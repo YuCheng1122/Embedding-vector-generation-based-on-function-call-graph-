@@ -1,0 +1,5 @@
+{
+    "vector_size": 50,
+    "epochs": 10,
+    "save_path": "./model_saved1/word2vec"
+}
