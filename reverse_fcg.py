@@ -214,7 +214,3 @@ def main() -> None:
 
     parallel_process(get_args(input_dir, output_dir,
                      extraction_logger, timing_logger))
-
-
-if __name__ == "__main__":
-    main()

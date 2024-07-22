@@ -14,17 +14,22 @@ logging.basicConfig(level=logging.INFO, format='[%(levelname)s] [%(asctime)s] %(
 
 
 class Word2VecCBOW:
-    def __init__(self, vector_size, epochs, save_path):
+    def __init__(self, vector_size, epochs, save_path, use_gpu):
         """Initialize the Word2Vec model with the specified parameters."""
         self.vector_size = vector_size
         self.epochs = epochs
         self.save_path = save_path
+        self.use_gpu = use_gpu
         self.model = None
 
     def train(self, sentences):
         """Train the model using the provided sentences."""
-        self.model = Word2Vec(sentences, vector_size=self.vector_size, window=5,
-                              min_count=1, workers=4, sg=0, epochs=self.epochs)
+        if self.use_gpu:
+            self.model = Word2Vec(sentences, vector_size=self.vector_size, window=5,
+                                  min_count=1, workers=4, sg=0, epochs=self.epochs, compute_loss=True, compute_device="gpu")
+        else:
+            self.model = Word2Vec(sentences, vector_size=self.vector_size, window=5,
+                                  min_count=1, workers=4, sg=0, epochs=self.epochs)
         logging.info("Training completed successfully.")
 
     def get_word_vectors(self):
@@ -48,7 +53,7 @@ class Word2VecCBOW:
             r'\w+', instruction) for instruction in instructions]
         return tokenized_instructions
 
-    def parallel_process(self, args, batch_size=100):
+    def parallel_process(self, args, batch_size=16):
         """Process the extraction tasks in parallel with batching."""
         results = []
 
@@ -58,9 +63,12 @@ class Word2VecCBOW:
                 futures = [executor.submit(
                     self.parse_fcg_json_file, arg) for arg in batch]
                 for future in tqdm(as_completed(futures), total=len(futures), desc="Processing batch", unit="file"):
-                    result = future.result()
-                    if result:
-                        batch_results.extend(result)
+                    try:
+                        result = future.result()
+                        if result:
+                            batch_results.extend(result)
+                    except Exception as e:
+                        logging.error(f"Error in future result: {e}")
             return batch_results
 
         # Split the list of args into batches
@@ -119,6 +127,8 @@ class Word2VecCBOW:
                             help='base directory containing benign and malware folders')
         parser.add_argument('--modelparams', type=str, required=False, metavar='<path>', default='./model_params/params.json',
                             help='path to model parameters JSON file')
+        parser.add_argument('--use-gpu', action='store_true',
+                            help='use GPU for training')
         args = parser.parse_args()
         return args
 
@@ -131,18 +141,22 @@ class Word2VecCBOW:
 
     def run(self, base_directory):
         """Run the training process."""
-        self.writelog("Starting Word2Vec training")
+        try:
+            self.writelog("Starting Word2Vec training")
 
-        labeled_data = self.label_and_parse_data(base_directory)
-        if not labeled_data:
-            self.writelog("No data found for training. Exiting.")
-            return
+            labeled_data = self.label_and_parse_data(base_directory)
+            if not labeled_data:
+                self.writelog("No data found for training. Exiting.")
+                return
 
-        # Train Word2Vec model on all instructions
-        all_instructions = [instruction for instruction, label in labeled_data]
-        self.writelog(f'Total instructions: {len(all_instructions)}')
+            # Train Word2Vec model on all instructions
+            all_instructions = [
+                instruction for instruction, label in labeled_data]
+            self.writelog(f'Total instructions: {len(all_instructions)}')
 
-        self.train(all_instructions)
-        self.writelog("Training completed")
+            self.train(all_instructions)
+            self.writelog("Training completed")
 
-        self.save_model()
+            self.save_model()
+        except Exception as e:
+            logging.error(f"Run interrupted or ended with error: {e}")

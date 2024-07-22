@@ -1,5 +1,31 @@
 {
-    "vector_size": 50,
-    "epochs": 10,
-    "save_path": "./model_saved1/word2vec"
+    "normalize": {
+        "input_dir": "/mnt/E/mnt/bigDisk/yishan/data_disassemble/results",
+        "output_dir": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results"
+    },
+    "word2vec": {
+        "vector_size": 100,
+        "epochs": 10,
+        "save_path": "./model_saved1/word2vec",
+        "use_gpu": true,
+        "graph_dir": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results"
+    },
+    "graph": {
+        "base_directory": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble/results",
+        "normalized_directory": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results",
+        "output_directory": "/mnt/E/mnt/bigDisk/yishan/graph",
+        "sample_size": 1000,
+        "word2vec_model_path": "/mnt/E/re/Embedding vector generation based on function call graph for effective malware detection and classification/model_saved/word2vec"
+    },
+    "gcn": {
+        "num_features": 128,
+        "hidden_channels": 64,
+        "num_classes": 2,
+        "use_gpu": true,
+        "data_dir": "/mnt/E/mnt/bigDisk/yishan/graph",
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "epochs": 50,
+        "model_save_path": "./model_saved/gcn_with_attention.pth"
+    }
 }

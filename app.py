@@ -1,42 +1,90 @@
-from tools import NormalizeAssembly
+import argparse
+import json
+import logging
+import torch
+from tqdm import tqdm
+from normalize import NormalizeAssembly
 from word2vec_model import Word2VecCBOW
 from gcn_model import GCNWithAttention
 from graph_preprocessing import GraphProcessor
-from logging import logging
 
-if __name__ == '__main__':
 
-    """Normalize fcg"""
+def load_params(file_path):
+    """Load parameters from a JSON file."""
+    with open(file_path, 'r') as file:
+        return json.load(file)
 
-    args = NormalizeAssembly.parse_arguments()
-    normalizer = NormalizeAssembly(args.directory, args.output)
+
+def normalize_fcg(params):
+    """Normalize function call graphs."""
+    normalizer = NormalizeAssembly(params['input_dir'], params['output_dir'])
     normalizer.process_json_files()
 
-    """Train Word2Vec"""
 
-    args = Word2VecCBOW.parse_args()
-    model_params = Word2VecCBOW.load_model_params(args.modelparams)
+def train_word2vec(params):
+    """Train Word2Vec model."""
+    try:
+        model = Word2VecCBOW(
+            vector_size=params['vector_size'],
+            epochs=params['epochs'],
+            save_path=params['save_path'],
+            use_gpu=params['use_gpu']
+        )
+        model.run(params['graph_dir'])
+    except Exception as e:
+        logging.error(
+            f"Word2Vec training interrupted or ended with error: {e}")
 
-    model = Word2VecCBOW(
-        vector_size=model_params['vector_size'],
-        epochs=model_params['epochs'],
-        save_path=model_params['save_path']
-    )
-    model.run(args.graph_dir)
 
-    """Graph Preprocessing"""
-
+def preprocess_graphs(params):
+    """Graph preprocessing."""
     GraphProcessor.setup_logging()
-    processor = GraphProcessor('./model_saved/word2vec')
-    labeled_data = processor.label_and_parse_data(
-        '/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results', sample_size=100)
-    G = processor.create_graph(labeled_data)
-    data = processor.prepare_data(G)
-    logging.info(
-        f"Graph has {len(G.nodes())} nodes and {len(G.edges())} edges.")
-    logging.info(
-        f"Feature matrix shape: {data.x.shape}, Labels shape: {data.y.shape}")
-    logging.info(f"First 5 node features:\n{data.x[:5]}")
-    logging.info(f"First 5 node labels:\n{data.y[:5]}")
 
-    """Train Graph Convolution Network"""
+    try:
+        processor = GraphProcessor(params)
+        processor.process_files()
+    except Exception as e:
+        logging.error(f"Error in graph preprocessing: {e}")
+
+
+def train_gcn_model(params, device):
+    """Train and evaluate the GCN model."""
+    model = GCNWithAttention(
+        params['num_features'], params['hidden_channels'], params['num_classes']).to(device)
+
+    model.train_and_evaluate(params['data_dir'], params, device)
+
+
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description='Run all stages of the pipeline.')
+    parser.add_argument('--config', type=str, required=True,
+                        help='Path to the parameters JSON file.')
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+
+    # Load parameters
+    all_params = load_params(args.config)
+
+    normalize_params = all_params['normalize']
+    word2vec_params = all_params['word2vec']
+    graph_params = all_params['graph']
+    gcn_params = all_params['gcn']
+
+    # Determine device
+    device = torch.device(
+        'cuda' if gcn_params['use_gpu'] and torch.cuda.is_available() else 'cpu')
+
+    # Execute stages
+    normalize_fcg(normalize_params)
+    train_word2vec(word2vec_params)
+    preprocess_graphs(graph_params)
+    train_gcn_model(gcn_params, device)
+
+
+if __name__ == '__main__':
+    main()
