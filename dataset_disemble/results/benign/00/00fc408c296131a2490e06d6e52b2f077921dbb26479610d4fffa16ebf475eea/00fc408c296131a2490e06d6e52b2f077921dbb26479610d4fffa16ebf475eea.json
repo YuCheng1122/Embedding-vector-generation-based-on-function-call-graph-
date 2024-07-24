@@ -1,0 +1,139 @@
+{
+    "sym._init": {
+        "function_address": "0x000006d8",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [reloc.__gmon_start__]",
+            "test rax, rax",
+            "je 0x6ed",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x00000720",
+        "instructions": [
+            "jmp qword [0x00200fc0]"
+        ]
+    },
+    "sym.message_hdr_put": {
+        "function_address": "0x000008a0",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "mov ebp, esi",
+            "mov rbx, rdi",
+            "sub rsp, 0x10",
+            "push qword [rsp + 0x50]",
+            "push qword [rsp + 0x50]",
+            "push qword [rsp + 0x50]",
+            "call sym.imp.server_id_put",
+            "add rsp, 0x18",
+            "lea rdi, [rbx + 0x18]",
+            "push qword [rsp + 0x38]",
+            "push qword [rsp + 0x38]",
+            "push qword [rsp + 0x38]",
+            "call sym.imp.server_id_put",
+            "mov rax, rbp",
+            "mov byte [rbx + 0x30], bpl",
+            "movzx eax, ah",
+            "mov byte [rbx + 0x31], al",
+            "mov eax, ebp",
+            "shr ebp, 0x18",
+            "shr eax, 0x10",
+            "mov byte [rbx + 0x33], bpl",
+            "mov byte [rbx + 0x32], al",
+            "add rsp, 0x28",
+            "pop rbx",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "sym.imp.server_id_put": {
+        "function_address": "0x00000710",
+        "instructions": [
+            "jmp qword [reloc.server_id_put]"
+        ]
+    },
+    "sym.message_hdr_get": {
+        "function_address": "0x00000850",
+        "instructions": [
+            "push r12",
+            "push rbp",
+            "mov r12, rsi",
+            "push rbx",
+            "mov rsi, rcx",
+            "mov rbx, rcx",
+            "mov rbp, rdi",
+            "mov rdi, rdx",
+            "call sym.imp.server_id_get",
+            "lea rsi, [rbx + 0x18]",
+            "mov rdi, r12",
+            "call sym.imp.server_id_get",
+            "movzx eax, byte [rbx + 0x31]",
+            "movzx edx, byte [rbx + 0x30]",
+            "movzx ecx, byte [rbx + 0x32]",
+            "shl eax, 8",
+            "or eax, edx",
+            "movzx edx, byte [rbx + 0x33]",
+            "shl edx, 8",
+            "or edx, ecx",
+            "shl edx, 0x10",
+            "or eax, edx",
+            "mov dword [rbp], eax",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "ret"
+        ]
+    },
+    "sym.imp.server_id_get": {
+        "function_address": "0x00000740",
+        "instructions": [
+            "jmp qword [reloc.server_id_get]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000007e0",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0x810",
+            "cmp qword [reloc.__cxa_finalize], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0x803",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000730",
+        "instructions": [
+            "jmp qword [0x00200fc8]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000750",
+        "instructions": [
+            "lea rdi, [loc._edata]",
+            "lea rax, [0x0020100f]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0x780",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0x780",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    }
+}

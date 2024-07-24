@@ -1,0 +1,16 @@
+digraph code {
+  "0x00000380" [label="entry0"];
+  "0x00000380" -> "0x00000344";
+  "0x00000344" [label="loc.imp.__gmon_start__"];
+  "0x00000480" [label="sym.gconv"];
+  "0x00000480" -> "0x0000035c";
+  "0x0000035c" [label="sym.imp._dl_mcount_wrapper_check"];
+  "0x00000480" -> "0x00000350";
+  "0x00000350" [label="sym.imp.__assert_fail"];
+  "0x00001038" [label="sym.gconv_init"];
+  "0x00001038" -> "0x00000368";
+  "0x00000368" [label="sym.imp.strcmp"];
+  "0x000003ac" [label="entry.fini0"];
+  "0x000003ac" -> "0x00000374";
+  "0x00000374" [label="sym.imp.__cxa_finalize"];
+}

@@ -1,0 +1,80 @@
+{
+    "sym.samba_init_module": {
+        "function_address": "0x00000ec0",
+        "instructions": [
+            "lea rdx, [0x00202020]",
+            "lea rsi, [0x00000f23]",
+            "sub rsp, 8",
+            "mov edi, 6",
+            "call sym.imp.smb_register_idmap",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "sym.imp.smb_register_idmap": {
+        "function_address": "0x000009c0",
+        "instructions": [
+            "jmp qword [reloc.smb_register_idmap]"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x00000978",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [reloc.__gmon_start__]",
+            "test rax, rax",
+            "je 0x98d",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x000009e0",
+        "instructions": [
+            "jmp qword [0x00201f88]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000b00",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0xb30",
+            "cmp qword [reloc.__cxa_finalize], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0xb23",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000a60",
+        "instructions": [
+            "jmp qword [0x00201fc8]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000a70",
+        "instructions": [
+            "lea rdi, [loc._edata]",
+            "lea rax, [0x00202047]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0xaa0",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0xaa0",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    }
+}

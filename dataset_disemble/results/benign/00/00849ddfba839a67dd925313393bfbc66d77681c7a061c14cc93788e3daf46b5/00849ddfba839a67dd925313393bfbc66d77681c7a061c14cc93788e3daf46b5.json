@@ -1,0 +1,221 @@
+{
+    "entry0": {
+        "function_address": "0x004010d0",
+        "instructions": [
+            "lui gp, 0x42",
+            "addiu gp, gp, -0x69a0",
+            "move ra, zero",
+            "lui a0, 0x40",
+            "addiu a0, a0, 0x770",
+            "lw a1, (sp)",
+            "addiu a2, sp, 4",
+            "addiu at, zero, -8",
+            "and sp, sp, at",
+            "addiu sp, sp, -0x20",
+            "lui a3, 0x40",
+            "addiu a3, a3, 0x6f0",
+            "lui t0, 0x40",
+            "addiu t0, t0, 0x1330",
+            "sw t0, 0x10(sp)",
+            "sw v0, 0x14(sp)",
+            "jal sym.imp.__uClibc_main"
+        ]
+    },
+    "sym.imp.__uClibc_main": {
+        "function_address": "0x00400760",
+        "instructions": [
+            "lui t7, 0x41",
+            "lw t9, 0x166c(t7)",
+            "jr t9",
+            "addiu t8, t7, 0x166c"
+        ]
+    },
+    "sym._fini": {
+        "function_address": "0x00401330",
+        "instructions": [
+            "lui gp, 2",
+            "addiu gp, gp, -0x7cd0",
+            "addu gp, gp, t9",
+            "addiu sp, sp, -0x20",
+            "sw gp, 0x10(sp)",
+            "sw ra, 0x1c(sp)",
+            "sw gp, 0x18(sp)",
+            "bal 0x401354",
+            "nop",
+            "jal fcn.00401120",
+            "nop",
+            "lw ra, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x20"
+        ]
+    },
+    "unk.0x401354": {
+        "function_address": "0x00401354",
+        "instructions": [
+            "lui gp, 2",
+            "addiu gp, gp, -0x7cd0",
+            "addu gp, gp, t9",
+            "addiu sp, sp, -0x20",
+            "sw gp, 0x10(sp)",
+            "sw ra, 0x1c(sp)",
+            "sw gp, 0x18(sp)",
+            "bal 0x401354",
+            "nop",
+            "jal fcn.00401120",
+            "nop",
+            "lw ra, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x20"
+        ]
+    },
+    "fcn.00401120": {
+        "function_address": "0x00401120",
+        "instructions": [
+            "addiu sp, sp, -0x30",
+            "sw s3, 0x28(sp)",
+            "lui s3, 0x41",
+            "sw ra, 0x2c(sp)",
+            "sw s2, 0x24(sp)",
+            "sw s1, 0x20(sp)",
+            "sw s0, 0x1c(sp)",
+            "lbu v0, 0x16d0(s3)",
+            "bnez v0, 0x401198",
+            "lui s2, 0x41",
+            "lui s1, 0x41",
+            "addiu s2, s2, 0x1638",
+            "addiu s1, s1, 0x163c",
+            "lui s0, 0x41",
+            "subu s1, s1, s2",
+            "sra s1, s1, 2",
+            "j 0x401180",
+            "addiu s1, s1, -1",
+            "sw v0, 0x16d4(s0)",
+            "sll v0, v0, 2",
+            "addu v0, v0, s2",
+            "lw t9, (v0)",
+            "jalr t9",
+            "nop",
+            "lw v0, 0x16d4(s0)",
+            "sltu v1, v0, s1",
+            "bnez v1, 0x401168",
+            "addiu v0, v0, 1",
+            "addiu v0, zero, 1",
+            "sb v0, 0x16d0(s3)",
+            "lw ra, 0x2c(sp)",
+            "lw s3, 0x28(sp)",
+            "lw s2, 0x24(sp)",
+            "lw s1, 0x20(sp)",
+            "lw s0, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x30"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x004006f0",
+        "instructions": [
+            "lui gp, 2",
+            "addiu gp, gp, -0x7090",
+            "addu gp, gp, t9",
+            "addiu sp, sp, -0x20",
+            "sw gp, 0x10(sp)",
+            "sw ra, 0x1c(sp)",
+            "sw gp, 0x18(sp)",
+            "bal 0x400714",
+            "nop",
+            "jal fcn.004011b4",
+            "nop",
+            "bal 0x400724",
+            "nop",
+            "jal fcn.004011f0",
+            "nop",
+            "lw ra, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x20"
+        ]
+    },
+    "unk.0x400714": {
+        "function_address": "0x00400714",
+        "instructions": [
+            "lui gp, 2",
+            "addiu gp, gp, -0x7090",
+            "addu gp, gp, t9",
+            "addiu sp, sp, -0x20",
+            "sw gp, 0x10(sp)",
+            "sw ra, 0x1c(sp)",
+            "sw gp, 0x18(sp)",
+            "bal 0x400714",
+            "nop",
+            "jal fcn.004011b4",
+            "nop",
+            "bal 0x400724",
+            "nop",
+            "jal fcn.004011f0",
+            "nop",
+            "lw ra, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x20"
+        ]
+    },
+    "fcn.004011b4": {
+        "function_address": "0x004011b4",
+        "instructions": [
+            "lui a0, 0x41",
+            "lw v0, 0x1640(a0)",
+            "beqz v0, 0x4011dc",
+            "nop",
+            "lui t9, 0",
+            "addiu t9, t9, 0",
+            "beqz t9, 0x4011dc",
+            "nop",
+            "jr t9",
+            "addiu a0, a0, 0x1640",
+            "jr ra",
+            "nop"
+        ]
+    },
+    "unk.0x400724": {
+        "function_address": "0x00400724",
+        "instructions": [
+            "lui gp, 2",
+            "addiu gp, gp, -0x7090",
+            "addu gp, gp, t9",
+            "addiu sp, sp, -0x20",
+            "sw gp, 0x10(sp)",
+            "sw ra, 0x1c(sp)",
+            "sw gp, 0x18(sp)",
+            "bal 0x400714",
+            "nop",
+            "jal fcn.004011b4",
+            "nop",
+            "bal 0x400724",
+            "nop",
+            "jal fcn.004011f0",
+            "nop",
+            "lw ra, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x20"
+        ]
+    },
+    "fcn.004011f0": {
+        "function_address": "0x004011f0",
+        "instructions": [
+            "addiu sp, sp, -0x28",
+            "sw s0, 0x1c(sp)",
+            "lui s0, 0x41",
+            "sw s1, 0x20(sp)",
+            "addiu s1, zero, -1",
+            "sw ra, 0x24(sp)",
+            "j 0x401218",
+            "addiu s0, s0, 0x1630",
+            "jalr t9",
+            "addiu s0, s0, -4",
+            "lw t9, (s0)",
+            "bne t9, s1, 0x401210",
+            "lw ra, 0x24(sp)",
+            "lw s1, 0x20(sp)",
+            "lw s0, 0x1c(sp)",
+            "jr ra",
+            "addiu sp, sp, 0x28"
+        ]
+    }
+}

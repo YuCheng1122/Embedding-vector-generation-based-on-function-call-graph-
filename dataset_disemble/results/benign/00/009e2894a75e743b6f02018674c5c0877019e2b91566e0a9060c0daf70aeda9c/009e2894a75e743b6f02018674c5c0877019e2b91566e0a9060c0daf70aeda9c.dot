@@ -1,0 +1,5 @@
+digraph code {
+  "0x00000398" [label="sym._init"];
+  "0x00000398" -> "0x0000030c";
+  "0x0000030c" [label="fcn.0000030c"];
+}

@@ -1,0 +1,434 @@
+{
+    "sym.tevent_req_is_unix_error": {
+        "function_address": "0x00001070",
+        "instructions": [
+            "push rbx",
+            "mov rbx, rsi",
+            "sub rsp, 0x10",
+            "lea rdx, [rsp + 8]",
+            "lea rsi, [rsp + 4]",
+            "call sym.imp.tevent_req_is_error",
+            "test al, al",
+            "je 0x10a4",
+            "mov edx, dword [rsp + 4]",
+            "cmp edx, 4",
+            "je 0x10b0",
+            "cmp edx, 5",
+            "je 0x10d0",
+            "cmp edx, 3",
+            "je 0x10c0",
+            "mov dword [rbx], 0x16",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov dword [rbx], 0x6e",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov rdx, qword [rsp + 8]",
+            "mov dword [rbx], edx",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov dword [rbx], 0xc",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret"
+        ]
+    },
+    "sym.imp.tevent_req_is_error": {
+        "function_address": "0x00000f50",
+        "instructions": [
+            "jmp qword [reloc.tevent_req_is_error]"
+        ]
+    },
+    "sym.tevent_req_simple_finish_ntstatus": {
+        "function_address": "0x00001200",
+        "instructions": [
+            "jmp qword [reloc._tevent_req_nterror]",
+            "push r12",
+            "push rbp",
+            "mov ebp, esi",
+            "push rbx",
+            "mov rbx, rdi",
+            "call sym.imp._tevent_req_callback_data",
+            "lea rdx, str..._lib_util_tevent_ntstatus.c:94",
+            "lea rsi, str.struct_tevent_req",
+            "mov rdi, rax",
+            "call sym.imp._talloc_get_type_abort",
+            "test rbx, rbx",
+            "mov r12, rax",
+            "je 0x123b",
+            "lea rsi, str..._lib_util_tevent_ntstatus.c:96",
+            "mov rdi, rbx",
+            "call sym.imp._talloc_free",
+            "test ebp, ebp",
+            "jne 0x1258",
+            "pop rbx",
+            "mov rdi, r12",
+            "lea rsi, str..._lib_util_tevent_ntstatus.c:102",
+            "pop rbp",
+            "pop r12",
+            "jmp sym.imp._tevent_req_done",
+            "pop rbx",
+            "mov esi, ebp",
+            "mov rdi, r12",
+            "lea rdx, str..._lib_util_tevent_ntstatus.c:99",
+            "pop rbp",
+            "pop r12",
+            "jmp 0xf40"
+        ]
+    },
+    "sym.imp._tevent_req_callback_data": {
+        "function_address": "0x00000e80",
+        "instructions": [
+            "jmp qword [reloc._tevent_req_callback_data]"
+        ]
+    },
+    "sym.imp._talloc_get_type_abort": {
+        "function_address": "0x00000eb0",
+        "instructions": [
+            "jmp qword [reloc._talloc_get_type_abort]"
+        ]
+    },
+    "sym.imp._talloc_free": {
+        "function_address": "0x00000f10",
+        "instructions": [
+            "jmp qword [reloc._talloc_free]"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x00000e08",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [0x00201fe0]",
+            "test rax, rax",
+            "je 0xe1d",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x00000ee0",
+        "instructions": [
+            "jmp qword [reloc.__gmon_start__]"
+        ]
+    },
+    "sym.tevent_req_simple_recv_ntstatus": {
+        "function_address": "0x000011d0",
+        "instructions": [
+            "push rbx",
+            "mov rbx, rdi",
+            "sub rsp, 0x10",
+            "mov rsi, rsp",
+            "mov dword [rsp], 0",
+            "call fcn.00000e60",
+            "mov rdi, rbx",
+            "call sym.imp.tevent_req_received",
+            "mov eax, dword [rsp]",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret"
+        ]
+    },
+    "fcn.00000e60": {
+        "function_address": "0x00000e60",
+        "instructions": [
+            "jmp qword [reloc.tevent_req_is_nterror]"
+        ]
+    },
+    "sym.imp.tevent_req_received": {
+        "function_address": "0x00000f00",
+        "instructions": [
+            "jmp qword [reloc.tevent_req_received]"
+        ]
+    },
+    "sym.tevent_req_poll_werror": {
+        "function_address": "0x000013d0",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "mov rbp, rdx",
+            "sub rsp, 8",
+            "call sym.imp.tevent_req_poll",
+            "test al, al",
+            "mov ebx, eax",
+            "jne 0x13fa",
+            "call sym.imp.__errno_location",
+            "mov edi, dword [rax]",
+            "call sym.imp.map_nt_error_from_unix_common",
+            "mov edi, eax",
+            "call sym.imp.ntstatus_to_werror",
+            "mov dword [rbp], eax",
+            "add rsp, 8",
+            "mov eax, ebx",
+            "pop rbx",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "sym.imp.tevent_req_poll": {
+        "function_address": "0x00000ed0",
+        "instructions": [
+            "jmp qword [reloc.tevent_req_poll]"
+        ]
+    },
+    "sym.imp.__errno_location": {
+        "function_address": "0x00000e50",
+        "instructions": [
+            "jmp qword [reloc.__errno_location]"
+        ]
+    },
+    "sym.imp.map_nt_error_from_unix_common": {
+        "function_address": "0x00000ea0",
+        "instructions": [
+            "jmp qword [reloc.map_nt_error_from_unix_common]"
+        ]
+    },
+    "sym.imp.ntstatus_to_werror": {
+        "function_address": "0x00000f20",
+        "instructions": [
+            "jmp qword [reloc.ntstatus_to_werror]"
+        ]
+    },
+    "sym.tevent_req_is_nterror": {
+        "function_address": "0x00001140",
+        "instructions": [
+            "push rbx",
+            "mov rbx, rsi",
+            "sub rsp, 0x10",
+            "lea rdx, [rsp + 8]",
+            "lea rsi, [rsp + 4]",
+            "call sym.imp.tevent_req_is_error",
+            "test al, al",
+            "je 0x1174",
+            "mov edx, dword [rsp + 4]",
+            "cmp edx, 4",
+            "je 0x1180",
+            "cmp edx, 5",
+            "je 0x11b0",
+            "cmp edx, 3",
+            "je 0x1190",
+            "mov dword [rbx], 0xc00000e5",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov dword [rbx], 0xc00000b5",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov rdx, qword [rsp + 8]",
+            "mov ecx, 0x917b5acd",
+            "mov rsi, rdx",
+            "shr rsi, 0x20",
+            "cmp rsi, rcx",
+            "jne 0x11bc",
+            "mov dword [rbx], edx",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov dword [rbx], 0xc0000017",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "call sym.imp.abort"
+        ]
+    },
+    "sym.imp.abort": {
+        "function_address": "0x00000e40",
+        "instructions": [
+            "jmp qword [reloc.abort]"
+        ]
+    },
+    "sym.tevent_req_simple_recv_unix": {
+        "function_address": "0x000010e0",
+        "instructions": [
+            "push rbx",
+            "mov rbx, rdi",
+            "sub rsp, 0x10",
+            "lea rsi, [rsp + 0xc]",
+            "mov dword [rsp + 0xc], 0",
+            "call fcn.00000e70",
+            "mov rdi, rbx",
+            "call sym.imp.tevent_req_received",
+            "mov eax, dword [rsp + 0xc]",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret"
+        ]
+    },
+    "fcn.00000e70": {
+        "function_address": "0x00000e70",
+        "instructions": [
+            "jmp qword [reloc.tevent_req_is_unix_error]"
+        ]
+    },
+    "sym.tevent_req_poll_ntstatus": {
+        "function_address": "0x00001270",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "mov rbp, rdx",
+            "sub rsp, 8",
+            "call sym.imp.tevent_req_poll",
+            "test al, al",
+            "mov ebx, eax",
+            "jne 0x1293",
+            "call sym.imp.__errno_location",
+            "mov edi, dword [rax]",
+            "call sym.imp.map_nt_error_from_unix_common",
+            "mov dword [rbp], eax",
+            "add rsp, 8",
+            "mov eax, ebx",
+            "pop rbx",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "sym.tevent_req_is_werror": {
+        "function_address": "0x000012b0",
+        "instructions": [
+            "push rbx",
+            "mov rbx, rsi",
+            "sub rsp, 0x10",
+            "lea rdx, [rsp + 8]",
+            "lea rsi, [rsp + 4]",
+            "call sym.imp.tevent_req_is_error",
+            "test al, al",
+            "je 0x12e4",
+            "mov edx, dword [rsp + 4]",
+            "cmp edx, 4",
+            "je 0x12f0",
+            "cmp edx, 5",
+            "je 0x1310",
+            "cmp edx, 3",
+            "je 0x1300",
+            "mov dword [rbx], 0x54f",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov dword [rbx], 0x5b4",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov rdx, qword [rsp + 8]",
+            "mov dword [rbx], edx",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret",
+            "mov dword [rbx], 8",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret"
+        ]
+    },
+    "sym.tevent_req_simple_recv_werror": {
+        "function_address": "0x00001320",
+        "instructions": [
+            "push rbx",
+            "mov rbx, rdi",
+            "sub rsp, 0x10",
+            "mov rsi, rsp",
+            "call fcn.00000f30",
+            "test al, al",
+            "mov rdi, rbx",
+            "jne 0x1348",
+            "call sym.imp.tevent_req_received",
+            "add rsp, 0x10",
+            "xor eax, eax",
+            "pop rbx",
+            "ret",
+            "call sym.imp.tevent_req_received",
+            "mov eax, dword [rsp]",
+            "add rsp, 0x10",
+            "pop rbx",
+            "ret"
+        ]
+    },
+    "fcn.00000f30": {
+        "function_address": "0x00000f30",
+        "instructions": [
+            "jmp qword [reloc.tevent_req_is_werror]"
+        ]
+    },
+    "sym.tevent_req_simple_finish_werror": {
+        "function_address": "0x00001360",
+        "instructions": [
+            "jmp qword [reloc._tevent_req_werror]",
+            "push r12",
+            "push rbp",
+            "mov ebp, esi",
+            "push rbx",
+            "mov rbx, rdi",
+            "call sym.imp._tevent_req_callback_data",
+            "lea rdx, str..._lib_util_tevent_werror.c:73",
+            "lea rsi, str.struct_tevent_req",
+            "mov rdi, rax",
+            "call sym.imp._talloc_get_type_abort",
+            "test rbx, rbx",
+            "mov r12, rax",
+            "je 0x139b",
+            "lea rsi, str..._lib_util_tevent_werror.c:75",
+            "mov rdi, rbx",
+            "call sym.imp._talloc_free",
+            "test ebp, ebp",
+            "jne 0x13b8",
+            "pop rbx",
+            "mov rdi, r12",
+            "lea rsi, str..._lib_util_tevent_werror.c:81",
+            "pop rbp",
+            "pop r12",
+            "jmp sym.imp._tevent_req_done",
+            "pop rbx",
+            "mov esi, ebp",
+            "mov rdi, r12",
+            "lea rdx, str..._lib_util_tevent_werror.c:78",
+            "pop rbp",
+            "pop r12",
+            "jmp 0xec0"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00001000",
+        "instructions": [
+            "cmp byte [loc.__bss_start], 0",
+            "jne 0x1030",
+            "cmp qword [0x00201ff8], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0x1023",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [loc.__bss_start], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000f60",
+        "instructions": [
+            "jmp qword [reloc.__cxa_finalize]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000f70",
+        "instructions": [
+            "lea rdi, [loc.__bss_start]",
+            "lea rax, [0x002020bf]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0xfa0",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0xfa0",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    }
+}

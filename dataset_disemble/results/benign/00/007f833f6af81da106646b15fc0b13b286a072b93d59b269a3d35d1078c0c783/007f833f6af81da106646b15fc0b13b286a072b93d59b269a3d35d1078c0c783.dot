@@ -1,0 +1,20 @@
+digraph code {
+  "0x00000820" [label="sym._init"];
+  "0x00000820" -> "0x00000958";
+  "0x00000958" [label="r15"];
+  "0x00000a18" [label="entry.fini0"];
+  "0x00000a18" -> "0x00000850";
+  "0x00000850" [label="sym.imp.__cxa_finalize"];
+  "0x00000a18" -> "0x0000097c";
+  "0x0000097c" [label="fcn.0000097c"];
+  "0x00000ad0" [label="fcn.00000ad0"];
+  "0x00000ad0" -> "0x000008d4";
+  "0x000008d4" [label="sym.imp.getenv"];
+  "0x00000ad0" -> "0x000008b0";
+  "0x000008b0" [label="sym.imp.fwrite"];
+  "0x00000b74" [label="fcn.00000b74"];
+  "0x00000b74" -> "0x0000091c";
+  "0x0000091c" [label="sym.imp.xtables_calloc"];
+  "0x00000b74" -> "0x000008bc";
+  "0x000008bc" [label="sym.imp.strcpy"];
+}

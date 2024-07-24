@@ -1,0 +1,10 @@
+digraph code {
+  "0x000006c8" [label="sym._init"];
+  "0x000006c8" -> "0x000006ec";
+  "0x000006ec" [label="unk.0x6ec"];
+  "0x000006c8" -> "0x0000071c";
+  "0x0000071c" [label="unk.0x71c"];
+  "0x000009e0" [label="sym._fini"];
+  "0x000009e0" -> "0x00000a04";
+  "0x00000a04" [label="unk.0xa04"];
+}

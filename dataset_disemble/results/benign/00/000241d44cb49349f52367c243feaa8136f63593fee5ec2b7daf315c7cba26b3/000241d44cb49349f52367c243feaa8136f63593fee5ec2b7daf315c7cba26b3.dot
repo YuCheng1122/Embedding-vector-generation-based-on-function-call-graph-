@@ -1,0 +1,36 @@
+digraph code {
+  "0x00002bf0" [label="sym.samba_init_module"];
+  "0x00002bf0" -> "0x00001470";
+  "0x00001470" [label="sym.imp.smb_register_vfs"];
+  "0x00002bf0" -> "0x00001570";
+  "0x00001570" [label="sym.imp.debug_add_class"];
+  "0x00002bf0" -> "0x00001360";
+  "0x00001360" [label="sym.imp.dbghdrclass"];
+  "0x00002bf0" -> "0x000013b0";
+  "0x000013b0" [label="sym.imp.dbgtext"];
+  "0x00001318" [label="sym._init"];
+  "0x00001318" -> "0x000013a0";
+  "0x000013a0" [label="loc.imp.__gmon_start__"];
+  "0x000016f0" [label="entry.fini0"];
+  "0x000016f0" -> "0x00001480";
+  "0x00001480" [label="sym.imp.__cxa_finalize"];
+  "0x000016f0" -> "0x00001660";
+  "0x00001660" [label="fcn.00001660"];
+  "0x000017e0" [label="fcn.000017e0"];
+  "0x000017e0" -> "0x00001380";
+  "0x00001380" [label="sym.imp.unix_wild_match"];
+  "0x00001605" [label="fcn.00001605"];
+  "0x00001605" -> "0x000015d0";
+  "0x000015d0" [label="sym.imp.lp_parm_const_string"];
+  "0x00001605" -> "0x000014b0";
+  "0x000014b0" [label="sym.imp.sscanf"];
+  "0x00001760" [label="fcn.00001760"];
+  "0x00001760" -> "0x000014f0";
+  "0x000014f0" [label="sym.imp._talloc_tos"];
+  "0x00001760" -> "0x00001520";
+  "0x00001520" [label="sym.imp.cp_smb_filename"];
+  "0x00001760" -> "0x000015b0";
+  "0x000015b0" [label="sym.imp.smb_vfs_call_stat"];
+  "0x00001760" -> "0x00001390";
+  "0x00001390" [label="sym.imp._talloc_free"];
+}

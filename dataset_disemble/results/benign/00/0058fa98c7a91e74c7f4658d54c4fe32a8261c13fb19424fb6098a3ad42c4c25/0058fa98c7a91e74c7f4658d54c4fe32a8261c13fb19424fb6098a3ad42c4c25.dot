@@ -1,0 +1,36 @@
+digraph code {
+  "0x0000216c" [label="sym.shm_open"];
+  "0x0000216c" -> "0x00002110";
+  "0x00002110" [label="sym.get_shm_name"];
+  "0x00001fe0" [label="sym.mq_receive"];
+  "0x00001fe0" -> "0x000022a8";
+  "0x000022a8" [label="sym.__GI_mq_timedreceive"];
+  "0x00002020" [label="sym.mq_send"];
+  "0x00002020" -> "0x000023a8";
+  "0x000023a8" [label="sym.__GI___mq_timedsend"];
+  "0x00001c78" [label="sym.__gcc_personality_v0"];
+  "0x00001c78" -> "0x00000d30";
+  "0x00000d30" [label="pc"];
+  "0x00001c20" [label="sym._Unwind_Resume"];
+  "0x00001c20" -> "0x00000d30";
+  "0x00000d30" [label="pc"];
+  "0x000021f4" [label="sym.shm_unlink"];
+  "0x000021f4" -> "0x00002110";
+  "0x00002110" [label="sym.get_shm_name"];
+  "0x00001dd0" [label="sym.clock_nanosleep"];
+  "0x00001dd0" -> "0x00001ac0";
+  "0x00001ac0" [label="sym.__librt_enable_asynccancel"];
+  "0x00001dd0" -> "0x00001b7c";
+  "0x00001b7c" [label="sym.__librt_disable_asynccancel"];
+  "0x00000e60" [label="sym.init_mq_netlink"];
+  "0x00000e60" -> "0x00000e08";
+  "0x00000e08" [label="sym.change_sigmask"];
+  "0x000010d8" [label="sym.notification_function"];
+  "0x000010d8" -> "0x00000e08";
+  "0x00000e08" [label="sym.change_sigmask"];
+  "0x00001780" [label="sym.timer_helper_thread"];
+  "0x00001780" -> "0x00001ac0";
+  "0x00001ac0" [label="sym.__librt_enable_asynccancel"];
+  "0x00001780" -> "0x00001b7c";
+  "0x00001b7c" [label="sym.__librt_disable_asynccancel"];
+}

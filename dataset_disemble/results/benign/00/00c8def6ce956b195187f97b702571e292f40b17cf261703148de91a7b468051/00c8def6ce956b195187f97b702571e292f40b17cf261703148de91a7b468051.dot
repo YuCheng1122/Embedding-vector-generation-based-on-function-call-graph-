@@ -1,0 +1,26 @@
+digraph code {
+  "0x080007cc" [label="sym.fq_codel_destroy"];
+  "0x080007cc" -> "0x08000774";
+  "0x08000774" [label="fcn.08000774"];
+  "0x08000824" [label="sym.fq_codel_enqueue"];
+  "0x08000824" -> "0x080006b8";
+  "0x080006b8" [label="sym.fq_codel_drop"];
+  "0x08000bbc" [label="sym.fq_codel_dequeue"];
+  "0x08000bbc" -> "0x08000078";
+  "0x08000078" [label="fcn.08000078"];
+  "0x08000bbc" -> "0x08000b14";
+  "0x08000b14" [label="fcn.08000b14"];
+  "0x08001288" [label="sym.fq_codel_change"];
+  "0x08001288" -> "0x08000bbc";
+  "0x08000bbc" [label="sym.fq_codel_dequeue"];
+  "0x08001444" [label="sym.fq_codel_init"];
+  "0x08001444" -> "0x08001288";
+  "0x08001288" [label="sym.fq_codel_change"];
+  "0x08001444" -> "0x080007f8";
+  "0x080007f8" [label="fcn.080007f8"];
+  "0x08001444" -> "0x08000774";
+  "0x08000774" [label="fcn.08000774"];
+  "0x08001588" [label="sym.fq_codel_reset"];
+  "0x08001588" -> "0x08000bbc";
+  "0x08000bbc" [label="sym.fq_codel_dequeue"];
+}

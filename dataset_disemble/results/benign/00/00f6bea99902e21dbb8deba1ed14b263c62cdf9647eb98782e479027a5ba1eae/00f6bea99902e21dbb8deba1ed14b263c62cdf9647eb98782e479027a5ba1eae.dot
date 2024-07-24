@@ -1,0 +1,10 @@
+digraph code {
+  "0x000004b8" [label="sym._init"];
+  "0x000004b8" -> "0x000004f4";
+  "0x000004f4" [label="r15"];
+  "0x000005b4" [label="entry.fini0"];
+  "0x000005b4" -> "0x000004dc";
+  "0x000004dc" [label="sym.imp.__cxa_finalize"];
+  "0x000005b4" -> "0x00000518";
+  "0x00000518" [label="fcn.00000518"];
+}

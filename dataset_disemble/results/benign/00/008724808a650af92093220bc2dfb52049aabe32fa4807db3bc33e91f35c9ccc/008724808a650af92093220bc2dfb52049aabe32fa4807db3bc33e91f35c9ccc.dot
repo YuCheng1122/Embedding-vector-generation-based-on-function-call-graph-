@@ -1,0 +1,20 @@
+digraph code {
+  "0x00001000" [label="fcn.00001000"];
+  "0x00001000" -> "0x000007ec";
+  "0x000007ec" [label="sym.imp.strdup"];
+  "0x00001000" -> "0x0000081c";
+  "0x0000081c" [label="sym.imp.strchr"];
+  "0x00001000" -> "0x000007d4";
+  "0x000007d4" [label="sym.imp.strtol"];
+  "0x00001000" -> "0x00000798";
+  "0x00000798" [label="loc.imp.__ebt_print_error"];
+  "0x000011ac" [label="fcn.000011ac"];
+  "0x000011ac" -> "0x000007f8";
+  "0x000007f8" [label="sym.imp.__errno_location"];
+  "0x000011ac" -> "0x000007d4";
+  "0x000007d4" [label="sym.imp.strtol"];
+  "0x000011ac" -> "0x00000798";
+  "0x00000798" [label="loc.imp.__ebt_print_error"];
+  "0x000011ac" -> "0x00000768";
+  "0x00000768" [label="sym.imp.strerror"];
+}

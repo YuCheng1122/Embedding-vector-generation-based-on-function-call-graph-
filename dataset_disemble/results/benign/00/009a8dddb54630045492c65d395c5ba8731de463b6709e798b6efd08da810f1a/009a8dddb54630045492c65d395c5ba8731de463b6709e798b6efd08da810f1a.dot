@@ -1,0 +1,21 @@
+digraph code {
+  "0x00000d78" [label="sym._init"];
+  "0x00000d78" -> "0x00000e40";
+  "0x00000e40" [label="loc.imp.__gmon_start__"];
+  "0x00001f80" [label="sym.boot_Hash__Util"];
+  "0x00001f80" -> "0x00000ea0";
+  "0x00000ea0" [label="loc.imp.Perl_xs_apiversion_bootcheck"];
+  "0x00001f80" -> "0x00000db0";
+  "0x00000db0" [label="loc.imp.Perl_xs_version_bootcheck"];
+  "0x00001f80" -> "0x00000ec0";
+  "0x00000ec0" [label="loc.imp.Perl_newXS_flags"];
+  "0x00001f80" -> "0x00000e90";
+  "0x00000e90" [label="loc.imp.Perl_newXS"];
+  "0x00001f80" -> "0x00000e80";
+  "0x00000e80" [label="loc.imp.Perl_call_list"];
+  "0x00001030" [label="entry.fini0"];
+  "0x00001030" -> "0x00000f60";
+  "0x00000f60" [label="sym.imp.__cxa_finalize"];
+  "0x00001030" -> "0x00000fa0";
+  "0x00000fa0" [label="rip"];
+}

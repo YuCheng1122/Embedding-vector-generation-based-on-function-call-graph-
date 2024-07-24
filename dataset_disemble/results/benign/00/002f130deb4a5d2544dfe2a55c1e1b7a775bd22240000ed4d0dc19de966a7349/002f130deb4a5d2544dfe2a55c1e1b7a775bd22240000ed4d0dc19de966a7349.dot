@@ -1,0 +1,14 @@
+digraph code {
+  "0x08004b7c" [label="sym.dfs_process_phyerr"];
+  "0x08004b7c" -> "0x08004554";
+  "0x08004554" [label="fcn.08004554"];
+  "0x0800880c" [label="sym.dfs_process_phyerr_bb_tlv"];
+  "0x0800880c" -> "0x08008760";
+  "0x08008760" [label="fcn.08008760"];
+  "0x08006b24" [label="sym.dfs_check_chirping"];
+  "0x08006b24" -> "0x08005e04";
+  "0x08005e04" [label="fcn.08005e04"];
+  "0x08001890" [label="sym.dfs_staggered_check"];
+  "0x08001890" -> "0x0800176c";
+  "0x0800176c" [label="fcn.0800176c"];
+}

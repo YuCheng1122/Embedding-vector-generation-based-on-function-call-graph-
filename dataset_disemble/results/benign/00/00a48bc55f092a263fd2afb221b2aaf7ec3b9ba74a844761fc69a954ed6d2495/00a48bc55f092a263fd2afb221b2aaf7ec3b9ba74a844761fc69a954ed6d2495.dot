@@ -1,0 +1,28 @@
+digraph code {
+  "0x00400610" [label="entry0"];
+  "0x00400610" -> "0x004005b0";
+  "0x004005b0" [label="sym.imp.__libc_start_main"];
+  "0x00400700" [label="main"];
+  "0x00400700" -> "0x004005a0";
+  "0x004005a0" [label="sym.imp.execv"];
+  "0x00400700" -> "0x004005e0";
+  "0x004005e0" [label="sym.imp.__errno_location"];
+  "0x00400700" -> "0x004005c0";
+  "0x004005c0" [label="sym.imp.strerror"];
+  "0x00400700" -> "0x00400600";
+  "0x00400600" [label="sym.imp.fprintf"];
+  "0x00400700" -> "0x004005f0";
+  "0x004005f0" [label="sym.imp.fwrite"];
+  "0x00400700" -> "0x004005d0";
+  "0x004005d0" [label="sym.imp.getenv"];
+  "0x00400578" [label="fcn.00400578"];
+  "0x00400578" -> "0x0040063c";
+  "0x0040063c" [label="fcn.0040063c"];
+  "0x00400578" -> "0x004006d0";
+  "0x004006d0" [label="fcn.004006d0"];
+  "0x00400578" -> "0x00400900";
+  "0x00400900" [label="fcn.00400900"];
+  "0x00400660" [label="fcn.00400660"];
+  "0x00400660" -> "0x00600d00";
+  "0x00600d00" [label="section..dtors"];
+}

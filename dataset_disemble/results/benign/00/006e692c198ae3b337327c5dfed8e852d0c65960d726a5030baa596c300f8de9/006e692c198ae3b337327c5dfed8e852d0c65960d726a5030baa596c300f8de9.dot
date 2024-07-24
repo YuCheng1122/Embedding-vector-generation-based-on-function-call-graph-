@@ -1,0 +1,20 @@
+digraph code {
+  "0x08000128" [label="sym.unregister_sound_special"];
+  "0x08000128" -> "0x08000068";
+  "0x08000068" [label="fcn.08000068"];
+  "0x0800036c" [label="sym.register_sound_dsp"];
+  "0x0800036c" -> "0x08000180";
+  "0x08000180" [label="fcn.08000180"];
+  "0x08000180" [label="fcn.08000180"];
+  "0x08000180" -> "0x08000068";
+  "0x08000068" [label="fcn.08000068"];
+  "0x08000428" [label="sym.register_sound_special_device"];
+  "0x08000428" -> "0x08000180";
+  "0x08000180" [label="fcn.08000180"];
+  "0x080003ec" [label="sym.register_sound_mixer"];
+  "0x080003ec" -> "0x08000180";
+  "0x08000180" [label="fcn.08000180"];
+  "0x080003ac" [label="sym.register_sound_midi"];
+  "0x080003ac" -> "0x08000180";
+  "0x08000180" [label="fcn.08000180"];
+}

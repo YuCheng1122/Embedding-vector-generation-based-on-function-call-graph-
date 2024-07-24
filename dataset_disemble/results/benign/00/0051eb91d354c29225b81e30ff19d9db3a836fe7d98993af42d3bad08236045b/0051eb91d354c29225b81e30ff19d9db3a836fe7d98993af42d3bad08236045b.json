@@ -1,0 +1,170 @@
+{
+    "sym._init": {
+        "function_address": "0x00000cd8",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [0x00201fc8]",
+            "test rax, rax",
+            "je 0xced",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x00000db0",
+        "instructions": [
+            "jmp qword [reloc.__gmon_start__]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000f20",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0xf50",
+            "cmp qword [0x00201fe8], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0xf43",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000e70",
+        "instructions": [
+            "jmp qword [reloc.__cxa_finalize]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000e90",
+        "instructions": [
+            "lea rdi, [loc._edata]",
+            "lea rax, [0x002021af]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0xec0",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0xec0",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "fcn.000012f0": {
+        "function_address": "0x000012f0",
+        "instructions": [
+            "push r13",
+            "push r12",
+            "mov r12, rsi",
+            "push rbp",
+            "push rbx",
+            "mov rbp, rdx",
+            "mov rbx, rdi",
+            "sub rsp, 8",
+            "movzx eax, byte [rdx]",
+            "test al, al",
+            "je 0x1385",
+            "cmp rdi, rsi",
+            "jae 0x139b",
+            "lea r13, str.________________________________",
+            "jmp 0x1368",
+            "lea rax, [rbx + 2]",
+            "cmp r12, rax",
+            "jbe 0x13b3",
+            "mov byte [rbx], 0x25",
+            "movzx r8d, byte [rbp]",
+            "lea rdi, [rbx + 1]",
+            "lea rcx, str._02x",
+            "xor eax, eax",
+            "add rbp, 1",
+            "mov rdx, 0xffffffffffffffff",
+            "mov esi, 1",
+            "add rbx, 3",
+            "call sym.imp.__sprintf_chk",
+            "movzx eax, byte [rbp]",
+            "test al, al",
+            "je 0x1385",
+            "cmp rbx, r12",
+            "jae 0x139b",
+            "movzx edx, al",
+            "test byte [r13 + rdx], 0x20",
+            "jne 0x1320",
+            "add rbp, 1",
+            "mov byte [rbx], al",
+            "add rbx, 1",
+            "movzx eax, byte [rbp]",
+            "test al, al",
+            "jne 0x1363",
+            "cmp r12, rbx",
+            "jbe 0x13cb",
+            "mov byte [rbx], 0",
+            "add rsp, 8",
+            "mov rax, rbx",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "ret",
+            "lea rsi, str.mod_log_forensic.c",
+            "lea rdi, str.q___e",
+            "mov edx, 0x7d",
+            "call loc.imp.ap_log_assert",
+            "lea rsi, str.mod_log_forensic.c",
+            "lea rdi, str.q2___e",
+            "mov edx, 0x7f",
+            "call loc.imp.ap_log_assert",
+            "lea rsi, str.mod_log_forensic.c",
+            "lea rdi, str.q___e",
+            "mov edx, 0x87",
+            "call loc.imp.ap_log_assert",
+            "nop word cs:[rax + rax]",
+            "push rbp",
+            "push rbx",
+            "mov rbp, rdx",
+            "mov rbx, rdi",
+            "sub rsp, 8",
+            "mov rax, qword [rdi + 8]",
+            "lea rdx, [rax + 1]",
+            "mov qword [rdi + 8], rdx",
+            "mov byte [rax], 0x7c",
+            "mov rdx, rsi",
+            "mov rdi, qword [rdi + 8]",
+            "mov rsi, qword [rbx + 0x10]",
+            "call fcn.000012f0",
+            "lea rdx, [rax + 1]",
+            "mov qword [rbx + 8], rdx",
+            "mov byte [rax], 0x3a",
+            "mov rdx, rbp",
+            "mov rsi, qword [rbx + 0x10]",
+            "mov rdi, qword [rbx + 8]",
+            "call fcn.000012f0",
+            "mov qword [rbx + 8], rax",
+            "add rsp, 8",
+            "mov eax, 1",
+            "pop rbx",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "sym.imp.__sprintf_chk": {
+        "function_address": "0x00000e80",
+        "instructions": [
+            "jmp qword [reloc.__sprintf_chk]"
+        ]
+    },
+    "loc.imp.ap_log_assert": {
+        "function_address": "0x00000e50",
+        "instructions": [
+            "jmp qword [reloc.ap_log_assert]"
+        ]
+    }
+}

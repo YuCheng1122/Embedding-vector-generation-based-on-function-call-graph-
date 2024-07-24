@@ -1,0 +1,18 @@
+digraph code {
+  "0x000008ec" [label="entry0"];
+  "0x000008ec" -> "0x00000868";
+  "0x00000868" [label="loc.imp.__gmon_start__"];
+  "0x00000b34" [label="sym.ldb_init_module"];
+  "0x00000b34" -> "0x00000814";
+  "0x00000814" [label="sym.imp.strcmp"];
+  "0x00000b34" -> "0x00000874";
+  "0x00000874" [label="sym.imp.fprintf"];
+  "0x00000b34" -> "0x000008b0";
+  "0x000008b0" [label="sym.imp.ldb_register_module"];
+  "0x000007f0" [label="sym._init"];
+  "0x000007f0" -> "0x000008ec";
+  "0x000008ec" [label="r15"];
+  "0x00000918" [label="entry.fini0"];
+  "0x00000918" -> "0x00000820";
+  "0x00000820" [label="sym.imp.__cxa_finalize"];
+}

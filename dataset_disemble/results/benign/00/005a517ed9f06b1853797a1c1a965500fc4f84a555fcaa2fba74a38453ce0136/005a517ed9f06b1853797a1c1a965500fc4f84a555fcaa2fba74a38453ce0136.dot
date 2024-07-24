@@ -1,0 +1,36 @@
+digraph code {
+  "0x00012498" [label="entry.init0"];
+  "0x00012498" -> "0x00010d24";
+  "0x00010d24" [label="loc.imp.__register_frame_info"];
+  "0x00012450" [label="entry.fini0"];
+  "0x00012450" -> "0x000123e8";
+  "0x000123e8" [label="fcn.000123e8"];
+  "0x00012450" -> "0x00010c28";
+  "0x00010c28" [label="loc.imp.__deregister_frame_info"];
+  "0x00012550" [label="fcn.00012550"];
+  "0x00012550" -> "0x00010bc8";
+  "0x00010bc8" [label="sym.imp.puts"];
+  "0x000124c8" [label="fcn.000124c8"];
+  "0x000124c8" -> "0x00010b50";
+  "0x00010b50" [label="sym.imp.strtok_r"];
+  "0x000124c8" -> "0x00010bec";
+  "0x00010bec" [label="sym.imp.strtoul"];
+  "0x000124c8" -> "0x00010bc8";
+  "0x00010bc8" [label="sym.imp.puts"];
+  "0x000124c8" -> "0x00010ce8";
+  "0x00010ce8" [label="sym.imp.exit"];
+  "0x00012c40" [label="fcn.00012c40"];
+  "0x00012c40" -> "0x00010bc8";
+  "0x00010bc8" [label="sym.imp.puts"];
+  "0x00012c40" -> "0x00010b98";
+  "0x00010b98" [label="sym.imp.snprintf"];
+  "0x00012c40" -> "0x00010b44";
+  "0x00010b44" [label="sym.imp.if_indextoname"];
+  "0x00012c40" -> "0x00010b68";
+  "0x00010b68" [label="sym.imp.printf"];
+  "0x0001290c" [label="fcn.0001290c"];
+  "0x0001290c" -> "0x00010bc8";
+  "0x00010bc8" [label="sym.imp.puts"];
+  "0x0001290c" -> "0x00010b68";
+  "0x00010b68" [label="sym.imp.printf"];
+}

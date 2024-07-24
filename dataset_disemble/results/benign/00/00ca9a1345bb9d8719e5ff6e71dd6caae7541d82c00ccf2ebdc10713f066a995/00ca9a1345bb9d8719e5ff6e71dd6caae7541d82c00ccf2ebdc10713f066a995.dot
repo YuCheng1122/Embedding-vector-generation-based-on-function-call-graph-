@@ -1,0 +1,13 @@
+digraph code {
+  "0x00000ec0" [label="sym.samba_init_module"];
+  "0x00000ec0" -> "0x000009c0";
+  "0x000009c0" [label="sym.imp.smb_register_idmap"];
+  "0x00000978" [label="sym._init"];
+  "0x00000978" -> "0x000009e0";
+  "0x000009e0" [label="loc.imp.__gmon_start__"];
+  "0x00000b00" [label="entry.fini0"];
+  "0x00000b00" -> "0x00000a60";
+  "0x00000a60" [label="sym.imp.__cxa_finalize"];
+  "0x00000b00" -> "0x00000a70";
+  "0x00000a70" [label="rip"];
+}

@@ -1,0 +1,114 @@
+{
+    "entry.init0": {
+        "function_address": "0x00000680",
+        "instructions": [
+            "ldr r0, [0x000005e4]",
+            "ldr r1, [0x000005e8]",
+            "add r0, pc, r0",
+            "add r1, pc, r1",
+            "ldr r3, [0x000005ec]",
+            "rsb r1, r0, r1",
+            "asr r1, r1, 2",
+            "add r3, pc, r3",
+            "add r1, r1, r1, lsr 31",
+            "asrs r1, r1, 1",
+            "bxeq lr",
+            "ldr r2, [0x000005f0]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3",
+            "push {r3, lr}",
+            "ldr r3, [0x000006b8]",
+            "ldr r2, [0x000006bc]",
+            "add r3, pc, r3",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "beq 0x6b0",
+            "ldr r0, [0x000006c0]",
+            "ldr r1, [0x000006c4]",
+            "add r0, pc, r0",
+            "add r1, pc, r1",
+            "bl loc.imp.__register_frame_info",
+            "pop {r3, lr}",
+            "b 0x5a4"
+        ]
+    },
+    "loc.imp.__register_frame_info": {
+        "function_address": "0x0000053c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 16, 20",
+            "ldr pc, [ip, 0x984]!"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000005f4",
+        "instructions": [
+            "ldr r3, [0x00000664]",
+            "push {r4, lr}",
+            "add r3, pc, r3",
+            "ldr r4, [0x00000668]",
+            "ldrb r3, [r3]",
+            "add r4, pc, r4",
+            "cmp r3, 0",
+            "popne {r4, pc}",
+            "ldr r3, [0x0000066c]",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "beq 0x630",
+            "ldr r3, [0x00000670]",
+            "ldr r0, [0x00000630]",
+            "bl sym.imp.__cxa_finalize",
+            "bl fcn.00000558",
+            "ldr r3, [0x00000674]",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "beq 0x650",
+            "ldr r0, [0x00000678]",
+            "add r0, pc, r0",
+            "bl loc.imp.__deregister_frame_info",
+            "ldr r3, [0x0000067c]",
+            "mov r2, 1",
+            "add r3, pc, r3",
+            "strb r2, [r3]",
+            "pop {r4, pc}"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x0000050c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 16, 20",
+            "ldr pc, [ip, 0x9a4]!"
+        ]
+    },
+    "fcn.00000558": {
+        "function_address": "0x00000558",
+        "instructions": [
+            "ldr r2, [0x00000594]",
+            "ldr r0, [0x00000598]",
+            "add r2, pc, r2",
+            "add r0, pc, r0",
+            "add r2, r2, 3",
+            "ldr r3, [0x0000059c]",
+            "rsb r2, r0, r2",
+            "cmp r2, 6",
+            "add r3, pc, r3",
+            "bxls lr",
+            "ldr r2, [0x000005a0]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3"
+        ]
+    },
+    "loc.imp.__deregister_frame_info": {
+        "function_address": "0x00000518",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 16, 20",
+            "ldr pc, [ip, 0x99c]!"
+        ]
+    }
+}

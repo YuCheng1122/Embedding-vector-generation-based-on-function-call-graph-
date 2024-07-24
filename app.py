@@ -58,9 +58,11 @@ def train_gcn_model(params, device):
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Run all stages of the pipeline.')
+        description='Run stages of the pipeline.')
     parser.add_argument('--config', type=str, required=True,
                         help='Path to the parameters JSON file.')
+    parser.add_argument('--stage', type=int, choices=[1, 2, 3, 4], required=True,
+                        help='Stage to run: 1 for normalize, 2 for word2vec, 3 for preprocess graphs, 4 for GCN model.')
     return parser.parse_args()
 
 
@@ -79,11 +81,15 @@ def main():
     device = torch.device(
         'cuda' if gcn_params['use_gpu'] and torch.cuda.is_available() else 'cpu')
 
-    # Execute stages
-    normalize_fcg(normalize_params)
-    train_word2vec(word2vec_params)
-    preprocess_graphs(graph_params)
-    train_gcn_model(gcn_params, device)
+    # Execute selected stage
+    if args.stage == 1:
+        normalize_fcg(normalize_params)
+    elif args.stage == 2:
+        train_word2vec(word2vec_params)
+    elif args.stage == 3:
+        preprocess_graphs(graph_params)
+    elif args.stage == 4:
+        train_gcn_model(gcn_params, device)
 
 
 if __name__ == '__main__':

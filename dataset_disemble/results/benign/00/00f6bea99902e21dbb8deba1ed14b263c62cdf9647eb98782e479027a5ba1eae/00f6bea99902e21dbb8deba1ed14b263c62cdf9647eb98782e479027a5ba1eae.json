@@ -1,0 +1,77 @@
+{
+    "sym._init": {
+        "function_address": "0x000004b8",
+        "instructions": [
+            "push {r3, lr}",
+            "bl entry0",
+            "pop {r3, lr}",
+            "bx lr"
+        ]
+    },
+    "r15": {
+        "function_address": "0x000004f4",
+        "instructions": [
+            "ldr r3, [0x00000510]",
+            "ldr r2, [0x00000514]",
+            "add r3, pc, r3",
+            "ldr r2, [r3, r2]",
+            "cmp r2, 0",
+            "bxeq lr",
+            "b loc.imp.__gmon_start__"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000005b4",
+        "instructions": [
+            "push {r3, lr}",
+            "ldr r3, [0x00000608]",
+            "add r3, pc, r3",
+            "ldrb r3, [r3]",
+            "cmp r3, 0",
+            "ldr r3, [0x0000060c]",
+            "add r3, pc, r3",
+            "bne 0x600",
+            "ldr r2, [0x00000610]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "ldrne r3, [0x00000614]",
+            "ldrne r0, [0x000005ec]",
+            "blne sym.imp.__cxa_finalize",
+            "bl fcn.00000518",
+            "mov r2, 1",
+            "ldr r3, [0x00000618]",
+            "add r3, pc, r3",
+            "strb r2, [r3]",
+            "pop {r3, lr}",
+            "bx lr"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x000004dc",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0xb28]!"
+        ]
+    },
+    "fcn.00000518": {
+        "function_address": "0x00000518",
+        "instructions": [
+            "ldr r3, [0x00000554]",
+            "ldr r0, [0x00000558]",
+            "add r3, pc, r3",
+            "add r0, pc, r0",
+            "add r3, r3, 3",
+            "rsb r3, r0, r3",
+            "cmp r3, 6",
+            "ldr r3, [0x0000055c]",
+            "add r3, pc, r3",
+            "bxls lr",
+            "ldr r2, [0x00000560]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3"
+        ]
+    }
+}

@@ -1,0 +1,269 @@
+{
+    "sym.samba_init_module": {
+        "function_address": "0x00002bf0",
+        "instructions": [
+            "pushrbx",
+            "leardx,[0x00204040]",
+            "learsi,[0x0000350f]",
+            "movedi,0x22",
+            "callsym.imp.smb_register_vfs",
+            "testeax,eax",
+            "movebx,eax",
+            "jne0x2c26",
+            "leardi,[0x0000350f]",
+            "callsym.imp.debug_add_class",
+            "cmpeax,0xffffffff",
+            "je0x2c30",
+            "movdword[0x00204008],eax",
+            "moveax,ebx",
+            "poprbx",
+            "ret",
+            "movrax,qword[reloc.debuglevel_class]",
+            "movdword[0x00204008],0xc",
+            "movrax,qword[rax]",
+            "moveax,dword[rax+0x30]",
+            "testeax,eax",
+            "js0x2c26",
+            "learcx,str.samba_init_module",
+            "leardx,str..._source3_modules_vfs_recycle.c:658",
+            "xoredi,edi",
+            "movesi,0xc",
+            "callsym.imp.dbghdrclass",
+            "testal,al",
+            "je0x2c26",
+            "leardi,str.vfs_recycle:_couldnt_register_custom_debugging_class__n",
+            "xoreax,eax",
+            "callsym.imp.dbgtext",
+            "jmp0x2c26"
+        ]
+    },
+    "sym.imp.smb_register_vfs": {
+        "function_address": "0x00001470",
+        "instructions": [
+            "jmpqword[reloc.smb_register_vfs]"
+        ]
+    },
+    "sym.imp.debug_add_class": {
+        "function_address": "0x00001570",
+        "instructions": [
+            "jmpqword[reloc.debug_add_class]"
+        ]
+    },
+    "sym.imp.dbghdrclass": {
+        "function_address": "0x00001360",
+        "instructions": [
+            "jmpqword[reloc.dbghdrclass]"
+        ]
+    },
+    "sym.imp.dbgtext": {
+        "function_address": "0x000013b0",
+        "instructions": [
+            "jmpqword[reloc.dbgtext]"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x00001318",
+        "instructions": [
+            "subrsp,8",
+            "movrax,qword[reloc.__gmon_start__]",
+            "testrax,rax",
+            "je0x132d",
+            "callloc.imp.__gmon_start__",
+            "addrsp,8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x000013a0",
+        "instructions": [
+            "jmpqword[0x00203eb0]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000016f0",
+        "instructions": [
+            "cmpbyte[loc._edata],0",
+            "jne0x1720",
+            "cmpqword[reloc.__cxa_finalize],0",
+            "pushrbp",
+            "movrbp,rsp",
+            "je0x1713",
+            "movrdi,qword[section..data]",
+            "callsym.imp.__cxa_finalize",
+            "callfcn.00001660",
+            "poprbp",
+            "movbyte[loc._edata],1",
+            "repzret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00001480",
+        "instructions": [
+            "jmpqword[0x00203f20]"
+        ]
+    },
+    "fcn.00001660": {
+        "function_address": "0x00001660",
+        "instructions": [
+            "leardi,[loc._edata]",
+            "learax,[0x002043a7]",
+            "pushrbp",
+            "subrax,rdi",
+            "movrbp,rsp",
+            "cmprax,0xe",
+            "jbe0x1690",
+            "movrax,qword[reloc._itm_deregistertmclonetable]",
+            "testrax,rax",
+            "je0x1690",
+            "poprbp",
+            "jmprax",
+            "poprbp",
+            "ret"
+        ]
+    },
+    "fcn.000017e0": {
+        "function_address": "0x000017e0",
+        "instructions": [
+            "pushrbp",
+            "pushrbx",
+            "movrbx,rdi",
+            "subrsp,8",
+            "testrdi,rdi",
+            "je0x1829",
+            "movrdi,qword[rdi]",
+            "testrdi,rdi",
+            "je0x1829",
+            "cmpbyte[rdi],0",
+            "je0x1829",
+            "testrsi,rsi",
+            "je0x1829",
+            "cmpbyte[rsi],0",
+            "je0x1829",
+            "movrbp,rsi",
+            "addrbx,8",
+            "nopdword[rax]",
+            "movrsi,rbp",
+            "callsym.imp.unix_wild_match",
+            "testal,al",
+            "jne0x182b",
+            "addrbx,8",
+            "movrdi,qword[rbx-8]",
+            "testrdi,rdi",
+            "jne0x1810",
+            "xoreax,eax",
+            "addrsp,8",
+            "poprbx",
+            "poprbp",
+            "ret"
+        ]
+    },
+    "sym.imp.unix_wild_match": {
+        "function_address": "0x00001380",
+        "instructions": [
+            "jmpqword[reloc.unix_wild_match]"
+        ]
+    },
+    "fcn.00001605": {
+        "function_address": "0x00001605",
+        "instructions": [
+            "subrsp,0x18",
+            "oreax,0xffffffff",
+            "testrdi,rdi",
+            "je0x1617",
+            "movrax,qword[rdi+0x28]",
+            "moveax,dword[rax]",
+            "leardx,str.directory_mode",
+            "learsi,[0x0000350f]",
+            "xorecx,ecx",
+            "movedi,eax",
+            "callsym.imp.lp_parm_const_string",
+            "testrax,rax",
+            "je0x164b",
+            "leardx,[rsp+0xc]",
+            "learsi,[0x0000350b]",
+            "movrdi,rax",
+            "xoreax,eax",
+            "callsym.imp.sscanf",
+            "jmp0x1653",
+            "movdword[rsp+0xc],0x1c0",
+            "moveax,dword[rsp+0xc]",
+            "addrsp,0x18",
+            "ret"
+        ]
+    },
+    "sym.imp.lp_parm_const_string": {
+        "function_address": "0x000015d0",
+        "instructions": [
+            "jmpqword[reloc.lp_parm_const_string]"
+        ]
+    },
+    "sym.imp.sscanf": {
+        "function_address": "0x000014b0",
+        "instructions": [
+            "jmpqword[reloc.sscanf]"
+        ]
+    },
+    "fcn.00001760": {
+        "function_address": "0x00001760",
+        "instructions": [
+            "pushr12",
+            "movr12,rdi",
+            "pushrbp",
+            "leardi,str..._source3_modules_vfs_recycle.c:206",
+            "pushrbx",
+            "movrbx,rsi",
+            "callsym.imp._talloc_tos",
+            "movrsi,rbx",
+            "movrdi,rax",
+            "callsym.imp.cp_smb_filename",
+            "movrbp,rax",
+            "xoreax,eax",
+            "testrbp,rbp",
+            "je0x17b2",
+            "movrax,qword[r12]",
+            "movrsi,rbp",
+            "xorebx,ebx",
+            "movrdi,qword[rax+0x68]",
+            "callsym.imp.smb_vfs_call_stat",
+            "testeax,eax",
+            "je0x17c0",
+            "learsi,str..._source3_modules_vfs_recycle.c:217",
+            "movrdi,rbp",
+            "callsym.imp._talloc_free",
+            "moveax,ebx",
+            "poprbx",
+            "poprbp",
+            "popr12",
+            "ret",
+            "moveax,dword[rbp+0x28]",
+            "andeax,0xf000",
+            "cmpeax,0x8000",
+            "setebl",
+            "jmp0x17a1"
+        ]
+    },
+    "sym.imp._talloc_tos": {
+        "function_address": "0x000014f0",
+        "instructions": [
+            "jmpqword[reloc._talloc_tos]"
+        ]
+    },
+    "sym.imp.cp_smb_filename": {
+        "function_address": "0x00001520",
+        "instructions": [
+            "jmpqword[reloc.cp_smb_filename]"
+        ]
+    },
+    "sym.imp.smb_vfs_call_stat": {
+        "function_address": "0x000015b0",
+        "instructions": [
+            "jmpqword[reloc.smb_vfs_call_stat]"
+        ]
+    },
+    "sym.imp._talloc_free": {
+        "function_address": "0x00001390",
+        "instructions": [
+            "jmpqword[reloc._talloc_free]"
+        ]
+    }
+}

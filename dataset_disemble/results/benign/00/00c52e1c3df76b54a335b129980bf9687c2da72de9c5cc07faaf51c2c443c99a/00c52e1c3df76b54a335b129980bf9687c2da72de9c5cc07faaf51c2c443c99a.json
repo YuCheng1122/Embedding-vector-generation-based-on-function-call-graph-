@@ -1,0 +1,105 @@
+{
+    "sym.cli_credentials_set_cmdline_callbacks": {
+        "function_address": "0x00000bd0",
+        "instructions": [
+            "mov rax, qword [reloc.stdout]",
+            "push rbx",
+            "mov rbx, rdi",
+            "mov rdi, qword [rax]",
+            "call sym.imp.fileno",
+            "mov edi, eax",
+            "call sym.imp.isatty",
+            "xor edx, edx",
+            "test eax, eax",
+            "je 0xc04",
+            "lea rsi, [0x00000b70]",
+            "mov rdi, rbx",
+            "call sym.imp.cli_credentials_set_password_callback",
+            "mov edx, 1",
+            "mov eax, edx",
+            "pop rbx",
+            "ret"
+        ]
+    },
+    "sym.imp.fileno": {
+        "function_address": "0x00000a00",
+        "instructions": [
+            "jmp qword [reloc.fileno]"
+        ]
+    },
+    "sym.imp.isatty": {
+        "function_address": "0x000009e0",
+        "instructions": [
+            "jmp qword [reloc.isatty]"
+        ]
+    },
+    "sym.imp.cli_credentials_set_password_callback": {
+        "function_address": "0x000009f0",
+        "instructions": [
+            "jmp qword [reloc.cli_credentials_set_password_callback]"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x000009b8",
+        "instructions": [
+            "sub rsp, 8",
+            "call entry0",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000a70",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [reloc.__gmon_start__]",
+            "test rax, rax",
+            "je 0xa82",
+            "call rax",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000b00",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0xb30",
+            "cmp qword [0x00200fe0], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0xb23",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call fcn.00000a90",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000a50",
+        "instructions": [
+            "jmp qword [reloc.__cxa_finalize]"
+        ]
+    },
+    "fcn.00000a90": {
+        "function_address": "0x00000a90",
+        "instructions": [
+            "lea rax, [0x00201057]",
+            "lea rdi, [loc._edata]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "ja 0xaad",
+            "pop rbp",
+            "ret",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0xaab",
+            "pop rbp",
+            "jmp rax"
+        ]
+    }
+}

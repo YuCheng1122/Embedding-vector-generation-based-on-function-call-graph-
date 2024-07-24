@@ -1,0 +1,8 @@
+digraph code {
+  "0x08001534" [label="sym.gdbg"];
+  "0x08001534" -> "0x0800146c";
+  "0x0800146c" [label="sym.gvprintk"];
+  "0x08001510" [label="sym.gprintk"];
+  "0x08001510" -> "0x0800146c";
+  "0x0800146c" [label="sym.gvprintk"];
+}

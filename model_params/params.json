@@ -1,7 +1,7 @@
 {
     "normalize": {
-        "input_dir": "/mnt/E/mnt/bigDisk/yishan/data_disassemble/results",
-        "output_dir": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results"
+        "input_dir": "E:/Embedding-vector-generation-based-on-function-call-graph-/dataset_disemble",
+        "output_dir": "E:/Embedding-vector-generation-based-on-function-call-graph-/dataset_disemble_results"
     },
     "word2vec": {
         "vector_size": 100,

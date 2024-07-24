@@ -1,0 +1,77 @@
+{
+    "entry.init0": {
+        "function_address": "0x00010748",
+        "instructions": [
+            "ldr r0, loc.__bss_start__",
+            "ldr r1, loc.__bss_start__",
+            "rsb r1, r0, r1",
+            "asr r1, r1, 2",
+            "add r1, r1, r1, lsr 31",
+            "asrs r1, r1, 1",
+            "bxeq lr",
+            "ldr r3, [0x000106fc]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3",
+            "ldr r3, [0x0001076c]",
+            "cmp r3, 0",
+            "beq 0x10768",
+            "push {r4, lr}",
+            "ldr r1, [0x00010770]",
+            "ldr r0, aav.0x00010884",
+            "bl fcn.00010544",
+            "pop {r4, lr}",
+            "b 0x106c8"
+        ]
+    },
+    "fcn.00010544": {
+        "function_address": "0x00010544",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 16, 20",
+            "ldr pc, [ip, 0x43c]!"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00010700",
+        "instructions": [
+            "ldr r3, loc.__bss_start__",
+            "ldrb r2, [r3]",
+            "cmp r2, 0",
+            "bxne lr",
+            "push {r4, lr}",
+            "mov r4, r3",
+            "bl fcn.00010698",
+            "ldr r3, [0x00010740]",
+            "cmp r3, 0",
+            "beq 0x10730",
+            "ldr r0, aav.0x00010884",
+            "bl loc.imp.__deregister_frame_info",
+            "mov r3, 1",
+            "strb r3, [r4]",
+            "pop {r4, pc}"
+        ]
+    },
+    "fcn.00010698": {
+        "function_address": "0x00010698",
+        "instructions": [
+            "ldr r0, loc.__bss_start__",
+            "ldr r3, [0x000106c0]",
+            "rsb r3, r0, r3",
+            "cmp r3, 6",
+            "bxls lr",
+            "ldr r3, [0x000106c4]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3"
+        ]
+    },
+    "loc.imp.__deregister_frame_info": {
+        "function_address": "0x000104fc",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 16, 20",
+            "ldr pc, [ip, 0x46c]!"
+        ]
+    }
+}

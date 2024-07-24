@@ -1,0 +1,17 @@
+digraph code {
+  "0x00000bd0" [label="sym.cli_credentials_set_cmdline_callbacks"];
+  "0x00000bd0" -> "0x00000a00";
+  "0x00000a00" [label="sym.imp.fileno"];
+  "0x00000bd0" -> "0x000009e0";
+  "0x000009e0" [label="sym.imp.isatty"];
+  "0x00000bd0" -> "0x000009f0";
+  "0x000009f0" [label="sym.imp.cli_credentials_set_password_callback"];
+  "0x000009b8" [label="sym._init"];
+  "0x000009b8" -> "0x00000a70";
+  "0x00000a70" [label="rip"];
+  "0x00000b00" [label="entry.fini0"];
+  "0x00000b00" -> "0x00000a50";
+  "0x00000a50" [label="sym.imp.__cxa_finalize"];
+  "0x00000b00" -> "0x00000a90";
+  "0x00000a90" [label="fcn.00000a90"];
+}

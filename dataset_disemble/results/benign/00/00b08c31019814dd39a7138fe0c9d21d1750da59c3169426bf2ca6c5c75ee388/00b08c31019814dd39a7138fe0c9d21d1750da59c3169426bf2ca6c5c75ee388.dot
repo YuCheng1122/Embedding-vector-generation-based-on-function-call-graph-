@@ -1,0 +1,13 @@
+digraph code {
+  "0x00402de0" [label="entry0"];
+  "0x00402de0" -> "0x00402dec";
+  "0x00402dec" [label="unk.0x402dec"];
+  "0x00410be0" [label="sym._fini"];
+  "0x00410be0" -> "0x00410c04";
+  "0x00410c04" [label="unk.0x410c04"];
+  "0x00402d54" [label="sym._init"];
+  "0x00402d54" -> "0x00402d78";
+  "0x00402d78" [label="unk.0x402d78"];
+  "0x00402d54" -> "0x00402da8";
+  "0x00402da8" [label="unk.0x402da8"];
+}

@@ -1,0 +1,52 @@
+{
+    "sym._init": {
+        "function_address": "0x000003a8",
+        "instructions": [
+            "push {r3, lr}",
+            "bl entry0",
+            "pop {r3, pc}"
+        ]
+    },
+    "r15": {
+        "function_address": "0x000003e0",
+        "instructions": [
+            "ldr r0, [0x000003fc]",
+            "ldr r2, [0x00000400]",
+            "add r3, pc, r0",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "b loc.imp.__gmon_start__"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000404",
+        "instructions": [
+            "push {r3, r4, r5, lr}",
+            "ldr r4, [0x00000448]",
+            "ldr r5, [0x0000044c]",
+            "add r4, pc, r4",
+            "ldrb r3, [r4, r5]",
+            "cmp r3, 0",
+            "popne {r3, r4, r5, pc}",
+            "ldr r1, [0x00000450]",
+            "ldr r0, [r4, r1]",
+            "cmp r0, 0",
+            "beq 0x43c",
+            "ldr r2, [0x00000454]",
+            "ldr r0, [r4, r2]",
+            "bl sym.imp.__cxa_finalize",
+            "mov ip, 1",
+            "strb ip, [r4, r5]",
+            "pop {r3, r4, r5, pc}"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x000003d4",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x1e4]!"
+        ]
+    }
+}

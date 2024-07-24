@@ -1,0 +1,8 @@
+digraph code {
+  "0x0800040c" [label="sym.DNS_redirect_lan_in_packet"];
+  "0x0800040c" -> "0x08000034";
+  "0x08000034" [label="r15"];
+  "0x08000440" [label="sym.DNS_redirect_wan_in_packet"];
+  "0x08000440" -> "0x08000034";
+  "0x08000034" [label="r15"];
+}

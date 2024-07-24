@@ -1,0 +1,269 @@
+{
+    "sym.samba_init_module": {
+        "function_address": "0x00002bf0",
+        "instructions": [
+            "push rbx",
+            "lea rdx, [0x00204040]",
+            "lea rsi, [0x0000350f]",
+            "mov edi, 0x22",
+            "call sym.imp.smb_register_vfs",
+            "test eax, eax",
+            "mov ebx, eax",
+            "jne 0x2c26",
+            "lea rdi, [0x0000350f]",
+            "call sym.imp.debug_add_class",
+            "cmp eax, 0xffffffff",
+            "je 0x2c30",
+            "mov dword [0x00204008], eax",
+            "mov eax, ebx",
+            "pop rbx",
+            "ret",
+            "mov rax, qword [reloc.DEBUGLEVEL_CLASS]",
+            "mov dword [0x00204008], 0xc",
+            "mov rax, qword [rax]",
+            "mov eax, dword [rax + 0x30]",
+            "test eax, eax",
+            "js 0x2c26",
+            "lea rcx, str.samba_init_module",
+            "lea rdx, str..._source3_modules_vfs_recycle.c:658",
+            "xor edi, edi",
+            "mov esi, 0xc",
+            "call sym.imp.dbghdrclass",
+            "test al, al",
+            "je 0x2c26",
+            "lea rdi, str.vfs_recycle:_Couldnt_register_custom_debugging_class__n",
+            "xor eax, eax",
+            "call sym.imp.dbgtext",
+            "jmp 0x2c26"
+        ]
+    },
+    "sym.imp.smb_register_vfs": {
+        "function_address": "0x00001470",
+        "instructions": [
+            "jmp qword [reloc.smb_register_vfs]"
+        ]
+    },
+    "sym.imp.debug_add_class": {
+        "function_address": "0x00001570",
+        "instructions": [
+            "jmp qword [reloc.debug_add_class]"
+        ]
+    },
+    "sym.imp.dbghdrclass": {
+        "function_address": "0x00001360",
+        "instructions": [
+            "jmp qword [reloc.dbghdrclass]"
+        ]
+    },
+    "sym.imp.dbgtext": {
+        "function_address": "0x000013b0",
+        "instructions": [
+            "jmp qword [reloc.dbgtext]"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x00001318",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [reloc.__gmon_start__]",
+            "test rax, rax",
+            "je 0x132d",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x000013a0",
+        "instructions": [
+            "jmp qword [0x00203eb0]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000016f0",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0x1720",
+            "cmp qword [reloc.__cxa_finalize], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0x1713",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call fcn.00001660",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00001480",
+        "instructions": [
+            "jmp qword [0x00203f20]"
+        ]
+    },
+    "fcn.00001660": {
+        "function_address": "0x00001660",
+        "instructions": [
+            "lea rdi, [loc._edata]",
+            "lea rax, [0x002043a7]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0x1690",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0x1690",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "fcn.000017e0": {
+        "function_address": "0x000017e0",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "mov rbx, rdi",
+            "sub rsp, 8",
+            "test rdi, rdi",
+            "je 0x1829",
+            "mov rdi, qword [rdi]",
+            "test rdi, rdi",
+            "je 0x1829",
+            "cmp byte [rdi], 0",
+            "je 0x1829",
+            "test rsi, rsi",
+            "je 0x1829",
+            "cmp byte [rsi], 0",
+            "je 0x1829",
+            "mov rbp, rsi",
+            "add rbx, 8",
+            "nop dword [rax]",
+            "mov rsi, rbp",
+            "call sym.imp.unix_wild_match",
+            "test al, al",
+            "jne 0x182b",
+            "add rbx, 8",
+            "mov rdi, qword [rbx - 8]",
+            "test rdi, rdi",
+            "jne 0x1810",
+            "xor eax, eax",
+            "add rsp, 8",
+            "pop rbx",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "sym.imp.unix_wild_match": {
+        "function_address": "0x00001380",
+        "instructions": [
+            "jmp qword [reloc.unix_wild_match]"
+        ]
+    },
+    "fcn.00001605": {
+        "function_address": "0x00001605",
+        "instructions": [
+            "sub rsp, 0x18",
+            "or eax, 0xffffffff",
+            "test rdi, rdi",
+            "je 0x1617",
+            "mov rax, qword [rdi + 0x28]",
+            "mov eax, dword [rax]",
+            "lea rdx, str.directory_mode",
+            "lea rsi, [0x0000350f]",
+            "xor ecx, ecx",
+            "mov edi, eax",
+            "call sym.imp.lp_parm_const_string",
+            "test rax, rax",
+            "je 0x164b",
+            "lea rdx, [rsp + 0xc]",
+            "lea rsi, [0x0000350b]",
+            "mov rdi, rax",
+            "xor eax, eax",
+            "call sym.imp.sscanf",
+            "jmp 0x1653",
+            "mov dword [rsp + 0xc], 0x1c0",
+            "mov eax, dword [rsp + 0xc]",
+            "add rsp, 0x18",
+            "ret"
+        ]
+    },
+    "sym.imp.lp_parm_const_string": {
+        "function_address": "0x000015d0",
+        "instructions": [
+            "jmp qword [reloc.lp_parm_const_string]"
+        ]
+    },
+    "sym.imp.sscanf": {
+        "function_address": "0x000014b0",
+        "instructions": [
+            "jmp qword [reloc.sscanf]"
+        ]
+    },
+    "fcn.00001760": {
+        "function_address": "0x00001760",
+        "instructions": [
+            "push r12",
+            "mov r12, rdi",
+            "push rbp",
+            "lea rdi, str..._source3_modules_vfs_recycle.c:206",
+            "push rbx",
+            "mov rbx, rsi",
+            "call sym.imp._talloc_tos",
+            "mov rsi, rbx",
+            "mov rdi, rax",
+            "call sym.imp.cp_smb_filename",
+            "mov rbp, rax",
+            "xor eax, eax",
+            "test rbp, rbp",
+            "je 0x17b2",
+            "mov rax, qword [r12]",
+            "mov rsi, rbp",
+            "xor ebx, ebx",
+            "mov rdi, qword [rax + 0x68]",
+            "call sym.imp.smb_vfs_call_stat",
+            "test eax, eax",
+            "je 0x17c0",
+            "lea rsi, str..._source3_modules_vfs_recycle.c:217",
+            "mov rdi, rbp",
+            "call sym.imp._talloc_free",
+            "mov eax, ebx",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "ret",
+            "mov eax, dword [rbp + 0x28]",
+            "and eax, 0xf000",
+            "cmp eax, 0x8000",
+            "sete bl",
+            "jmp 0x17a1"
+        ]
+    },
+    "sym.imp._talloc_tos": {
+        "function_address": "0x000014f0",
+        "instructions": [
+            "jmp qword [reloc._talloc_tos]"
+        ]
+    },
+    "sym.imp.cp_smb_filename": {
+        "function_address": "0x00001520",
+        "instructions": [
+            "jmp qword [reloc.cp_smb_filename]"
+        ]
+    },
+    "sym.imp.smb_vfs_call_stat": {
+        "function_address": "0x000015b0",
+        "instructions": [
+            "jmp qword [reloc.smb_vfs_call_stat]"
+        ]
+    },
+    "sym.imp._talloc_free": {
+        "function_address": "0x00001390",
+        "instructions": [
+            "jmp qword [reloc._talloc_free]"
+        ]
+    }
+}

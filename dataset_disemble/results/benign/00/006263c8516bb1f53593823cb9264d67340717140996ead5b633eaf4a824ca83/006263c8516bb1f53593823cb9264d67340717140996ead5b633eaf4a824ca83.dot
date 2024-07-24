@@ -1,0 +1,5 @@
+digraph code {
+  "0x00000940" [label="sym.imp.__fputc_unlocked"];
+  "0x00000940" -> "0x00000000";
+  "0x00000000" [label="gp"];
+}

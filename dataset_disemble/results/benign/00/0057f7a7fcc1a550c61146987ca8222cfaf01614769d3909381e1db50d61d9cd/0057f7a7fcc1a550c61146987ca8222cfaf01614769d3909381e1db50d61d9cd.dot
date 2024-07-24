@@ -1,0 +1,10 @@
+digraph code {
+  "0x00010748" [label="entry.init0"];
+  "0x00010748" -> "0x00010544";
+  "0x00010544" [label="fcn.00010544"];
+  "0x00010700" [label="entry.fini0"];
+  "0x00010700" -> "0x00010698";
+  "0x00010698" [label="fcn.00010698"];
+  "0x00010700" -> "0x000104fc";
+  "0x000104fc" [label="loc.imp.__deregister_frame_info"];
+}

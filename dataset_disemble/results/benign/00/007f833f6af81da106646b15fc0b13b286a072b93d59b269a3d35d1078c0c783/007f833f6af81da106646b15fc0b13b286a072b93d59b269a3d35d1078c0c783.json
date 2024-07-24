@@ -1,0 +1,182 @@
+{
+    "sym._init": {
+        "function_address": "0x00000820",
+        "instructions": [
+            "push {r3, lr}",
+            "bl entry0",
+            "pop {r3, lr}",
+            "bx lr"
+        ]
+    },
+    "r15": {
+        "function_address": "0x00000958",
+        "instructions": [
+            "ldr r3, [0x00000974]",
+            "ldr r2, [0x00000978]",
+            "add r3, pc, r3",
+            "ldr r2, [r3, r2]",
+            "cmp r2, 0",
+            "bxeq lr",
+            "b loc.imp.__gmon_start__"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000a18",
+        "instructions": [
+            "push {r3, lr}",
+            "ldr r3, [0x00000a6c]",
+            "add r3, pc, r3",
+            "ldrb r3, [r3]",
+            "cmp r3, 0",
+            "ldr r3, [0x00000a70]",
+            "add r3, pc, r3",
+            "bne 0xa64",
+            "ldr r2, [0x00000a74]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "ldrne r3, [0x00000a78]",
+            "ldrne r0, [0x00000a50]",
+            "blne sym.imp.__cxa_finalize",
+            "bl fcn.0000097c",
+            "mov r2, 1",
+            "ldr r3, [0x00000a7c]",
+            "add r3, pc, r3",
+            "strb r2, [r3]",
+            "pop {r3, lr}",
+            "bx lr"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000850",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x11000",
+            "ldr pc, [ip, 0xa0]!"
+        ]
+    },
+    "fcn.0000097c": {
+        "function_address": "0x0000097c",
+        "instructions": [
+            "ldr r3, [0x000009b8]",
+            "ldr r0, [0x000009bc]",
+            "add r3, pc, r3",
+            "add r0, pc, r0",
+            "add r3, r3, 3",
+            "rsb r3, r0, r3",
+            "cmp r3, 6",
+            "ldr r3, [0x000009c0]",
+            "add r3, pc, r3",
+            "bxls lr",
+            "ldr r2, [0x000009c4]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3"
+        ]
+    },
+    "fcn.00000ad0": {
+        "function_address": "0x00000ad0",
+        "instructions": [
+            "ldr r0, [0x00000b58]",
+            "push {r3, r4, r5, lr}",
+            "add r0, pc, r0",
+            "bl sym.imp.getenv",
+            "ldr r4, [0x00000b5c]",
+            "ldr r3, [0x00000b60]",
+            "add r4, pc, r4",
+            "ldr r5, [r4, r3]",
+            "cmp r0, 0",
+            "str r0, [r5]",
+            "beq 0xb04",
+            "pop {r3, r4, r5, lr}",
+            "bx lr",
+            "ldr r0, [0x00000b64]",
+            "add r0, pc, r0",
+            "bl sym.imp.getenv",
+            "cmp r0, 0",
+            "str r0, [r5]",
+            "beq 0xb48",
+            "ldr r3, [0x00000b68]",
+            "ldr r0, [0x00000b6c]",
+            "ldr r3, [r4, r3]",
+            "add r0, pc, r0",
+            "ldr r3, [r3]",
+            "mov r1, 1",
+            "mov r2, 0x23",
+            "bl sym.imp.fwrite",
+            "ldr r3, [r5]",
+            "cmp r3, 0",
+            "bne 0xafc",
+            "ldr r3, [0x00000b70]",
+            "add r3, pc, r3",
+            "str r3, [r5]",
+            "b 0xafc"
+        ]
+    },
+    "sym.imp.getenv": {
+        "function_address": "0x000008d4",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x11000",
+            "ldr pc, [ip, 0x48]!"
+        ]
+    },
+    "sym.imp.fwrite": {
+        "function_address": "0x000008b0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x11000",
+            "ldr pc, [ip, 0x60]!"
+        ]
+    },
+    "fcn.00000b74": {
+        "function_address": "0x00000b74",
+        "instructions": [
+            "cmp r1, 0",
+            "push {r3, r4, r5, lr}",
+            "ldr r3, [r0, 0x14]",
+            "strne r1, [r0, 0x54]",
+            "beq 0xb94",
+            "mov r0, 0",
+            "pop {r3, r4, r5, lr}",
+            "bx lr",
+            "add r5, r3, 0x20",
+            "mov r4, r0",
+            "mov r1, r5",
+            "mov r0, 1",
+            "bl sym.imp.xtables_calloc",
+            "str r0, [r4, 0x54]",
+            "strh r5, [r0]",
+            "ldr r0, [r4, 0x54]",
+            "ldr r1, [r4, 8]",
+            "add r0, r0, 2",
+            "bl sym.imp.strcpy",
+            "ldr r3, [r4, 0x54]",
+            "ldrb r2, [r4, 0x10]",
+            "strb r2, [r3, 0x1f]",
+            "ldr r3, [r4, 0x20]",
+            "cmp r3, 0",
+            "beq 0xb88",
+            "ldr r0, [r4, 0x54]",
+            "mov lr, pc",
+            "bx r3",
+            "b 0xb88"
+        ]
+    },
+    "sym.imp.xtables_calloc": {
+        "function_address": "0x0000091c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x11000",
+            "ldr pc, [ip, 0x18]!"
+        ]
+    },
+    "sym.imp.strcpy": {
+        "function_address": "0x000008bc",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x11000",
+            "ldr pc, [ip, 0x58]!"
+        ]
+    }
+}

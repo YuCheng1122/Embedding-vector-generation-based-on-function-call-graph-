@@ -1,0 +1,21 @@
+digraph code {
+  "0x000008c8" [label="sym._init"];
+  "0x000008c8" -> "0x000008ec";
+  "0x000008ec" [label="unk.0x8ec"];
+  "0x000008c8" -> "0x000009fc";
+  "0x000009fc" [label="fcn.000009fc"];
+  "0x000008c8" -> "0x00000914";
+  "0x00000914" [label="unk.0x914"];
+  "0x000008c8" -> "0x00001b10";
+  "0x00001b10" [label="fcn.00001b10"];
+  "0x00001d50" [label="sym._fini"];
+  "0x00001d50" -> "0x00001d74";
+  "0x00001d74" [label="unk.0x1d74"];
+  "0x00001d50" -> "0x00000940";
+  "0x00000940" [label="pc"];
+  "0x00000ee0" [label="sym.netprb_arpinfo_update"];
+  "0x00000ee0" -> "0x00000c0c";
+  "0x00000c0c" [label="fcn.00000c0c"];
+  "0x00000ee0" -> "0x00000a40";
+  "0x00000a40" [label="fcn.00000a40"];
+}

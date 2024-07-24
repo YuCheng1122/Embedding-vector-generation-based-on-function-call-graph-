@@ -1,0 +1,407 @@
+{
+    "entry0": {
+        "function_address": "0x000087d0",
+        "instructions": [
+            "mov fp, 0",
+            "mov lr, 0",
+            "pop {r1}",
+            "mov r2, sp",
+            "str r2, [sp, -4]!",
+            "str r0, [sp, -4]!",
+            "ldr ip, fcn.00008b90",
+            "str ip, [sp, -4]!",
+            "ldr r0, main",
+            "ldr r3, fcn.00008b94",
+            "bl sym.imp.__libc_start_main"
+        ]
+    },
+    "sym.imp.__libc_start_main": {
+        "function_address": "0x000086e0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x75c]!"
+        ]
+    },
+    "main": {
+        "function_address": "0x00008888",
+        "instructions": [
+            "push {r4, r5, r6, r7, r8, sb, sl, lr}",
+            "ldr r5, [r1]",
+            "mov r7, r0",
+            "mov r4, r1",
+            "mov r0, r5",
+            "mov r1, 0x2f",
+            "bl sym.imp.strrchr",
+            "cmp r0, 0",
+            "addne r5, r0, 1",
+            "ldr r1, aav.0x00008c50",
+            "mov r0, 6",
+            "bl sym.imp.setlocale",
+            "ldr r1, str._usr_share_locale",
+            "ldr r0, str.util_linux_ng",
+            "bl sym.imp.bindtextdomain",
+            "ldr r0, str.util_linux_ng",
+            "bl sym.imp.textdomain",
+            "cmp r7, 2",
+            "beq 0x8a64",
+            "ldr r2, obj.opterr",
+            "mov r3, 0",
+            "ldr r5, obj.optarg",
+            "mov r6, r3",
+            "str r3, [r2]",
+            "mov r8, r3",
+            "mov r0, r7",
+            "mov r1, r4",
+            "ldr r2, aav.0x00008c6c",
+            "bl sym.imp.getopt",
+            "cmn r0, 1",
+            "beq 0x8a50",
+            "cmp r0, 0x56",
+            "beq 0x8a5c",
+            "cmp r0, 0x74",
+            "beq 0x8a34",
+            "ldr r5, obj.optind",
+            "ldr r3, [r5]",
+            "sub r3, r3, 1",
+            "str r3, [r5]",
+            "cmp r7, r3",
+            "beq 0x8adc",
+            "ldr r3, str.ext2",
+            "cmp r8, 0",
+            "ldr r0, str.PATH",
+            "moveq r8, r3",
+            "bl sym.imp.getenv",
+            "subs sl, r0, 0",
+            "beq 0x8ad0",
+            "bl sym.imp.strlen",
+            "add r0, r0, 0x2f",
+            "bl sym.imp.malloc",
+            "subs r7, r0, 0",
+            "beq 0x8b08",
+            "mov r3, sl",
+            "ldr r1, str._s:_s_n",
+            "ldr r2, str.PATH_sbin:_sbin_fs:_sbin_fs.d:_etc_fs:_etc",
+            "bl sym.imp.sprintf",
+            "mov r0, r7",
+            "bl sym.imp.putenv",
+            "mov r0, r8",
+            "bl sym.imp.strlen",
+            "add r0, r0, 9",
+            "bl sym.imp.malloc",
+            "subs r7, r0, 0",
+            "beq 0x8b08",
+            "ldr r1, str.mkfs._s",
+            "mov r2, r8",
+            "bl sym.imp.sprintf",
+            "ldr r1, [r5]",
+            "cmp r6, 0",
+            "sub r1, r1, 1",
+            "str r7, [r4, r1, lsl 2]",
+            "str r1, [r5]",
+            "add r1, r4, r1, lsl 2",
+            "beq 0x8a18",
+            "ldr r1, str.mkfs___s__n",
+            "mov r2, 5",
+            "mov r0, 0",
+            "bl sym.imp.dcgettext",
+            "ldr r1, str.util_linux_ng_2.17.2",
+            "bl sym.imp.printf",
+            "ldr r3, obj.optind",
+            "ldr r8, [r3]",
+            "ldr r1, [r4, r8, lsl 2]",
+            "cmp r1, 0",
+            "beq 0x89fc",
+            "add r8, r8, 1",
+            "add r8, r4, r8, lsl 2",
+            "ldr r0, aav.0x00008d28",
+            "bl sym.imp.printf",
+            "ldr r1, [r8], 4",
+            "cmp r1, 0",
+            "bne 0x89e8",
+            "mov r0, 0xa",
+            "bl sym.imp.putchar",
+            "cmp r6, 1",
+            "movne r0, 0",
+            "bne 0x8a2c",
+            "ldr r1, [r5]",
+            "add r1, r4, r1, lsl 2",
+            "mov r0, r7",
+            "bl sym.imp.execvp",
+            "mov r0, r7",
+            "bl sym.imp.perror",
+            "mov r0, 1",
+            "pop {r4, r5, r6, r7, r8, sb, sl, lr}",
+            "bx lr",
+            "mov r0, r7",
+            "mov r1, r4",
+            "ldr r2, aav.0x00008c6c",
+            "ldr r8, [r5]",
+            "bl sym.imp.getopt",
+            "cmn r0, 1",
+            "bne 0x8904",
+            "ldr r5, obj.optind",
+            "ldr r3, [r5]",
+            "b 0x8924",
+            "add r6, r6, 1",
+            "b 0x88ec",
+            "ldr r0, [r4, 4]",
+            "ldr r3, aav.0x00008c38",
+            "ldrb r1, [r0]",
+            "ldrb r2, [r3]",
+            "cmp r1, r2",
+            "bne 0x8a9c",
+            "ldrb r1, [r0, 1]",
+            "ldrb r2, [r3, 1]",
+            "cmp r1, r2",
+            "bne 0x8a9c",
+            "ldrb r3, [r3, 2]",
+            "ldrb r2, [r0, 2]",
+            "cmp r2, r3",
+            "beq 0x8aac",
+            "ldr r1, str.__version",
+            "bl sym.imp.strcmp",
+            "cmp r0, 0",
+            "bne 0x88d4",
+            "mov r2, 5",
+            "ldr r1, str._s___s__n",
+            "mov r0, 0",
+            "bl sym.imp.dcgettext",
+            "mov r1, r5",
+            "ldr r2, str.util_linux_ng_2.17.2",
+            "bl sym.imp.printf",
+            "mov r0, 0",
+            "bl sym.imp.exit",
+            "mov r0, 0x33",
+            "ldr sl, str._bin",
+            "b 0x8950",
+            "ldr r3, obj.stderr",
+            "mov r2, 5",
+            "ldr r1, str.Usage:_mkfs___V____t_fstype___fs_options__device__size__n",
+            "mov r0, 0",
+            "ldr r4, [r3]",
+            "bl sym.imp.dcgettext",
+            "mov r1, r0",
+            "mov r0, r4",
+            "bl sym.imp.fprintf",
+            "mvn r0, 0",
+            "b 0x8a2c",
+            "ldr r3, obj.stderr",
+            "mov r2, 5",
+            "ldr r1, str._s:_Out_of_memory__n",
+            "ldr r4, [r3]",
+            "bl sym.imp.dcgettext",
+            "ldr r2, str.mkfs",
+            "mov r1, r0",
+            "mov r0, r4",
+            "bl sym.imp.fprintf",
+            "mov r0, 1",
+            "bl sym.imp.exit"
+        ]
+    },
+    "sym.imp.strrchr": {
+        "function_address": "0x00008710",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x73c]!"
+        ]
+    },
+    "sym.imp.setlocale": {
+        "function_address": "0x00008764",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x704]!"
+        ]
+    },
+    "sym.imp.bindtextdomain": {
+        "function_address": "0x00008728",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x72c]!"
+        ]
+    },
+    "sym.imp.textdomain": {
+        "function_address": "0x000087a0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6dc]!"
+        ]
+    },
+    "sym.imp.getopt": {
+        "function_address": "0x00008758",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x70c]!"
+        ]
+    },
+    "sym.imp.getenv": {
+        "function_address": "0x000086f8",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x74c]!"
+        ]
+    },
+    "sym.imp.strlen": {
+        "function_address": "0x0000874c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x714]!"
+        ]
+    },
+    "sym.imp.malloc": {
+        "function_address": "0x00008794",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6e4]!"
+        ]
+    },
+    "sym.imp.sprintf": {
+        "function_address": "0x000087c4",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6c4]!"
+        ]
+    },
+    "sym.imp.putenv": {
+        "function_address": "0x0000877c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6f4]!"
+        ]
+    },
+    "sym.imp.dcgettext": {
+        "function_address": "0x00008740",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x71c]!"
+        ]
+    },
+    "sym.imp.printf": {
+        "function_address": "0x00008770",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6fc]!"
+        ]
+    },
+    "sym.imp.putchar": {
+        "function_address": "0x00008704",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x744]!"
+        ]
+    },
+    "sym.imp.execvp": {
+        "function_address": "0x0000871c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x734]!"
+        ]
+    },
+    "sym.imp.perror": {
+        "function_address": "0x00008734",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x724]!"
+        ]
+    },
+    "sym.imp.strcmp": {
+        "function_address": "0x000087ac",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6d4]!"
+        ]
+    },
+    "sym.imp.exit": {
+        "function_address": "0x000087b8",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6cc]!"
+        ]
+    },
+    "sym.imp.fprintf": {
+        "function_address": "0x00008788",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x6ec]!"
+        ]
+    },
+    "fcn.00008b94": {
+        "function_address": "0x00008b94",
+        "instructions": [
+            "push {r4, r5, r6, r7, r8, sb, sl, lr}",
+            "ldr sl, [0x00008bf8]",
+            "ldr r5, [0x00008bfc]",
+            "mov r6, r0",
+            "mov r7, r1",
+            "mov r8, r2",
+            "bl fcn.000086b0",
+            "ldr r3, aav.0x00008274",
+            "rsb r5, sl, r5",
+            "add r3, pc, r3",
+            "asrs r5, r5, 2",
+            "add sl, r3, sl",
+            "beq 0x8bf0",
+            "mov r4, 0",
+            "mov r0, r6",
+            "mov r1, r7",
+            "mov r2, r8",
+            "ldr ip, [sl, r4, lsl 2]",
+            "mov lr, pc",
+            "bx ip",
+            "add r4, r4, 1",
+            "cmp r4, r5",
+            "blo 0x8bcc",
+            "pop {r4, r5, r6, r7, r8, sb, sl, lr}",
+            "bx lr"
+        ]
+    },
+    "fcn.000086b0": {
+        "function_address": "0x000086b0",
+        "instructions": [
+            "push {r4, lr}",
+            "bl fcn.0000880c",
+            "pop {r4, lr}",
+            "bx lr"
+        ]
+    },
+    "fcn.0000880c": {
+        "function_address": "0x0000880c",
+        "instructions": [
+            "ldr r3, aav.0x00008618",
+            "ldr r2, [0x00008834]",
+            "add r3, pc, r3",
+            "ldr r2, [r3, r2]",
+            "push {r4, lr}",
+            "cmp r2, 0",
+            "blne loc.imp.__gmon_start__",
+            "pop {r4, lr}",
+            "bx lr"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x000086ec",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x754]!"
+        ]
+    }
+}

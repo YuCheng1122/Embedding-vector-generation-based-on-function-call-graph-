@@ -1,0 +1,16 @@
+digraph code {
+  "0x000006d8" [label="sym._init"];
+  "0x000006d8" -> "0x00000720";
+  "0x00000720" [label="loc.imp.__gmon_start__"];
+  "0x000008a0" [label="sym.message_hdr_put"];
+  "0x000008a0" -> "0x00000710";
+  "0x00000710" [label="sym.imp.server_id_put"];
+  "0x00000850" [label="sym.message_hdr_get"];
+  "0x00000850" -> "0x00000740";
+  "0x00000740" [label="sym.imp.server_id_get"];
+  "0x000007e0" [label="entry.fini0"];
+  "0x000007e0" -> "0x00000730";
+  "0x00000730" [label="sym.imp.__cxa_finalize"];
+  "0x000007e0" -> "0x00000750";
+  "0x00000750" [label="rip"];
+}

@@ -1,0 +1,12 @@
+digraph code {
+  "0x00000680" [label="entry.init0"];
+  "0x00000680" -> "0x0000053c";
+  "0x0000053c" [label="loc.imp.__register_frame_info"];
+  "0x000005f4" [label="entry.fini0"];
+  "0x000005f4" -> "0x0000050c";
+  "0x0000050c" [label="sym.imp.__cxa_finalize"];
+  "0x000005f4" -> "0x00000558";
+  "0x00000558" [label="fcn.00000558"];
+  "0x000005f4" -> "0x00000518";
+  "0x00000518" [label="loc.imp.__deregister_frame_info"];
+}

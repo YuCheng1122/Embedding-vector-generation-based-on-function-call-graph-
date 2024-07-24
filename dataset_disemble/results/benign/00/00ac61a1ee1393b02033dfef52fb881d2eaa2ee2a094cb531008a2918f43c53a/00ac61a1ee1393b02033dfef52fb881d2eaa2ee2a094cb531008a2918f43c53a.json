@@ -1,0 +1,571 @@
+{
+    "sym.samba_init_module": {
+        "function_address": "0x00003cf0",
+        "instructions": [
+            "lea rdx, [0x002061e0]",
+            "lea rsi, str.streams_xattr",
+            "sub rsp, 8",
+            "mov edi, 0x1e",
+            "call sym.imp.smb_register_vfs",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "sym.imp.smb_register_vfs": {
+        "function_address": "0x00001a40",
+        "instructions": [
+            "jmp qword [reloc.smb_register_vfs]"
+        ]
+    },
+    "sym._init": {
+        "function_address": "0x000018c8",
+        "instructions": [
+            "sub rsp, 8",
+            "call entry0",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00001c60",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [reloc.__gmon_start__]",
+            "test rax, rax",
+            "je 0x1c72",
+            "call rax",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00001cf0",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0x1d20",
+            "cmp qword [0x00205fd8], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0x1d13",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call fcn.00001c80",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00001a20",
+        "instructions": [
+            "jmp qword [reloc.__cxa_finalize]"
+        ]
+    },
+    "fcn.00001c80": {
+        "function_address": "0x00001c80",
+        "instructions": [
+            "lea rax, [0x0020650f]",
+            "lea rdi, [loc._edata]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "ja 0x1c9d",
+            "pop rbp",
+            "ret",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0x1c9b",
+            "pop rbp",
+            "jmp rax"
+        ]
+    },
+    "fcn.00001ee0": {
+        "function_address": "0x00001ee0",
+        "instructions": [
+            "mov qword [rsp - 0x28], rbx",
+            "lea rbx, [rsi + 1]",
+            "mov qword [rsp - 0x20], rbp",
+            "mov qword [rsp - 0x18], r12",
+            "mov qword [rsp - 0x10], r13",
+            "mov r12, rdi",
+            "mov qword [rsp - 8], r14",
+            "mov rdi, rbx",
+            "sub rsp, 0x28",
+            "mov r13, rsi",
+            "mov esi, 0x3a",
+            "mov rbp, rdx",
+            "call sym.imp.strchr_m",
+            "lea rdx, str.user.DosStream.",
+            "lea rsi, str._s_s",
+            "mov r14, rax",
+            "mov rcx, rbx",
+            "xor eax, eax",
+            "mov rdi, r12",
+            "call sym.imp.talloc_asprintf",
+            "test rax, rax",
+            "mov qword [rbp], rax",
+            "je 0x1fc0",
+            "test r14, r14",
+            "je 0x1fa0",
+            "mov esi, 0x3a",
+            "mov rdi, rax",
+            "call sym.imp.strrchr_m",
+            "lea rdi, [rax + 1]",
+            "call sym.imp.strupper_m",
+            "test al, al",
+            "je 0x1f90",
+            "mov rax, qword [reloc.DEBUGLEVEL_CLASS]",
+            "mov rax, qword [rax]",
+            "cmp dword [rax + 0x30], 9",
+            "jg 0x1fc7",
+            "xor eax, eax",
+            "mov rbx, qword [rsp]",
+            "mov rbp, qword [rsp + 8]",
+            "mov r12, qword [rsp + 0x10]",
+            "mov r13, qword [rsp + 0x18]",
+            "mov r14, qword [rsp + 0x20]",
+            "add rsp, 0x28",
+            "ret",
+            "mov eax, 0xc000000d",
+            "jmp 0x1f73",
+            "lea rsi, str._s:_DATA",
+            "mov rdx, rax",
+            "mov rdi, r12",
+            "xor eax, eax",
+            "call sym.imp.talloc_asprintf",
+            "test rax, rax",
+            "mov qword [rbp], rax",
+            "jne 0x1f61",
+            "nop dword [rax]",
+            "mov eax, 0xc0000017",
+            "jmp 0x1f73",
+            "lea rcx, str.streams_xattr_get_name",
+            "lea rdx, str..._source3_modules_vfs_streams_xattr.c:128",
+            "mov esi, 0xc",
+            "mov edi, 0xa",
+            "call sym.imp.dbghdrclass",
+            "test al, al",
+            "je 0x1f71",
+            "mov rsi, qword [rbp]",
+            "lea rdi, str.xattr_name:__s__stream_name:__s_n",
+            "mov rdx, r13",
+            "xor eax, eax",
+            "call sym.imp.dbgtext",
+            "jmp 0x1f71"
+        ]
+    },
+    "sym.imp.strchr_m": {
+        "function_address": "0x00001c10",
+        "instructions": [
+            "jmp qword [reloc.strchr_m]"
+        ]
+    },
+    "sym.imp.talloc_asprintf": {
+        "function_address": "0x00001a80",
+        "instructions": [
+            "jmp qword [reloc.talloc_asprintf]"
+        ]
+    },
+    "sym.imp.strrchr_m": {
+        "function_address": "0x00001bf0",
+        "instructions": [
+            "jmp qword [reloc.strrchr_m]"
+        ]
+    },
+    "sym.imp.strupper_m": {
+        "function_address": "0x00001980",
+        "instructions": [
+            "jmp qword [reloc.strupper_m]"
+        ]
+    },
+    "sym.imp.dbghdrclass": {
+        "function_address": "0x00001ba0",
+        "instructions": [
+            "jmp qword [reloc.dbghdrclass]"
+        ]
+    },
+    "sym.imp.dbgtext": {
+        "function_address": "0x00001b50",
+        "instructions": [
+            "jmp qword [reloc.dbgtext]"
+        ]
+    },
+    "fcn.00002010": {
+        "function_address": "0x00002010",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "mov rbx, rdi",
+            "sub rsp, 0x18",
+            "mov rax, qword [rdi + 0x18]",
+            "mov qword [rsp + 8], 0",
+            "mov rax, qword [rax + 0x130]",
+            "cmp rax, qword [rdi + 0x10]",
+            "je 0x2130",
+            "mov rbp, qword [rax + 8]",
+            "test rbp, rbp",
+            "je 0x2118",
+            "lea rdi, str..._source3_modules_vfs_streams_xattr.c:148",
+            "call sym.imp._talloc_tos",
+            "lea rdx, [rsp + 8]",
+            "mov rsi, rbp",
+            "mov rdi, rax",
+            "call fcn.00001ee0",
+            "test eax, eax",
+            "jne 0x2140",
+            "mov rdi, qword [rbx + 8]",
+            "lea rsi, str..._source3_modules_vfs_streams_xattr.c:155",
+            "call sym.imp._talloc_free",
+            "mov rdi, qword [rbx]",
+            "lea rsi, str..._source3_modules_vfs_streams_xattr.c:156",
+            "mov qword [rbx + 8], 0",
+            "call sym.imp._talloc_free",
+            "mov rbp, qword [rsp + 8]",
+            "mov rsi, qword [rbx + 0x18]",
+            "mov rdi, qword [rbx + 0x20]",
+            "mov qword [rbx], 0",
+            "call sym.imp.vfs_memctx_fsp_extension",
+            "mov rsi, rbp",
+            "mov rdi, rax",
+            "call sym.imp.talloc_strdup",
+            "mov rsi, qword [rbx + 0x18]",
+            "mov rdi, qword [rbx + 0x20]",
+            "mov qword [rbx + 8], rax",
+            "mov rdx, qword [rsi + 0x130]",
+            "mov rbp, qword [rdx]",
+            "call sym.imp.vfs_memctx_fsp_extension",
+            "mov rdi, rax",
+            "mov rsi, rbp",
+            "call sym.imp.talloc_strdup",
+            "mov qword [rbx], rax",
+            "mov rax, qword [rbx + 0x18]",
+            "lea rsi, str..._source3_modules_vfs_streams_xattr.c:163",
+            "mov rdi, qword [rsp + 8]",
+            "mov rax, qword [rax + 0x130]",
+            "mov qword [rbx + 0x10], rax",
+            "call sym.imp._talloc_free",
+            "cmp qword [rbx + 8], 0",
+            "je 0x2140",
+            "cmp qword [rbx], 0",
+            "setne al",
+            "add rsp, 0x18",
+            "pop rbx",
+            "pop rbp",
+            "ret",
+            "call sym.imp.__errno_location",
+            "mov dword [rax], 0x16",
+            "add rsp, 0x18",
+            "xor eax, eax",
+            "pop rbx",
+            "pop rbp",
+            "ret",
+            "add rsp, 0x18",
+            "mov eax, 1",
+            "pop rbx",
+            "pop rbp",
+            "ret",
+            "xor eax, eax",
+            "jmp 0x210a"
+        ]
+    },
+    "sym.imp._talloc_tos": {
+        "function_address": "0x00001aa0",
+        "instructions": [
+            "jmp qword [reloc._talloc_tos]"
+        ]
+    },
+    "sym.imp._talloc_free": {
+        "function_address": "0x00001950",
+        "instructions": [
+            "jmp qword [reloc._talloc_free]"
+        ]
+    },
+    "sym.imp.vfs_memctx_fsp_extension": {
+        "function_address": "0x00001b80",
+        "instructions": [
+            "jmp qword [reloc.vfs_memctx_fsp_extension]"
+        ]
+    },
+    "sym.imp.talloc_strdup": {
+        "function_address": "0x000019f0",
+        "instructions": [
+            "jmp qword [reloc.talloc_strdup]"
+        ]
+    },
+    "sym.imp.__errno_location": {
+        "function_address": "0x00001b20",
+        "instructions": [
+            "jmp qword [reloc.__errno_location]"
+        ]
+    },
+    "fcn.00001d60": {
+        "function_address": "0x00001d60",
+        "instructions": [
+            "mov qword [rsp - 0x20], rbx",
+            "mov rbx, rdi",
+            "lea rdi, str..._source3_modules_vfs_streams_xattr.c:82",
+            "mov qword [rsp - 0x18], rbp",
+            "mov qword [rsp - 0x10], r12",
+            "mov rbp, rsi",
+            "mov qword [rsp - 8], r13",
+            "mov r12, rdx",
+            "sub rsp, 0x48",
+            "mov r13, rcx",
+            "call sym.imp._talloc_tos",
+            "mov r9, rsp",
+            "mov r8, r13",
+            "mov rcx, r12",
+            "mov rdx, rbp",
+            "mov rsi, rbx",
+            "mov rdi, rax",
+            "call sym.imp.get_ea_value",
+            "test eax, eax",
+            "jne 0x1de1",
+            "mov rbx, qword [rsp + 0x18]",
+            "mov rdi, qword [rsp + 0x10]",
+            "lea rsi, str..._source3_modules_vfs_streams_xattr.c:90",
+            "sub rbx, 1",
+            "call sym.imp._talloc_free",
+            "mov rax, rbx",
+            "mov rbp, qword [rsp + 0x30]",
+            "mov rbx, qword [rsp + 0x28]",
+            "mov r12, qword [rsp + 0x38]",
+            "mov r13, qword [rsp + 0x40]",
+            "add rsp, 0x48",
+            "ret",
+            "or rbx, 0xffffffffffffffff",
+            "jmp 0x1dc5"
+        ]
+    },
+    "sym.imp.get_ea_value": {
+        "function_address": "0x00001960",
+        "instructions": [
+            "jmp qword [reloc.get_ea_value]"
+        ]
+    },
+    "fcn.000024e0": {
+        "function_address": "0x000024e0",
+        "instructions": [
+            "push r12",
+            "mov r12, rdi",
+            "push rbp",
+            "push rbx",
+            "mov rbx, rsi",
+            "sub rsp, 0x70",
+            "mov rbp, qword [reloc.DEBUGLEVEL_CLASS]",
+            "mov rax, qword fs:[0x28]",
+            "mov qword [rsp + 0x68], rax",
+            "xor eax, eax",
+            "mov rax, qword [rbp]",
+            "cmp dword [rax + 0x30], 9",
+            "jg 0x2614",
+            "lea rdi, str..._source3_modules_vfs_streams_xattr.c:51",
+            "call sym.imp._talloc_tos",
+            "mov rsi, rbx",
+            "mov rdi, rax",
+            "call sym.imp.talloc_strdup_upper",
+            "test rax, rax",
+            "mov rbx, rax",
+            "je 0x25fe",
+            "lea rdi, [rsp + 0x10]",
+            "call sym.imp.MD5Init",
+            "lea rdi, [rsp + 0x10]",
+            "mov edx, 8",
+            "mov rsi, r12",
+            "call sym.imp.MD5Update",
+            "lea rsi, [r12 + 8]",
+            "lea rdi, [rsp + 0x10]",
+            "mov edx, 8",
+            "call sym.imp.MD5Update",
+            "mov rdi, rbx",
+            "call sym.imp.talloc_get_size",
+            "lea rdi, [rsp + 0x10]",
+            "lea rdx, [rax - 1]",
+            "mov rsi, rbx",
+            "call sym.imp.MD5Update",
+            "lea rsi, [rsp + 0x10]",
+            "mov rdi, rsp",
+            "call sym.imp.MD5Final",
+            "lea rsi, str..._source3_modules_vfs_streams_xattr.c:63",
+            "mov rdi, rbx",
+            "call sym.imp._talloc_free",
+            "mov rax, qword [rbp]",
+            "mov rbx, qword [rsp]",
+            "cmp dword [rax + 0x30], 9",
+            "jg 0x25ca",
+            "mov rdx, qword [rsp + 0x68]",
+            "xor rdx, qword fs:[0x28]",
+            "mov rax, rbx",
+            "jne 0x25c5",
+            "add rsp, 0x70",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "ret",
+            "call sym.imp.__stack_chk_fail",
+            "lea rcx, str.stream_inode",
+            "lea rdx, str..._source3_modules_vfs_streams_xattr.c:68",
+            "mov esi, 0xc",
+            "mov edi, 0xa",
+            "call sym.imp.dbghdrclass",
+            "test al, al",
+            "je 0x25a9",
+            "lea rdi, str.stream_inode_returns__lu_n",
+            "mov rsi, rbx",
+            "xor eax, eax",
+            "call sym.imp.dbgtext",
+            "jmp 0x25a9",
+            "mov rax, qword [rbp]",
+            "cmp dword [rax + 0x30], 0",
+            "jns 0x2658",
+            "lea rdi, str.assert_failed:_upper_sname___NULL",
+            "call sym.imp.smb_panic",
+            "lea rcx, str.stream_inode",
+            "lea rdx, str..._source3_modules_vfs_streams_xattr.c:49",
+            "mov esi, 0xc",
+            "mov edi, 0xa",
+            "call sym.imp.dbghdrclass",
+            "test al, al",
+            "je 0x2513",
+            "mov rdx, qword [r12 + 8]",
+            "mov rsi, qword [r12]",
+            "lea rdi, str.stream_inode_called_for__lu__lu___s__n",
+            "mov rcx, rbx",
+            "xor eax, eax",
+            "call sym.imp.dbgtext",
+            "jmp 0x2513",
+            "lea rcx, str.stream_inode",
+            "lea rdx, str..._source3_modules_vfs_streams_xattr.c:52",
+            "xor edi, edi",
+            "mov esi, 0xc",
+            "call sym.imp.dbghdrclass",
+            "test al, al",
+            "je 0x2608",
+            "lea rcx, str.upper_sname___NULL",
+            "lea rsi, str..._source3_modules_vfs_streams_xattr.c",
+            "lea rdi, str.PANIC:_assert_failed_at__s__d_:__s_n",
+            "mov edx, 0x34",
+            "xor eax, eax",
+            "call sym.imp.dbgtext",
+            "jmp 0x2608"
+        ]
+    },
+    "sym.imp.talloc_strdup_upper": {
+        "function_address": "0x00001920",
+        "instructions": [
+            "jmp qword [reloc.talloc_strdup_upper]"
+        ]
+    },
+    "sym.imp.MD5Init": {
+        "function_address": "0x00001a50",
+        "instructions": [
+            "jmp qword [reloc.MD5Init]"
+        ]
+    },
+    "sym.imp.MD5Update": {
+        "function_address": "0x00001bd0",
+        "instructions": [
+            "jmp qword [reloc.MD5Update]"
+        ]
+    },
+    "sym.imp.talloc_get_size": {
+        "function_address": "0x00001940",
+        "instructions": [
+            "jmp qword [reloc.talloc_get_size]"
+        ]
+    },
+    "sym.imp.MD5Final": {
+        "function_address": "0x00001b10",
+        "instructions": [
+            "jmp qword [reloc.MD5Final]"
+        ]
+    },
+    "sym.imp.__stack_chk_fail": {
+        "function_address": "0x00001b70",
+        "instructions": [
+            "jmp qword [reloc.__stack_chk_fail]"
+        ]
+    },
+    "sym.imp.smb_panic": {
+        "function_address": "0x000019d0",
+        "instructions": [
+            "jmp qword [reloc.smb_panic]"
+        ]
+    },
+    "fcn.00001df0": {
+        "function_address": "0x00001df0",
+        "instructions": [
+            "mov qword [rsp - 0x30], rbx",
+            "mov rbx, rsi",
+            "mov qword [rsp - 0x28], rbp",
+            "mov qword [rsp - 0x20], r12",
+            "mov qword [rsp - 0x18], r13",
+            "mov rbp, rdi",
+            "mov qword [rsp - 0x10], r14",
+            "mov qword [rsp - 8], r15",
+            "sub rsp, 0x38",
+            "mov rax, qword [rbx + 8]",
+            "mov rsi, qword [rdi + 0x18]",
+            "mov rdi, qword [rax + 0x18]",
+            "sub rsi, 1",
+            "call sym.imp.smb_roundup",
+            "mov ecx, dword [rbx + 0x10]",
+            "mov rsi, qword [rbx + 0x18]",
+            "lea r8, str.struct_stream_struct",
+            "mov rdi, qword [rbx]",
+            "mov edx, 0x18",
+            "mov r13, qword [rbp + 0x18]",
+            "mov r14, qword [rbp + 8]",
+            "mov r12, rax",
+            "add ecx, 1",
+            "call sym.imp._talloc_realloc_array",
+            "test rax, rax",
+            "mov rbp, rax",
+            "je 0x1ed0",
+            "mov eax, dword [rbx + 0x10]",
+            "mov rsi, r14",
+            "mov rdi, rbp",
+            "lea rax, [rax + rax*2]",
+            "lea r15, [rbp + rax*8]",
+            "call sym.imp.talloc_strdup",
+            "mov ecx, dword [rbx + 0x10]",
+            "mov qword [r15 + 0x10], rax",
+            "mov eax, ecx",
+            "lea rax, [rax + rax*2]",
+            "lea rdx, [rbp + rax*8]",
+            "cmp qword [rdx + 0x10], 0",
+            "je 0x1ed0",
+            "sub r13, 1",
+            "add ecx, 1",
+            "mov qword [rdx + 8], r12",
+            "mov qword [rdx], r13",
+            "mov eax, 1",
+            "mov qword [rbx + 0x18], rbp",
+            "mov dword [rbx + 0x10], ecx",
+            "mov rbx, qword [rsp + 8]",
+            "mov rbp, qword [rsp + 0x10]",
+            "mov r12, qword [rsp + 0x18]",
+            "mov r13, qword [rsp + 0x20]",
+            "mov r14, qword [rsp + 0x28]",
+            "mov r15, qword [rsp + 0x30]",
+            "add rsp, 0x38",
+            "ret",
+            "mov dword [rbx + 0x20], 0xc0000017",
+            "xor eax, eax",
+            "jmp 0x1ea8"
+        ]
+    },
+    "sym.imp.smb_roundup": {
+        "function_address": "0x000018f0",
+        "instructions": [
+            "jmp qword [reloc.smb_roundup]"
+        ]
+    },
+    "sym.imp._talloc_realloc_array": {
+        "function_address": "0x00001af0",
+        "instructions": [
+            "jmp qword [reloc._talloc_realloc_array]"
+        ]
+    }
+}

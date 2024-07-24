@@ -1,0 +1,450 @@
+{
+    "sym.camera_abilities": {
+        "function_address": "0x000015a0",
+        "instructions": [
+            "push r13",
+            "push r12",
+            "lea rsi, str.iClick_5X",
+            "push rbp",
+            "push rbx",
+            "lea rbx, section..data.rel.ro",
+            "mov r13, rdi",
+            "xor r12d, r12d",
+            "sub rsp, 0x9d8",
+            "mov rax, qword fs:[0x28]",
+            "mov qword [rsp + reloc._ITM_registerTMCloneTable], rax",
+            "xor eax, eax",
+            "mov rbp, rsp",
+            "mov rax, r12",
+            "mov ecx, 0x139",
+            "mov rdi, rbp",
+            "rep stosq qword [rdi], rax",
+            "mov edx, 0x80",
+            "mov rdi, rbp",
+            "call sym.imp.__strcpy_chk",
+            "movzx edx, word [rbx + 0xc]",
+            "mov eax, dword [rbx + 8]",
+            "mov ecx, 0x139",
+            "mov dword [rsp + 0x84], 4",
+            "mov dword [rsp + 0x88], 0",
+            "mov rsi, rbp",
+            "mov dword [rsp + 0x190], 1",
+            "mov dword [rsp + entry0], 0x18",
+            "cmp eax, 2",
+            "mov dword [rsp + 0x80], eax",
+            "mov dword [rsp + 0x194], edx",
+            "movzx edx, word [rbx + 0xe]",
+            "setne al",
+            "movzx eax, al",
+            "sub rsp, 0x9d0",
+            "add rbx, 0x10",
+            "shl eax, 3",
+            "mov dword [rsp + 0xb58], eax",
+            "mov dword [rsp + 0xb68], edx",
+            "mov rdi, rsp",
+            "rep movsq qword [rdi], qword [rsi]",
+            "mov rdi, r13",
+            "call sym.imp.gp_abilities_list_append",
+            "mov rsi, qword [rbx]",
+            "add rsp, 0x9d0",
+            "test rsi, rsi",
+            "jne 0x15d7",
+            "xor eax, eax",
+            "mov rcx, qword [rsp + 0x9c8]",
+            "xor rcx, qword fs:[0x28]",
+            "jne 0x16a8",
+            "add rsp, 0x9d8",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "ret",
+            "call sym.imp.__stack_chk_fail"
+        ]
+    },
+    "sym.imp.__strcpy_chk": {
+        "function_address": "0x00000e30",
+        "instructions": [
+            "jmp qword [reloc.__strcpy_chk]"
+        ]
+    },
+    "sym.imp.gp_abilities_list_append": {
+        "function_address": "0x00000e60",
+        "instructions": [
+            "jmp qword [reloc.gp_abilities_list_append]"
+        ]
+    },
+    "sym.imp.__stack_chk_fail": {
+        "function_address": "0x00000d80",
+        "instructions": [
+            "jmp qword [reloc.__stack_chk_fail]"
+        ]
+    },
+    "sym.camera_init": {
+        "function_address": "0x000016b0",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "lea rdx, [0x00001500]",
+            "lea rcx, [0x00001530]",
+            "lea rsi, str.iclick_iclick_library.c",
+            "mov rbx, rdi",
+            "sub rsp, 0xa8",
+            "mov rax, qword fs:[0x28]",
+            "mov qword [rsp + 0x98], rax",
+            "xor eax, eax",
+            "mov rax, qword [rdi + 0x10]",
+            "mov edi, 2",
+            "mov rbp, rsp",
+            "mov qword [rax + 0x60], rdx",
+            "lea rdx, [0x00001470]",
+            "mov qword [rax + 0x58], rcx",
+            "lea rcx, [0x000014d0]",
+            "mov qword [rax + 0x10], rdx",
+            "lea rdx, str.Initializing_the_camera_n",
+            "mov qword [rax + 0x68], rcx",
+            "xor eax, eax",
+            "call sym.imp.gp_log",
+            "mov rdi, qword [rbx]",
+            "mov rsi, rsp",
+            "call sym.imp.gp_port_get_settings",
+            "test eax, eax",
+            "js 0x17a8",
+            "sub rsp, 0x90",
+            "mov ecx, 0x12",
+            "mov rsi, rbp",
+            "mov rdi, rsp",
+            "rep movsq qword [rdi], qword [rsi]",
+            "mov rdi, qword [rbx]",
+            "call sym.imp.gp_port_set_settings",
+            "add rsp, 0x90",
+            "test eax, eax",
+            "js 0x17a8",
+            "mov rdi, qword [rbx + 8]",
+            "lea rsi, [0x00203040]",
+            "mov rdx, rbx",
+            "call sym.imp.gp_filesystem_set_funcs",
+            "mov edi, 0x18",
+            "call sym.imp.malloc",
+            "test rax, rax",
+            "mov qword [rbx + 0x18], rax",
+            "je 0x17d5",
+            "mov rdi, qword [rbx]",
+            "mov dword [rax], 0",
+            "mov rsi, rax",
+            "mov qword [rax + 8], 0",
+            "mov dword [rax + 0x10], 0",
+            "mov dword [rax + 0x14], 0xffffffff",
+            "call fcn.00001920",
+            "mov ebp, eax",
+            "xor eax, eax",
+            "test ebp, ebp",
+            "jne 0x17c8",
+            "mov rsi, qword [rsp + 0x98]",
+            "xor rsi, qword fs:[0x28]",
+            "jne 0x17dc",
+            "add rsp, 0xa8",
+            "pop rbx",
+            "pop rbp",
+            "ret",
+            "mov rdi, qword [rbx + 0x18]",
+            "call sym.imp.free",
+            "mov eax, ebp",
+            "jmp 0x17a8",
+            "mov eax, 0xfffffffd",
+            "jmp 0x17a8",
+            "call sym.imp.__stack_chk_fail"
+        ]
+    },
+    "sym.imp.gp_log": {
+        "function_address": "0x00000cf0",
+        "instructions": [
+            "jmp qword [reloc.gp_log]"
+        ]
+    },
+    "sym.imp.gp_port_get_settings": {
+        "function_address": "0x00000db0",
+        "instructions": [
+            "jmp qword [reloc.gp_port_get_settings]"
+        ]
+    },
+    "sym.imp.gp_port_set_settings": {
+        "function_address": "0x00000d40",
+        "instructions": [
+            "jmp qword [reloc.gp_port_set_settings]"
+        ]
+    },
+    "sym.imp.gp_filesystem_set_funcs": {
+        "function_address": "0x00000df0",
+        "instructions": [
+            "jmp qword [reloc.gp_filesystem_set_funcs]"
+        ]
+    },
+    "sym.imp.malloc": {
+        "function_address": "0x00000e10",
+        "instructions": [
+            "jmp qword [reloc.malloc]"
+        ]
+    },
+    "fcn.00001920": {
+        "function_address": "0x00001920",
+        "instructions": [
+            "push r12",
+            "push rbp",
+            "mov rbp, rdi",
+            "push rbx",
+            "mov edi, 0x8000",
+            "mov r12, rsi",
+            "call sym.imp.malloc",
+            "test rax, rax",
+            "mov rbx, rax",
+            "mov dword [r12], 3",
+            "je 0x1a10",
+            "mov rdi, rbp",
+            "call fcn.00001850",
+            "mov esi, 0x20",
+            "mov rdi, rbp",
+            "call fcn.000017f0",
+            "mov edx, 0x8000",
+            "mov rsi, rbx",
+            "mov rdi, rbp",
+            "call sym.imp.gp_port_read",
+            "lea rsi, [0x00233200]",
+            "mov edx, 0x28000",
+            "mov rdi, rbp",
+            "call fcn.00001870",
+            "mov rdi, rbp",
+            "call fcn.00001850",
+            "xor edx, edx",
+            "jmp 0x199d",
+            "add rdx, 0x20",
+            "cmp rdx, 0x7fc0",
+            "je 0x1a00",
+            "cmp byte [rbx + rdx + 0x40], 0",
+            "jne 0x1990",
+            "mov ecx, edx",
+            "sar ecx, 5",
+            "test edx, edx",
+            "mov dword [r12 + 0x10], ecx",
+            "jne 0x19e0",
+            "mov rdi, rbx",
+            "call sym.imp.free",
+            "mov qword [r12 + 8], 0",
+            "mov rdi, rbp",
+            "call fcn.00001850",
+            "mov dword [r12 + 0x14], 0xffffffff",
+            "xor eax, eax",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "ret",
+            "mov rsi, rdx",
+            "mov rdi, rbx",
+            "call sym.imp.realloc",
+            "test rax, rax",
+            "cmovne rbx, rax",
+            "mov qword [r12 + 8], rbx",
+            "jmp 0x19c3",
+            "mov dword [r12 + 0x10], 0x3fe",
+            "mov esi, 0x7fc0",
+            "jmp 0x19e3",
+            "mov eax, 0xfffffffd",
+            "jmp 0x19d6"
+        ]
+    },
+    "sym.imp.free": {
+        "function_address": "0x00000ce0",
+        "instructions": [
+            "jmp qword [reloc.free]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000f20",
+        "instructions": [
+            "cmp byte [section..bss], 0",
+            "jne 0xf50",
+            "cmp qword [reloc.__cxa_finalize], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0xf43",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [section..bss], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000e70",
+        "instructions": [
+            "jmp qword [0x00202fb8]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000e90",
+        "instructions": [
+            "lea rdi, [0x00203198]",
+            "lea rax, [0x0020319f]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0xec0",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0xec0",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "fcn.00001870": {
+        "function_address": "0x00001870",
+        "instructions": [
+            "mov eax, edx",
+            "push r15",
+            "push r14",
+            "sar eax, 0x1f",
+            "push r13",
+            "push r12",
+            "shr eax, 0x11",
+            "push rbp",
+            "push rbx",
+            "lea r14d, [rdx + rax]",
+            "mov r13, rdi",
+            "mov r15, rsi",
+            "sub rsp, 8",
+            "and r14d, 0x7fff",
+            "sub r14d, eax",
+            "cmp edx, 0x7fff",
+            "jle 0x190c",
+            "lea r12d, [rdx - 0x8000]",
+            "mov rbx, rsi",
+            "shr r12d, 0xf",
+            "mov ebp, r12d",
+            "add rbp, 1",
+            "shl rbp, 0xf",
+            "add rbp, rsi",
+            "nop",
+            "mov rsi, rbx",
+            "mov edx, 0x8000",
+            "mov rdi, r13",
+            "add rbx, 0x8000",
+            "call sym.imp.gp_port_read",
+            "cmp rbx, rbp",
+            "jne 0x18c0",
+            "add r12d, 1",
+            "shl r12d, 0xf",
+            "test r14d, r14d",
+            "je 0x18fb",
+            "movsxd r12, r12d",
+            "mov edx, r14d",
+            "mov rdi, r13",
+            "lea rsi, [r15 + r12]",
+            "call sym.imp.gp_port_read",
+            "add rsp, 8",
+            "xor eax, eax",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "pop r14",
+            "pop r15",
+            "ret",
+            "xor r12d, r12d",
+            "jmp 0x18e4"
+        ]
+    },
+    "sym.imp.gp_port_read": {
+        "function_address": "0x00000e40",
+        "instructions": [
+            "jmp qword [reloc.gp_port_read]"
+        ]
+    },
+    "fcn.00001a20": {
+        "function_address": "0x00001a20",
+        "instructions": [
+            "push rbp",
+            "push rbx",
+            "mov rbp, rsi",
+            "lea rdx, [0x00001d88]",
+            "lea rsi, str.iclick_iclick_iclick.c",
+            "mov rbx, rdi",
+            "sub rsp, 8",
+            "mov edi, 2",
+            "xor eax, eax",
+            "call sym.imp.gp_log",
+            "mov rdi, rbx",
+            "mov esi, 0x20",
+            "call fcn.000017f0",
+            "lea rsi, [0x00203200]",
+            "mov edx, 0x30000",
+            "mov rdi, rbx",
+            "call fcn.00001870",
+            "mov rdi, rbx",
+            "call fcn.00001850",
+            "mov rdi, rbx",
+            "mov esi, 0x30",
+            "call fcn.000017f0",
+            "mov rdi, rbp",
+            "xor esi, esi",
+            "call fcn.00001820",
+            "mov dword [rbp + 0x14], eax",
+            "add rsp, 8",
+            "xor eax, eax",
+            "pop rbx",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "fcn.000017f0": {
+        "function_address": "0x000017f0",
+        "instructions": [
+            "sub rsp, 8",
+            "mov eax, 0x300",
+            "cmp esi, 0x20",
+            "mov ecx, 0",
+            "mov edx, esi",
+            "mov esi, 0xc",
+            "cmove ecx, eax",
+            "xor r9d, r9d",
+            "xor r8d, r8d",
+            "call sym.imp.gp_port_usb_msg_write",
+            "xor eax, eax",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "fcn.00001850": {
+        "function_address": "0x00001850",
+        "instructions": [
+            "sub rsp, 8",
+            "mov esi, 0xa0",
+            "call fcn.000017f0",
+            "xor eax, eax",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "fcn.00001820": {
+        "function_address": "0x00001820",
+        "instructions": [
+            "imul eax, esi, 0x4b100",
+            "ret"
+        ]
+    },
+    "sym.imp.gp_port_usb_msg_write": {
+        "function_address": "0x00000e00",
+        "instructions": [
+            "jmp qword [reloc.gp_port_usb_msg_write]"
+        ]
+    },
+    "sym.imp.realloc": {
+        "function_address": "0x00000e20",
+        "instructions": [
+            "jmp qword [reloc.realloc]"
+        ]
+    }
+}

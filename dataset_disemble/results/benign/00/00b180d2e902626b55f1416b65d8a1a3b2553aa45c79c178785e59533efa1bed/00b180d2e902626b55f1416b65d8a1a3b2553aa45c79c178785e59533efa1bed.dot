@@ -1,0 +1,22 @@
+digraph code {
+  "0x00401b60" [label="entry0"];
+  "0x00401b60" -> "0x00400aa0";
+  "0x00400aa0" [label="sym.imp.__uClibc_main"];
+  "0x00400a28" [label="sym._init"];
+  "0x00400a28" -> "0x00400a4c";
+  "0x00400a4c" [label="unk.0x400a4c"];
+  "0x00400a28" -> "0x00401c44";
+  "0x00401c44" [label="fcn.00401c44"];
+  "0x00400a28" -> "0x00400a5c";
+  "0x00400a5c" [label="unk.0x400a5c"];
+  "0x00400a28" -> "0x00402420";
+  "0x00402420" [label="fcn.00402420"];
+  "0x00402720" [label="sym._fini"];
+  "0x00402720" -> "0x00402744";
+  "0x00402744" [label="unk.0x402744"];
+  "0x00402720" -> "0x00401bb0";
+  "0x00401bb0" [label="fcn.00401bb0"];
+  "0x0040223c" [label="sym.check_port_free"];
+  "0x0040223c" -> "0x00402130";
+  "0x00402130" [label="sym.conv_decToHex"];
+}

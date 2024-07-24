@@ -1,0 +1,7 @@
+digraph code {
+  "0x0000071c" [label="entry.fini0"];
+  "0x0000071c" -> "0x0000060c";
+  "0x0000060c" [label="sym.imp.__cxa_finalize"];
+  "0x0000071c" -> "0x00000680";
+  "0x00000680" [label="fcn.00000680"];
+}

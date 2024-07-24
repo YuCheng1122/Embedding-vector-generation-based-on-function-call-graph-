@@ -1,0 +1,14 @@
+digraph code {
+  "0x08000c04" [label="sym.sfe_drv_destroy_ipv4_rule_msg"];
+  "0x08000c04" -> "0x080000bc";
+  "0x080000bc" [label="fcn.080000bc"];
+  "0x080007e4" [label="sym.sfe_drv_create_ipv4_rule_msg"];
+  "0x080007e4" -> "0x080000bc";
+  "0x080000bc" [label="fcn.080000bc"];
+  "0x080011b0" [label="sym.sfe_drv_destroy_ipv6_rule_msg"];
+  "0x080011b0" -> "0x080000bc";
+  "0x080000bc" [label="fcn.080000bc"];
+  "0x08000d24" [label="sym.sfe_drv_create_ipv6_rule_msg"];
+  "0x08000d24" -> "0x080000bc";
+  "0x080000bc" [label="fcn.080000bc"];
+}

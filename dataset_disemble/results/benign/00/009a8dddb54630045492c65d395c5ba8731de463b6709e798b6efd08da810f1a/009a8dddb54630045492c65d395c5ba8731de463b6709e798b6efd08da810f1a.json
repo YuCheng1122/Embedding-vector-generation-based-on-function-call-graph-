@@ -1,0 +1,204 @@
+{
+    "sym._init": {
+        "function_address": "0x00000d78",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [0x00202fd8]",
+            "test rax, rax",
+            "je 0xd8d",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x00000e40",
+        "instructions": [
+            "jmp qword [reloc.__gmon_start__]"
+        ]
+    },
+    "sym.boot_Hash__Util": {
+        "function_address": "0x00001f80",
+        "instructions": [
+            "push r15",
+            "push r14",
+            "mov ecx, 7",
+            "push r13",
+            "push r12",
+            "push rbp",
+            "push rbx",
+            "mov rbx, rdi",
+            "sub rsp, 0x18",
+            "mov rax, qword [rdi]",
+            "mov rbp, qword [rdi + 0x18]",
+            "mov qword [rsp + 8], rax",
+            "mov rax, qword [rdi + 0x78]",
+            "lea rdx, [rax - 4]",
+            "mov qword [rdi + 0x78], rdx",
+            "movsxd r12, dword [rax]",
+            "lea rdx, str.v5.20.0",
+            "lea r15d, [r12 + 1]",
+            "movsxd r14, r15d",
+            "mov rsi, qword [rbp + r14*8]",
+            "lea r13, [r14*8]",
+            "call loc.imp.Perl_xs_apiversion_bootcheck",
+            "mov rsi, qword [rsp + 8]",
+            "lea rax, [rbp + r12*8]",
+            "lea rcx, str.0.16",
+            "mov r8d, 4",
+            "mov edx, r15d",
+            "mov rdi, rbx",
+            "sub rsi, rax",
+            "sar rsi, 3",
+            "call loc.imp.Perl_xs_version_bootcheck",
+            "lea r8, [0x000021ff]",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x00001c00]",
+            "lea rsi, str.Hash::Util::all_keys",
+            "xor r9d, r9d",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS_flags",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x00001a70]",
+            "lea rsi, str.Hash::Util::hidden_ref_keys",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS",
+            "mov rax, qword [rax]",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x00001a70]",
+            "lea rsi, str.Hash::Util::legal_ref_keys",
+            "mov rdi, rbx",
+            "mov dword [rax + 0x28], 0",
+            "call loc.imp.Perl_newXS",
+            "mov rax, qword [rax]",
+            "lea r8, str.___",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x000018d0]",
+            "lea rsi, str.Hash::Util::hv_store",
+            "xor r9d, r9d",
+            "mov rdi, rbx",
+            "mov dword [rax + 0x28], 1",
+            "call loc.imp.Perl_newXS_flags",
+            "lea r8, [0x00002248]",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x000013d0]",
+            "lea rsi, str.Hash::Util::hash_seed",
+            "xor r9d, r9d",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS_flags",
+            "lea r8, [0x00002247]",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x00001df0]",
+            "lea rsi, str.Hash::Util::hash_value",
+            "xor r9d, r9d",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS_flags",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x00001790]",
+            "lea rsi, str.Hash::Util::hash_traversal_mask",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS",
+            "lea rcx, str.Util.c",
+            "lea rdx, [0x00001480]",
+            "lea rsi, str.Hash::Util::bucket_info",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS",
+            "lea rdx, [0x000010a0]",
+            "lea rcx, str.Util.c",
+            "lea rsi, str.Hash::Util::bucket_array",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_newXS",
+            "mov rdx, qword [rbx + 0x5f8]",
+            "test rdx, rdx",
+            "je 0x2153",
+            "mov esi, dword [rbx + 0x40]",
+            "mov rdi, rbx",
+            "call loc.imp.Perl_call_list",
+            "mov rax, qword [rbx + 0x18]",
+            "lea rdx, [rbx + 0x160]",
+            "mov qword [rax + r14*8], rdx",
+            "add r13, qword [rbx + 0x18]",
+            "mov qword [rbx], r13",
+            "add rsp, 0x18",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "pop r14",
+            "pop r15",
+            "ret"
+        ]
+    },
+    "loc.imp.Perl_xs_apiversion_bootcheck": {
+        "function_address": "0x00000ea0",
+        "instructions": [
+            "jmp qword [reloc.Perl_xs_apiversion_bootcheck]"
+        ]
+    },
+    "loc.imp.Perl_xs_version_bootcheck": {
+        "function_address": "0x00000db0",
+        "instructions": [
+            "jmp qword [reloc.Perl_xs_version_bootcheck]"
+        ]
+    },
+    "loc.imp.Perl_newXS_flags": {
+        "function_address": "0x00000ec0",
+        "instructions": [
+            "jmp qword [reloc.Perl_newXS_flags]"
+        ]
+    },
+    "loc.imp.Perl_newXS": {
+        "function_address": "0x00000e90",
+        "instructions": [
+            "jmp qword [reloc.Perl_newXS]"
+        ]
+    },
+    "loc.imp.Perl_call_list": {
+        "function_address": "0x00000e80",
+        "instructions": [
+            "jmp qword [reloc.Perl_call_list]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00001030",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0x1060",
+            "cmp qword [0x00202ff0], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0x1053",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000f60",
+        "instructions": [
+            "jmp qword [reloc.__cxa_finalize]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00000fa0",
+        "instructions": [
+            "lea rdi, [loc._edata]",
+            "lea rax, [0x0020311f]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0xfd0",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0xfd0",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    }
+}

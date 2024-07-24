@@ -1,0 +1,10 @@
+digraph code {
+  "0x000004b4" [label="entry0"];
+  "0x000004b4" -> "0x00000484";
+  "0x00000484" [label="sym.imp.__cxa_finalize"];
+  "0x000004b4" -> "0x00000490";
+  "0x00000490" [label="loc.imp.__deregister_frame_info"];
+  "0x00000530" [label="entry.init0"];
+  "0x00000530" -> "0x000004a8";
+  "0x000004a8" [label="loc.imp.__register_frame_info"];
+}

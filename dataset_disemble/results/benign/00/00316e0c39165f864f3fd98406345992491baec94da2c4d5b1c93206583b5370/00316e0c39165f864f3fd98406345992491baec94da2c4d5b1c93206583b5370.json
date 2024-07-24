@@ -1,0 +1,106 @@
+{
+    "fcn.0000848c": {
+        "function_address": "0x0000848c",
+        "instructions": [
+            "push {r3, r4, r5, lr}",
+            "mov r4, r1",
+            "ldr r0, aav.0x000085f4",
+            "ldr r5, loc.__bss_start__",
+            "bl sym.imp.puts",
+            "ldr r0, [r5]",
+            "ldr r3, [r0, 0x48]",
+            "cmp r3, 0",
+            "beq 0x84d4",
+            "ldr r3, [r0, 0x10]",
+            "ldr r2, [r0, 0x18]",
+            "cmp r3, r2",
+            "addlo r2, r3, 1",
+            "strlo r2, [r0, 0x10]",
+            "ldrblo r0, [r3]",
+            "blo 0x84e0",
+            "bl sym.imp.__fgetc_unlocked",
+            "b 0x84d8",
+            "bl sym.imp.fgetc",
+            "cmn r0, 1",
+            "beq 0x8500",
+            "cmp r0, 0xa",
+            "bne 0x84a0",
+            "mov r1, r4",
+            "ldr r0, [r1, 4]!",
+            "bl sym.imp.execvp",
+            "ldr r0, [0x00008510]",
+            "ldr r1, [r4]",
+            "bl sym.imp.printf",
+            "mvn r0, 0",
+            "pop {r3, r4, r5, pc}"
+        ]
+    },
+    "sym.imp.puts": {
+        "function_address": "0x00008444",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x2e0]!"
+        ]
+    },
+    "sym.imp.__fgetc_unlocked": {
+        "function_address": "0x00008450",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x2d8]!"
+        ]
+    },
+    "sym.imp.fgetc": {
+        "function_address": "0x00008474",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x2c0]!"
+        ]
+    },
+    "sym.imp.execvp": {
+        "function_address": "0x00008480",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x2b8]!"
+        ]
+    },
+    "sym.imp.printf": {
+        "function_address": "0x00008438",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x2e8]!"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000085b8",
+        "instructions": [
+            "push {r4, lr}",
+            "ldr r4, [0x000085dc]",
+            "ldrb r3, [r4]",
+            "cmp r3, 0",
+            "popne {r4, pc}",
+            "bl fcn.00008550",
+            "mov r3, 1",
+            "strb r3, [r4]",
+            "pop {r4, pc}"
+        ]
+    },
+    "fcn.00008550": {
+        "function_address": "0x00008550",
+        "instructions": [
+            "ldr r0, loc.__bss_start__",
+            "ldr r3, [0x00008578]",
+            "rsb r3, r0, r3",
+            "cmp r3, 6",
+            "bxls lr",
+            "ldr r3, [0x0000857c]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3"
+        ]
+    }
+}

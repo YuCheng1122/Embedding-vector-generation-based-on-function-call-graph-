@@ -1,0 +1,84 @@
+{
+    "entry0": {
+        "function_address": "0x000004b4",
+        "instructions": [
+            "push {r4, lr}",
+            "ldr r4, [0x00000518]",
+            "ldr r3, [0x0000051c]",
+            "add r4, pc, r4",
+            "ldrb r3, [r4, r3]",
+            "cmp r3, 0",
+            "popne {r4, pc}",
+            "ldr r3, [0x00000520]",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "beq 0x4ec",
+            "ldr r3, [0x00000524]",
+            "ldr r0, [r4, r3]",
+            "bl sym.imp.__cxa_finalize",
+            "ldr r3, [0x00000528]",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "beq 0x508",
+            "ldr r0, [0x0000052c]",
+            "add r0, r4, r0",
+            "bl loc.imp.__deregister_frame_info",
+            "ldr r3, [0x0000051c]",
+            "mov r2, 1",
+            "strb r2, [r4, r3]",
+            "pop {r4, pc}"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00000484",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x430]!"
+        ]
+    },
+    "loc.imp.__deregister_frame_info": {
+        "function_address": "0x00000490",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x428]!"
+        ]
+    },
+    "entry.init0": {
+        "function_address": "0x00000530",
+        "instructions": [
+            "push {r4, lr}",
+            "ldr r4, [0x0000058c]",
+            "ldr r3, [0x00000590]",
+            "add r4, pc, r4",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "beq 0x560",
+            "ldr r0, [0x00000594]",
+            "ldr r1, [0x00000598]",
+            "add r0, r4, r0",
+            "add r1, r4, r1",
+            "bl loc.imp.__register_frame_info",
+            "ldr r3, [0x0000059c]",
+            "add r0, r4, r3",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "popeq {r4, pc}",
+            "ldr r3, [0x000005a0]",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "popeq {r4, pc}",
+            "blx r3",
+            "pop {r4, pc}"
+        ]
+    },
+    "loc.imp.__register_frame_info": {
+        "function_address": "0x000004a8",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x418]!"
+        ]
+    }
+}

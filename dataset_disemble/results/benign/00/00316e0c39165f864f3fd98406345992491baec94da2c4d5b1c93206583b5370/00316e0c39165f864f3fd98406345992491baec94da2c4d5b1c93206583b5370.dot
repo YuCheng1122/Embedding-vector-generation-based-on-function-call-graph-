@@ -1,0 +1,16 @@
+digraph code {
+  "0x0000848c" [label="fcn.0000848c"];
+  "0x0000848c" -> "0x00008444";
+  "0x00008444" [label="sym.imp.puts"];
+  "0x0000848c" -> "0x00008450";
+  "0x00008450" [label="sym.imp.__fgetc_unlocked"];
+  "0x0000848c" -> "0x00008474";
+  "0x00008474" [label="sym.imp.fgetc"];
+  "0x0000848c" -> "0x00008480";
+  "0x00008480" [label="sym.imp.execvp"];
+  "0x0000848c" -> "0x00008438";
+  "0x00008438" [label="sym.imp.printf"];
+  "0x000085b8" [label="entry.fini0"];
+  "0x000085b8" -> "0x00008550";
+  "0x00008550" [label="fcn.00008550"];
+}

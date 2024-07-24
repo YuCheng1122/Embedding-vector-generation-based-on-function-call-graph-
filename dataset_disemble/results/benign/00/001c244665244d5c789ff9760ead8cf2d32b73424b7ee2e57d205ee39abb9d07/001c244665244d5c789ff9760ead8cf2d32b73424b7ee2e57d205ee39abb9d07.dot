@@ -1,0 +1,13 @@
+digraph code {
+  "0x10004500" [label="sym.imp.socket"];
+  "0x10004500" -> "0x10004540";
+  "0x10004540" [label="unk.0x10004540"];
+  "0x10000d90" [label="entry0"];
+  "0x10000d90" -> "0x10000d9c";
+  "0x10000d9c" [label="unk.0x10000d9c"];
+  "0x10000d08" [label="sym._init"];
+  "0x10000d08" -> "0x10000d38";
+  "0x10000d38" [label="unk.0x10000d38"];
+  "0x10000d08" -> "0x10000d5c";
+  "0x10000d5c" [label="unk.0x10000d5c"];
+}

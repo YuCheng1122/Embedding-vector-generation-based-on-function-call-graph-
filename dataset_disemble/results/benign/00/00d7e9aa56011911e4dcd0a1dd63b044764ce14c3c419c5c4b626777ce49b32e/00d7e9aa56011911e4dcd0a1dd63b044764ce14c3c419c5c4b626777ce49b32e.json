@@ -1,0 +1,56 @@
+{
+    "entry.fini0": {
+        "function_address": "0x0000071c",
+        "instructions": [
+            "ldr r2, [0x00000770]",
+            "push {r3, lr}",
+            "add r2, pc, r2",
+            "ldr r3, [0x00000774]",
+            "ldrb r2, [r2]",
+            "add r3, pc, r3",
+            "cmp r2, 0",
+            "popne {r3, pc}",
+            "ldr r2, [0x00000778]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "beq 0x758",
+            "ldr r3, [0x0000077c]",
+            "ldr r0, [0x00000758]",
+            "bl sym.imp.__cxa_finalize",
+            "bl fcn.00000680",
+            "ldr r3, [0x00000780]",
+            "mov r2, 1",
+            "add r3, pc, r3",
+            "strb r2, [r3]",
+            "pop {r3, pc}"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x0000060c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 8, 20",
+            "ldr pc, [ip, 0x65c]!"
+        ]
+    },
+    "fcn.00000680": {
+        "function_address": "0x00000680",
+        "instructions": [
+            "ldr r2, [0x000006bc]",
+            "ldr r0, [0x000006c0]",
+            "add r2, pc, r2",
+            "ldr r3, [0x000006c4]",
+            "add r0, pc, r0",
+            "add r2, r2, 3",
+            "rsb r2, r0, r2",
+            "add r3, pc, r3",
+            "cmp r2, 6",
+            "bxls lr",
+            "ldr r2, [0x000006c8]",
+            "ldr r3, [r3, r2]",
+            "cmp r3, 0",
+            "bxeq lr",
+            "bx r3"
+        ]
+    }
+}

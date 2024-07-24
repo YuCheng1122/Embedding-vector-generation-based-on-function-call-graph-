@@ -1,0 +1,31 @@
+digraph code {
+  "0x0000069c" [label="entry0"];
+  "0x0000069c" -> "0x00000630";
+  "0x00000630" [label="sym.imp.__cxa_finalize"];
+  "0x0000069c" -> "0x00000648";
+  "0x00000648" [label="loc.imp.__deregister_frame_info"];
+  "0x000008ac" [label="sym.regcomp"];
+  "0x000008ac" -> "0x00000618";
+  "0x00000618" [label="sym.imp.pcre_compile2"];
+  "0x000008ac" -> "0x00000624";
+  "0x00000624" [label="sym.imp.pcre_fullinfo"];
+  "0x0000097c" [label="sym.regexec"];
+  "0x0000097c" -> "0x0000066c";
+  "0x0000066c" [label="sym.imp.strlen"];
+  "0x0000097c" -> "0x00000678";
+  "0x00000678" [label="sym.imp.pcre_exec"];
+  "0x0000097c" -> "0x0000063c";
+  "0x0000063c" [label="sym.imp.malloc"];
+  "0x0000097c" -> "0x00000690";
+  "0x00000690" [label="sym.imp.free"];
+  "0x0000078c" [label="sym.regerror"];
+  "0x0000078c" -> "0x0000066c";
+  "0x0000066c" [label="sym.imp.strlen"];
+  "0x0000078c" -> "0x00000654";
+  "0x00000654" [label="sym.imp.strncpy"];
+  "0x0000078c" -> "0x00000660";
+  "0x00000660" [label="sym.imp.sprintf"];
+  "0x00000718" [label="entry.init0"];
+  "0x00000718" -> "0x00000684";
+  "0x00000684" [label="loc.imp.__register_frame_info"];
+}

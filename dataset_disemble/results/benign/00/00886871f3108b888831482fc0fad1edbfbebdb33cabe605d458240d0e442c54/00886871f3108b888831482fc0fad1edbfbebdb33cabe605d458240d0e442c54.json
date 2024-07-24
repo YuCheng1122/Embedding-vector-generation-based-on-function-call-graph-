@@ -1,0 +1,777 @@
+{
+    "entry0": {
+        "function_address": "0x000009e8",
+        "instructions": [
+            "ldr r3, [0x00000a0c]",
+            "ldr r2, [0x00000a10]",
+            "add r3, pc, r3",
+            "ldr r2, [r3, r2]",
+            "push {r4, lr}",
+            "cmp r2, 0",
+            "blne loc.imp.__gmon_start__",
+            "pop {r4, lr}",
+            "bx lr"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x00000874",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x79c]!"
+        ]
+    },
+    "sym.logwtmp": {
+        "function_address": "0x00000ecc",
+        "instructions": [
+            "push {r4, r5, r6, r7, lr}",
+            "sub sp, sp, 0x18c",
+            "mov r5, r1",
+            "mov r7, r0",
+            "mov r6, r2",
+            "mov r1, 0",
+            "mov r2, 0x180",
+            "mov r0, sp",
+            "bl sym.imp.memset",
+            "bl sym.imp.getpid",
+            "ldrb ip, [r5]",
+            "ldr r3, [0x00000f88]",
+            "cmp ip, 0",
+            "movne ip, 7",
+            "moveq ip, 8",
+            "add lr, sp, 0x188",
+            "strh ip, [lr, r3]",
+            "str r0, [sp, 4]",
+            "mov r1, r7",
+            "mov r2, 0x20",
+            "add r0, sp, 8",
+            "bl sym.imp.strncpy",
+            "mov r1, r5",
+            "mov r2, 0x20",
+            "add r0, sp, 0x2c",
+            "bl sym.imp.strncpy",
+            "mov r2, 0x100",
+            "mov r1, r6",
+            "add r0, sp, 0x4c",
+            "bl sym.imp.strncpy",
+            "mov r1, 0",
+            "add r0, sp, 0x180",
+            "bl sym.imp.__gettimeofday",
+            "ldr r5, [0x00000f8c]",
+            "ldr r3, [sp, 0x180]",
+            "ldr r0, [0x00000f90]",
+            "str r3, [sp, 0x154]",
+            "add r5, pc, r5",
+            "ldr r3, [sp, 0x184]",
+            "add r0, r5, r0",
+            "mov r1, sp",
+            "str r3, [sp, 0x158]",
+            "mov r4, sp",
+            "bl sym.imp.updwtmp",
+            "add sp, sp, 0x18c",
+            "pop {r4, r5, r6, r7, lr}",
+            "bx lr"
+        ]
+    },
+    "sym.imp.memset": {
+        "function_address": "0x00000898",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x784]!"
+        ]
+    },
+    "sym.imp.getpid": {
+        "function_address": "0x00000970",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6f4]!"
+        ]
+    },
+    "sym.imp.strncpy": {
+        "function_address": "0x00000880",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x794]!"
+        ]
+    },
+    "sym.imp.__gettimeofday": {
+        "function_address": "0x00000934",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x71c]!"
+        ]
+    },
+    "sym.imp.updwtmp": {
+        "function_address": "0x00000868",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x7a4]!"
+        ]
+    },
+    "sym.forkpty": {
+        "function_address": "0x0000110c",
+        "instructions": [
+            "push {r4, r5, lr}",
+            "mov ip, r2",
+            "sub sp, sp, 0x14",
+            "str r3, [sp]",
+            "mov r2, r1",
+            "mov r4, r0",
+            "mov r3, ip",
+            "add r0, sp, 0xc",
+            "add r1, sp, 8",
+            "bl sym.openpty",
+            "cmn r0, 1",
+            "moveq r5, r0",
+            "beq 0x1170",
+            "bl sym.imp.fork",
+            "cmn r0, 1",
+            "mov r5, r0",
+            "beq 0x1180",
+            "cmp r0, 0",
+            "bne 0x1194",
+            "ldr r0, [sp, 0xc]",
+            "bl sym.imp.close",
+            "ldr r0, [sp, 8]",
+            "bl sym.login_tty",
+            "cmp r0, 0",
+            "bne 0x11a8",
+            "mov r0, r5",
+            "add sp, sp, 0x14",
+            "pop {r4, r5, lr}",
+            "bx lr",
+            "ldr r0, [sp, 0xc]",
+            "bl sym.imp.close",
+            "ldr r0, [sp, 8]",
+            "bl sym.imp.close",
+            "b 0x1170",
+            "ldr r3, [sp, 0xc]",
+            "ldr r0, [sp, 8]",
+            "str r3, [r4]",
+            "bl sym.imp.close",
+            "b 0x1170",
+            "mov r0, 1",
+            "bl sym.imp._exit"
+        ]
+    },
+    "sym.openpty": {
+        "function_address": "0x00000f94",
+        "instructions": [
+            "push {r4, r5, r6, r7, r8, sb, sl, fp, lr}",
+            "sub sp, sp, 0x1000",
+            "sub sp, sp, 4",
+            "mov fp, r0",
+            "mov sb, r1",
+            "mov r4, r2",
+            "mov sl, r3",
+            "bl sym.imp.getpt",
+            "cmn r0, 1",
+            "mov r8, r0",
+            "moveq r0, r0",
+            "beq 0x1088",
+            "bl sym.imp.grantpt",
+            "cmp r0, 0",
+            "bne 0x107c",
+            "mov r0, r8",
+            "bl sym.imp.unlockpt",
+            "cmp r0, 0",
+            "bne 0x107c",
+            "mov r7, sp",
+            "mov r6, sp",
+            "mov r5, 0x1000",
+            "b 0x1010",
+            "cmp r6, r7",
+            "beq 0x1054",
+            "mov r0, r6",
+            "mov r1, r5",
+            "bl sym.imp.realloc",
+            "cmp r0, 0",
+            "beq 0x1064",
+            "mov r6, r0",
+            "cmp r5, 0",
+            "moveq r5, 0x80",
+            "beq 0xff0",
+            "mov r1, r6",
+            "mov r2, r5",
+            "mov r0, r8",
+            "bl sym.imp.ptsname_r",
+            "subs r1, r0, 0",
+            "mov r2, r5",
+            "mov r0, r6",
+            "bne 0x1070",
+            "bl sym.imp.memchr",
+            "cmp r0, 0",
+            "bne 0x1098",
+            "cmp r6, r7",
+            "lsl r5, r5, 1",
+            "bne 0xff8",
+            "mov r0, r5",
+            "bl sym.imp.malloc",
+            "cmp r0, 0",
+            "bne 0x100c",
+            "bl sym.imp.__errno_location",
+            "mov r3, 0xc",
+            "str r3, [r0]",
+            "cmp r6, r7",
+            "movne r0, r6",
+            "blne sym.imp.free",
+            "mov r0, r8",
+            "bl sym.imp.close",
+            "mvn r0, 0",
+            "add sp, sp, 4",
+            "add sp, sp, 0x1000",
+            "pop {r4, r5, r6, r7, r8, sb, sl, fp, lr}",
+            "bx lr",
+            "mov r0, r6",
+            "ldr r1, [0x00001104]",
+            "bl sym.imp.open",
+            "cmn r0, 1",
+            "mov r5, r0",
+            "beq 0x1070",
+            "cmp sl, 0",
+            "movne r2, sl",
+            "movne r1, 2",
+            "blne sym.imp.tcsetattr",
+            "add r2, sp, 0x1000",
+            "ldr r2, [r2, 0x28]",
+            "cmp r2, 0",
+            "movne r0, r5",
+            "ldrne r1, [0x00001108]",
+            "blne sym.imp.ioctl",
+            "cmp r4, 0",
+            "str r8, [fp]",
+            "str r5, [sb]",
+            "movne r0, r4",
+            "movne r1, r6",
+            "blne sym.imp.strcpy",
+            "cmp r6, r7",
+            "movne r0, r6",
+            "blne sym.imp.free",
+            "mov r0, 0",
+            "b 0x1088"
+        ]
+    },
+    "sym.imp.fork": {
+        "function_address": "0x0000097c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6ec]!"
+        ]
+    },
+    "sym.imp.close": {
+        "function_address": "0x00000904",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x73c]!"
+        ]
+    },
+    "sym.login_tty": {
+        "function_address": "0x00000d0c",
+        "instructions": [
+            "push {r4, lr}",
+            "mov r4, r0",
+            "bl sym.imp.setsid",
+            "mov r0, r4",
+            "ldr r1, [0x00000dbc]",
+            "mov r2, 0",
+            "bl sym.imp.ioctl",
+            "cmn r0, 1",
+            "beq 0xda8",
+            "mov r1, 0",
+            "mov r0, r4",
+            "bl sym.imp.dup2",
+            "cmn r0, 1",
+            "bne 0xd54",
+            "bl sym.imp.__errno_location",
+            "ldr r3, [r0]",
+            "cmp r3, 0x10",
+            "beq 0xd30",
+            "mov r1, 1",
+            "mov r0, r4",
+            "bl sym.imp.dup2",
+            "cmn r0, 1",
+            "bne 0xd78",
+            "bl sym.imp.__errno_location",
+            "ldr r3, [r0]",
+            "cmp r3, 0x10",
+            "beq 0xd54",
+            "mov r1, 2",
+            "mov r0, r4",
+            "bl sym.imp.dup2",
+            "cmn r0, 1",
+            "bne 0xd9c",
+            "bl sym.imp.__errno_location",
+            "ldr r3, [r0]",
+            "cmp r3, 0x10",
+            "beq 0xd78",
+            "cmp r4, 2",
+            "bgt 0xdb0",
+            "mov r0, 0",
+            "pop {r4, lr}",
+            "bx lr",
+            "mov r0, r4",
+            "bl sym.imp.close",
+            "b 0xda4"
+        ]
+    },
+    "sym.imp._exit": {
+        "function_address": "0x000008b0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x774]!"
+        ]
+    },
+    "sym.logout": {
+        "function_address": "0x00000dc0",
+        "instructions": [
+            "push {r4, r5, lr}",
+            "ldr r3, [0x00000ec0]",
+            "mov r5, r0",
+            "ldr r0, [0x00000ec4]",
+            "add r3, pc, r3",
+            "sub sp, sp, 0x314",
+            "add r0, r3, r0",
+            "bl sym.imp.utmpname",
+            "cmn r0, 1",
+            "moveq r4, 0",
+            "beq 0xea4",
+            "bl sym.imp.setutent",
+            "ldr r3, [0x00000ec8]",
+            "mov ip, 7",
+            "add lr, sp, 0x310",
+            "add r4, sp, 0x184",
+            "mov r1, r5",
+            "mov r2, 0x20",
+            "strh ip, [lr, r3]",
+            "add r0, r4, 8",
+            "bl sym.imp.strncpy",
+            "mov r0, r4",
+            "add r1, sp, 4",
+            "add r2, sp, 0x30c",
+            "bl sym.imp.getutline_r",
+            "cmp r0, 0",
+            "blt 0xeb4",
+            "ldr r3, [sp, 0x30c]",
+            "mov r4, 0",
+            "str r4, [r3, 0x48]",
+            "str r4, [r3, 0x2c]",
+            "str r4, [r3, 0x30]",
+            "str r4, [r3, 0x34]",
+            "str r4, [r3, 0x38]",
+            "str r4, [r3, 0x3c]",
+            "str r4, [r3, 0x40]",
+            "str r4, [r3, 0x44]",
+            "ldr r0, [sp, 0x30c]",
+            "mov r2, 0x100",
+            "mov r1, r4",
+            "add r0, r0, 0x4c",
+            "bl sym.imp.memset",
+            "mov r1, r4",
+            "add r0, sp, 0x304",
+            "bl sym.imp.__gettimeofday",
+            "ldr r0, [sp, 0x30c]",
+            "ldr r3, [sp, 0x304]",
+            "str r3, [r0, 0x154]",
+            "ldr r3, [sp, 0x308]",
+            "str r3, [r0, 0x158]",
+            "mov r3, 8",
+            "strh r3, [r0]",
+            "bl sym.imp.pututline",
+            "cmp r0, r4",
+            "movne r4, 1",
+            "beq 0xeb4",
+            "bl sym.imp.endutent",
+            "mov r0, r4",
+            "add sp, sp, 0x314",
+            "pop {r4, r5, lr}",
+            "bx lr",
+            "mov r4, 0",
+            "bl sym.imp.endutent",
+            "b 0xea4"
+        ]
+    },
+    "sym.imp.utmpname": {
+        "function_address": "0x0000094c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x70c]!"
+        ]
+    },
+    "sym.imp.setutent": {
+        "function_address": "0x00000988",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6e4]!"
+        ]
+    },
+    "sym.imp.getutline_r": {
+        "function_address": "0x000008ec",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x74c]!"
+        ]
+    },
+    "sym.imp.pututline": {
+        "function_address": "0x00000850",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x7b4]!"
+        ]
+    },
+    "sym.imp.endutent": {
+        "function_address": "0x00000940",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x714]!"
+        ]
+    },
+    "sym.imp.setsid": {
+        "function_address": "0x000008a4",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x77c]!"
+        ]
+    },
+    "sym.imp.ioctl": {
+        "function_address": "0x000008c8",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x764]!"
+        ]
+    },
+    "sym.imp.dup2": {
+        "function_address": "0x00000958",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x704]!"
+        ]
+    },
+    "sym.imp.__errno_location": {
+        "function_address": "0x000009b8",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6c4]!"
+        ]
+    },
+    "sym.imp.getpt": {
+        "function_address": "0x0000088c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x78c]!"
+        ]
+    },
+    "sym.imp.grantpt": {
+        "function_address": "0x00000928",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x724]!"
+        ]
+    },
+    "sym.imp.unlockpt": {
+        "function_address": "0x00000910",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x734]!"
+        ]
+    },
+    "sym.imp.realloc": {
+        "function_address": "0x000009a0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6d4]!"
+        ]
+    },
+    "sym.imp.ptsname_r": {
+        "function_address": "0x000008f8",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x744]!"
+        ]
+    },
+    "sym.imp.memchr": {
+        "function_address": "0x000009ac",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6cc]!"
+        ]
+    },
+    "sym.imp.malloc": {
+        "function_address": "0x0000091c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x72c]!"
+        ]
+    },
+    "sym.imp.free": {
+        "function_address": "0x000008bc",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x76c]!"
+        ]
+    },
+    "sym.imp.open": {
+        "function_address": "0x0000085c",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x7ac]!"
+        ]
+    },
+    "sym.imp.tcsetattr": {
+        "function_address": "0x00000964",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6fc]!"
+        ]
+    },
+    "sym.imp.strcpy": {
+        "function_address": "0x000008e0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x754]!"
+        ]
+    },
+    "sym.login": {
+        "function_address": "0x00000b84",
+        "instructions": [
+            "push {r4, r5, r6, r7, lr}",
+            "sub sp, sp, 0x1180",
+            "sub sp, sp, 0x2c",
+            "add r5, sp, 0x28",
+            "add r6, sp, 0x1000",
+            "add r3, sp, 0x1000",
+            "add r6, r6, 0x24",
+            "sub r5, r5, 0x24",
+            "mov r1, r0",
+            "mov r2, 0x180",
+            "str r5, [r3, 0x1a4]",
+            "mov r0, r6",
+            "bl sym.imp.memcpy",
+            "ldr r3, [0x00000cf4]",
+            "add r2, sp, 0x1180",
+            "mov r1, 7",
+            "add r2, r2, 0x28",
+            "strh r1, [r2, r3]",
+            "bl sym.imp.getpid",
+            "add r7, sp, 0x1180",
+            "add r3, sp, 0x1000",
+            "add r7, r7, 0x24",
+            "str r0, [r3, 0x28]",
+            "mov r1, r7",
+            "mov r0, 0",
+            "bl fcn.00000ab0",
+            "ldr r4, [0x00000cf8]",
+            "cmp r0, 0",
+            "add r4, pc, r4",
+            "blt 0xcb4",
+            "add r1, sp, 0x1000",
+            "ldr r7, [r1, 0x1a4]",
+            "ldr r1, [0x00000cfc]",
+            "mov r0, r7",
+            "add r1, r4, r1",
+            "mov r2, 5",
+            "bl sym.imp.strncmp",
+            "cmp r0, 0",
+            "addeq r1, r7, 5",
+            "bne 0xc74",
+            "mov r2, 0x20",
+            "add r0, r6, 8",
+            "bl sym.imp.strncpy",
+            "ldr r0, [0x00000d00]",
+            "add r0, r4, r0",
+            "bl sym.imp.utmpname",
+            "cmp r0, 0",
+            "beq 0xca0",
+            "add r2, sp, 0x1000",
+            "ldr r0, [r2, 0x1a4]",
+            "cmp r0, r5",
+            "blne sym.imp.free",
+            "ldr r0, [0x00000d04]",
+            "mov r1, r6",
+            "add r0, r4, r0",
+            "bl sym.imp.updwtmp",
+            "add sp, sp, 0x1ac",
+            "add sp, sp, 0x1000",
+            "pop {r4, r5, r6, r7, lr}",
+            "bx lr",
+            "mov r0, r7",
+            "bl sym.imp.basename",
+            "mov r2, 0x20",
+            "mov r1, r0",
+            "add r0, r6, 8",
+            "bl sym.imp.strncpy",
+            "ldr r0, [0x00000d00]",
+            "add r0, r4, r0",
+            "bl sym.imp.utmpname",
+            "cmp r0, 0",
+            "bne 0xc44",
+            "bl sym.imp.setutent",
+            "mov r0, r6",
+            "bl sym.imp.pututline",
+            "bl sym.imp.endutent",
+            "b 0xc44",
+            "mov r0, 1",
+            "mov r1, r7",
+            "bl fcn.00000ab0",
+            "cmp r0, 0",
+            "bge 0xbfc",
+            "mov r1, r7",
+            "mov r0, 2",
+            "bl fcn.00000ab0",
+            "cmp r0, 0",
+            "bge 0xbfc",
+            "ldr r1, [0x00000d08]",
+            "add r0, r6, 8",
+            "add r1, r4, r1",
+            "mov r2, 0x20",
+            "bl sym.imp.strncpy",
+            "b 0xc54"
+        ]
+    },
+    "sym.imp.memcpy": {
+        "function_address": "0x000008d4",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x75c]!"
+        ]
+    },
+    "fcn.00000ab0": {
+        "function_address": "0x00000ab0",
+        "instructions": [
+            "push {r4, r5, r6, r7, r8, lr}",
+            "mov r6, r1",
+            "ldr r5, [r1]",
+            "ldr r4, [0x00000b80]",
+            "mov r8, r0",
+            "b 0xaec",
+            "ldr r3, [r6]",
+            "mov r0, r5",
+            "cmp r5, r3",
+            "beq 0xb3c",
+            "mov r1, r4",
+            "bl sym.imp.realloc",
+            "cmp r0, 0",
+            "beq 0xb4c",
+            "mov r5, r0",
+            "cmp r4, 0",
+            "moveq r4, 0x80",
+            "beq 0xac8",
+            "mov r1, r5",
+            "mov r2, r4",
+            "mov r0, r8",
+            "bl sym.imp.ttyname_r",
+            "subs r7, r0, 0",
+            "mov r2, r4",
+            "mov r1, r7",
+            "mov r0, r5",
+            "bne 0xb5c",
+            "bl sym.imp.memchr",
+            "cmp r0, 0",
+            "bne 0xb78",
+            "ldr r3, [r6]",
+            "lsl r4, r4, 1",
+            "cmp r5, r3",
+            "mov r0, r5",
+            "bne 0xad8",
+            "mov r0, r4",
+            "bl sym.imp.malloc",
+            "cmp r0, 0",
+            "bne 0xae8",
+            "bl sym.imp.__errno_location",
+            "mov r3, 0xc",
+            "str r3, [r0]",
+            "mvn r7, 0",
+            "ldr r3, [r6]",
+            "cmp r5, r3",
+            "movne r0, r5",
+            "blne sym.imp.free",
+            "mov r0, r7",
+            "pop {r4, r5, r6, r7, r8, lr}",
+            "bx lr",
+            "str r5, [r6]",
+            "b 0xb6c"
+        ]
+    },
+    "sym.imp.strncmp": {
+        "function_address": "0x00000994",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6dc]!"
+        ]
+    },
+    "sym.imp.basename": {
+        "function_address": "0x000009c4",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6bc]!"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x00000a14",
+        "instructions": [
+            "push {r4, r5, r6, lr}",
+            "ldr r4, [0x00000a58]",
+            "ldr r5, [0x00000a5c]",
+            "add r4, pc, r4",
+            "ldrb r3, [r4, r5]",
+            "cmp r3, 0",
+            "bne 0xa50",
+            "ldr r3, [0x00000a60]",
+            "ldr r3, [r4, r3]",
+            "cmp r3, 0",
+            "ldrne r3, [0x00000a64]",
+            "ldrne r0, [r4, r3]",
+            "blne sym.imp.__cxa_finalize",
+            "mov r3, 1",
+            "strb r3, [r4, r5]",
+            "pop {r4, r5, r6, lr}",
+            "bx lr"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x000009dc",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6ac]!"
+        ]
+    },
+    "sym.imp.ttyname_r": {
+        "function_address": "0x000009d0",
+        "instructions": [
+            "add ip, pc, 0, 12",
+            "add ip, ip, 0x9000",
+            "ldr pc, [ip, 0x6b4]!"
+        ]
+    }
+}

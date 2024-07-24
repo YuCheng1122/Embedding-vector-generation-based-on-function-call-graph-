@@ -1,0 +1,616 @@
+{
+    "sym._init": {
+        "function_address": "0x000015c0",
+        "instructions": [
+            "sub rsp, 8",
+            "mov rax, qword [0x00203fe0]",
+            "test rax, rax",
+            "je 0x15d5",
+            "call loc.imp.__gmon_start__",
+            "add rsp, 8",
+            "ret"
+        ]
+    },
+    "loc.imp.__gmon_start__": {
+        "function_address": "0x000017d0",
+        "instructions": [
+            "jmp qword [reloc.__gmon_start__]"
+        ]
+    },
+    "entry.fini0": {
+        "function_address": "0x000019e0",
+        "instructions": [
+            "cmp byte [loc._edata], 0",
+            "jne 0x1a10",
+            "cmp qword [0x00203ff8], 0",
+            "push rbp",
+            "mov rbp, rsp",
+            "je 0x1a03",
+            "mov rdi, qword [section..data]",
+            "call sym.imp.__cxa_finalize",
+            "call entry0",
+            "pop rbp",
+            "mov byte [loc._edata], 1",
+            "repz ret"
+        ]
+    },
+    "sym.imp.__cxa_finalize": {
+        "function_address": "0x00001920",
+        "instructions": [
+            "jmp qword [reloc.__cxa_finalize]"
+        ]
+    },
+    "rip": {
+        "function_address": "0x00001950",
+        "instructions": [
+            "lea rdi, [loc._edata]",
+            "lea rax, [0x00204247]",
+            "push rbp",
+            "sub rax, rdi",
+            "mov rbp, rsp",
+            "cmp rax, 0xe",
+            "jbe 0x1980",
+            "mov rax, qword [reloc._ITM_deregisterTMCloneTable]",
+            "test rax, rax",
+            "je 0x1980",
+            "pop rbp",
+            "jmp rax",
+            "pop rbp",
+            "ret"
+        ]
+    },
+    "fcn.00001de0": {
+        "function_address": "0x00001de0",
+        "instructions": [
+            "push r15",
+            "push r14",
+            "mov r15d, 0xffffec6a",
+            "push r13",
+            "push r12",
+            "mov r12, rsi",
+            "push rbp",
+            "push rbx",
+            "mov rbp, rdi",
+            "xor edi, edi",
+            "mov rbx, rdx",
+            "sub rsp, 0x18",
+            "mov qword [rdx], 0",
+            "call sym.imp.gcry_mpi_new",
+            "xor edi, edi",
+            "mov qword [0x00204280], rax",
+            "call sym.imp.gcry_mpi_new",
+            "mov esi, 0x80",
+            "mov edi, 1",
+            "mov r13, rax",
+            "call sym.imp.calloc",
+            "test rax, rax",
+            "mov r14, rax",
+            "je 0x1f45",
+            "mov rdi, rax",
+            "mov edx, 1",
+            "mov esi, 0x80",
+            "call sym.imp.gcry_randomize",
+            "lea rdi, [0x00204280]",
+            "xor r8d, r8d",
+            "mov rdx, r14",
+            "mov ecx, 0x80",
+            "mov esi, 5",
+            "call sym.imp.gcry_mpi_scan",
+            "mov rdi, r14",
+            "lea r14, [rsp + 8]",
+            "call sym.imp.free",
+            "mov rcx, qword [0x00204290]",
+            "mov rdx, qword [0x00204280]",
+            "mov rdi, r13",
+            "mov rsi, qword [0x00204288]",
+            "call sym.imp.gcry_mpi_powm",
+            "mov rdx, rbp",
+            "mov rcx, r14",
+            "mov edi, 5",
+            "shr rdx, 8",
+            "xor edx, ebp",
+            "lea rbp, [r12 + 2]",
+            "mov word [0x00204268], dx",
+            "ror dx, 8",
+            "mov word [r12], dx",
+            "add qword [rbx], 2",
+            "mov edx, 4",
+            "mov r8, qword [0x00204288]",
+            "mov rsi, rbp",
+            "call sym.imp.gcry_mpi_print",
+            "mov rdx, qword [rsp + 8]",
+            "cmp rdx, 3",
+            "jbe 0x1f60",
+            "add qword [rbx], 4",
+            "mov edx, 0xffff8000",
+            "lea rsi, [r12 + 8]",
+            "mov word [r12 + 6], dx",
+            "add qword [rbx], 2",
+            "xor ecx, ecx",
+            "mov r8, qword [0x00204290]",
+            "mov edx, 0x80",
+            "mov edi, 5",
+            "lea rbp, [r12 + 0x88]",
+            "call sym.imp.gcry_mpi_print",
+            "sub qword [rbx], 0xffffffffffffff80",
+            "mov edx, 0x80",
+            "mov r8, r13",
+            "mov rcx, r14",
+            "mov rsi, rbp",
+            "mov edi, 5",
+            "call sym.imp.gcry_mpi_print",
+            "mov rdx, qword [rsp + 8]",
+            "cmp rdx, 0x7f",
+            "jbe 0x1fa0",
+            "sub qword [rbx], 0xffffffffffffff80",
+            "mov r15d, 0xffffec77",
+            "mov rdi, r13",
+            "call sym.imp.gcry_mpi_release",
+            "add rsp, 0x18",
+            "mov eax, r15d",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "pop r14",
+            "pop r15",
+            "ret",
+            "mov r15d, 4",
+            "mov rsi, rbp",
+            "sub r15, rdx",
+            "lea rdi, [rbp + r15]",
+            "call sym.imp.memmove",
+            "test r15d, r15d",
+            "mov edx, r15d",
+            "je 0x1edc",
+            "xor eax, eax",
+            "mov ecx, eax",
+            "add eax, 1",
+            "cmp eax, edx",
+            "mov byte [rbp + rcx], 0",
+            "jb 0x1f84",
+            "jmp 0x1edc",
+            "mov ecx, 0x80",
+            "mov rsi, rbp",
+            "sub rcx, rdx",
+            "lea rdi, [rbp + rcx]",
+            "mov r14, rcx",
+            "call sym.imp.memmove",
+            "cmp r14d, 8",
+            "jae 0x1ff0",
+            "test r14b, 4",
+            "jne 0x2030",
+            "test r14d, r14d",
+            "je 0x1f3b",
+            "test r14b, 2",
+            "mov byte [r12 + 0x88], 0",
+            "je 0x1f3b",
+            "mov ecx, r14d",
+            "xor eax, eax",
+            "mov word [rbp + rcx - 2], ax",
+            "jmp 0x1f3b",
+            "lea rdi, [r12 + 0x90]",
+            "mov eax, r14d",
+            "mov qword [r12 + 0x88], 0",
+            "mov qword [rbp + rax - 8], 0",
+            "xor eax, eax",
+            "and rdi, 0xfffffffffffffff8",
+            "sub rbp, rdi",
+            "lea ecx, [r14 + rbp]",
+            "shr ecx, 3",
+            "rep stosq qword [rdi], rax",
+            "jmp 0x1f3b",
+            "mov ecx, r14d",
+            "mov dword [r12 + 0x88], 0",
+            "mov dword [rbp + rcx - 4], 0",
+            "jmp 0x1f3b"
+        ]
+    },
+    "sym.imp.gcry_mpi_new": {
+        "function_address": "0x000017a0",
+        "instructions": [
+            "jmp qword [reloc.gcry_mpi_new]"
+        ]
+    },
+    "sym.imp.calloc": {
+        "function_address": "0x000017b0",
+        "instructions": [
+            "jmp qword [reloc.calloc]"
+        ]
+    },
+    "sym.imp.gcry_randomize": {
+        "function_address": "0x00001930",
+        "instructions": [
+            "jmp qword [reloc.gcry_randomize]"
+        ]
+    },
+    "sym.imp.gcry_mpi_scan": {
+        "function_address": "0x00001840",
+        "instructions": [
+            "jmp qword [reloc.gcry_mpi_scan]"
+        ]
+    },
+    "sym.imp.free": {
+        "function_address": "0x00001600",
+        "instructions": [
+            "jmp qword [reloc.free]"
+        ]
+    },
+    "sym.imp.gcry_mpi_powm": {
+        "function_address": "0x000016b0",
+        "instructions": [
+            "jmp qword [reloc.gcry_mpi_powm]"
+        ]
+    },
+    "sym.imp.gcry_mpi_print": {
+        "function_address": "0x000016a0",
+        "instructions": [
+            "jmp qword [reloc.gcry_mpi_print]"
+        ]
+    },
+    "sym.imp.gcry_mpi_release": {
+        "function_address": "0x00001830",
+        "instructions": [
+            "jmp qword [reloc.gcry_mpi_release]"
+        ]
+    },
+    "sym.imp.memmove": {
+        "function_address": "0x00001860",
+        "instructions": [
+            "jmp qword [reloc.memmove]"
+        ]
+    },
+    "fcn.00002050": {
+        "function_address": "0x00002050",
+        "instructions": [
+            "push r15",
+            "push r14",
+            "mov r14, rdx",
+            "push r13",
+            "push r12",
+            "mov r13, rdi",
+            "push rbp",
+            "push rbx",
+            "xor edi, edi",
+            "mov r12, rsi",
+            "mov rbp, rcx",
+            "sub rsp, 0x48",
+            "mov qword [rcx], 0",
+            "mov rax, qword fs:[0x28]",
+            "mov qword [rsp + 0x38], rax",
+            "xor eax, eax",
+            "call sym.imp.gcry_mpi_new",
+            "xor edi, edi",
+            "mov qword [rsp + 8], rax",
+            "call sym.imp.gcry_mpi_new",
+            "xor edi, edi",
+            "mov rbx, rax",
+            "call sym.imp.gcry_mpi_new",
+            "xor edi, edi",
+            "mov qword [rsp + 0x10], rax",
+            "call sym.imp.gcry_mpi_new",
+            "cmp r12, 0x92",
+            "mov qword [0x00204278], rax",
+            "je 0x2170",
+            "mov rdx, qword [reloc.type_configs]",
+            "mov ebp, 0xffffec65",
+            "cmp dword [rdx + 0x58], 1",
+            "jbe 0x20fb",
+            "lea r8, str.DHX2:_Paket_length_not_correct",
+            "lea rdx, str.uams_dhx2_pam.c",
+            "xor eax, eax",
+            "mov ecx, 0x1a9",
+            "mov esi, 5",
+            "mov edi, 2",
+            "call loc.imp.make_log_entry",
+            "mov rax, qword [0x00204278]",
+            "mov rdi, rax",
+            "call sym.imp.gcry_mpi_release",
+            "mov rdi, qword [0x00204270]",
+            "call sym.imp.free",
+            "mov qword [0x00204270], 0",
+            "mov rdi, rbx",
+            "call sym.imp.gcry_mpi_release",
+            "mov rdi, qword [rsp + 8]",
+            "call sym.imp.gcry_mpi_release",
+            "mov rdi, qword [0x00204280]",
+            "call sym.imp.gcry_mpi_release",
+            "mov rdi, qword [rsp + 0x10]",
+            "call sym.imp.gcry_mpi_release",
+            "mov rcx, qword [rsp + 0x38]",
+            "xor rcx, qword fs:[0x28]",
+            "mov eax, ebp",
+            "jne 0x23ec",
+            "add rsp, 0x48",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "pop r14",
+            "pop r15",
+            "ret",
+            "lea rdx, [r13 + 2]",
+            "lea rdi, [rsp + 8]",
+            "xor r8d, r8d",
+            "mov ecx, 0x80",
+            "mov esi, 5",
+            "call sym.imp.gcry_mpi_scan",
+            "mov rcx, qword [0x00204290]",
+            "mov rdx, qword [0x00204280]",
+            "mov rdi, rbx",
+            "mov rsi, qword [rsp + 8]",
+            "call sym.imp.gcry_mpi_powm",
+            "mov esi, 0x80",
+            "mov edi, 1",
+            "call sym.imp.calloc",
+            "test rax, rax",
+            "mov r12, rax",
+            "je 0x23aa",
+            "mov edx, 0x80",
+            "mov rcx, rsp",
+            "mov r8, rbx",
+            "mov rsi, rax",
+            "mov edi, 5",
+            "call sym.imp.gcry_mpi_print",
+            "mov rdx, qword [rsp]",
+            "cmp rdx, 0x7f",
+            "jbe 0x23c0",
+            "mov edi, 1",
+            "call sym.imp.gcry_md_get_algo_dlen",
+            "mov edi, 1",
+            "movsxd rsi, eax",
+            "mov dword [0x0020426c], eax",
+            "call sym.imp.calloc",
+            "test rax, rax",
+            "mov qword [0x00204270], rax",
+            "je 0x23aa",
+            "mov rsi, rax",
+            "mov ecx, 0x80",
+            "mov rdx, r12",
+            "mov edi, 1",
+            "call sym.imp.gcry_md_hash_buffer",
+            "mov rdi, r12",
+            "call sym.imp.free",
+            "lea rdi, [rsp + 0x18]",
+            "xor ecx, ecx",
+            "mov edx, 3",
+            "mov esi, 3",
+            "call sym.imp.gcry_cipher_open",
+            "test ax, ax",
+            "jne 0x23a0",
+            "movsxd rdx, dword [0x0020426c]",
+            "mov rsi, qword [0x00204270]",
+            "mov rdi, qword [rsp + 0x18]",
+            "call sym.imp.gcry_cipher_setkey",
+            "test ax, ax",
+            "jne 0x23a0",
+            "mov rdi, qword [rsp + 0x18]",
+            "lea rsi, [0x002041e4]",
+            "mov edx, 8",
+            "call sym.imp.gcry_cipher_setiv",
+            "test ax, ax",
+            "jne 0x23a0",
+            "mov rdi, qword [rsp + 0x18]",
+            "add r13, 0x82",
+            "xor r8d, r8d",
+            "xor ecx, ecx",
+            "mov edx, 0x10",
+            "mov rsi, r13",
+            "call sym.imp.gcry_cipher_decrypt",
+            "test ax, ax",
+            "jne 0x23a0",
+            "lea rdi, [rsp + 0x10]",
+            "xor r8d, r8d",
+            "mov ecx, 0x10",
+            "mov rdx, r13",
+            "mov esi, 5",
+            "lea r12, [rsp + 0x20]",
+            "call sym.imp.gcry_mpi_scan",
+            "mov rdi, qword [rsp + 0x10]",
+            "mov edx, 1",
+            "mov rsi, rdi",
+            "call sym.imp.gcry_mpi_add_ui",
+            "mov rdi, r12",
+            "mov esi, 0x10",
+            "call sym.imp.gcry_create_nonce",
+            "lea rdi, [0x00204278]",
+            "xor r8d, r8d",
+            "mov rdx, r12",
+            "mov ecx, 0x10",
+            "mov esi, 5",
+            "lea r12, [r14 + 2]",
+            "call sym.imp.gcry_mpi_scan",
+            "movzx eax, word [0x00204268]",
+            "mov r8, qword [rsp + 0x10]",
+            "xor ecx, ecx",
+            "mov edx, 0x80",
+            "mov rsi, r12",
+            "mov edi, 5",
+            "add eax, 1",
+            "ror ax, 8",
+            "mov word [r14], ax",
+            "add qword [rbp], 2",
+            "call sym.imp.gcry_mpi_print",
+            "mov rdx, qword [rsp + 0x28]",
+            "mov rax, qword [rsp + 0x20]",
+            "lea rsi, str.CJalbertLWallace",
+            "mov rdi, qword [rsp + 0x18]",
+            "mov qword [r14 + 0x1a], rdx",
+            "mov qword [r14 + 0x12], rax",
+            "mov edx, 8",
+            "call sym.imp.gcry_cipher_setiv",
+            "test ax, ax",
+            "jne 0x23a0",
+            "mov rdi, qword [rsp + 0x18]",
+            "xor r8d, r8d",
+            "xor ecx, ecx",
+            "mov edx, 0x20",
+            "mov rsi, r12",
+            "call sym.imp.gcry_cipher_encrypt",
+            "test ax, ax",
+            "jne 0x23a0",
+            "add qword [rbp], 0x20",
+            "mov ebp, 0xffffec77",
+            "jmp 0x211a",
+            "mov rdi, qword [rsp + 0x18]",
+            "call sym.imp.gcry_cipher_close",
+            "mov rax, qword [0x00204278]",
+            "mov ebp, 0xffffec6a",
+            "jmp 0x20fb",
+            "mov r15d, 0x80",
+            "mov rsi, r12",
+            "sub r15, rdx",
+            "lea rdi, [r12 + r15]",
+            "call sym.imp.memmove",
+            "mov ecx, 0x80",
+            "mov rdx, r15",
+            "xor esi, esi",
+            "mov rdi, r12",
+            "call sym.imp.__memset_chk",
+            "jmp 0x21e7",
+            "call sym.imp.__stack_chk_fail"
+        ]
+    },
+    "loc.imp.make_log_entry": {
+        "function_address": "0x000017f0",
+        "instructions": [
+            "jmp qword [reloc.make_log_entry]"
+        ]
+    },
+    "sym.imp.gcry_md_get_algo_dlen": {
+        "function_address": "0x00001650",
+        "instructions": [
+            "jmp qword [reloc.gcry_md_get_algo_dlen]"
+        ]
+    },
+    "sym.imp.gcry_md_hash_buffer": {
+        "function_address": "0x00001870",
+        "instructions": [
+            "jmp qword [reloc.gcry_md_hash_buffer]"
+        ]
+    },
+    "sym.imp.gcry_cipher_open": {
+        "function_address": "0x00001670",
+        "instructions": [
+            "jmp qword [reloc.gcry_cipher_open]"
+        ]
+    },
+    "sym.imp.gcry_cipher_setkey": {
+        "function_address": "0x00001690",
+        "instructions": [
+            "jmp qword [reloc.gcry_cipher_setkey]"
+        ]
+    },
+    "sym.imp.gcry_cipher_setiv": {
+        "function_address": "0x00001800",
+        "instructions": [
+            "jmp qword [reloc.gcry_cipher_setiv]"
+        ]
+    },
+    "sym.imp.gcry_cipher_decrypt": {
+        "function_address": "0x00001850",
+        "instructions": [
+            "jmp qword [reloc.gcry_cipher_decrypt]"
+        ]
+    },
+    "sym.imp.gcry_mpi_add_ui": {
+        "function_address": "0x00001770",
+        "instructions": [
+            "jmp qword [reloc.gcry_mpi_add_ui]"
+        ]
+    },
+    "sym.imp.gcry_create_nonce": {
+        "function_address": "0x00001880",
+        "instructions": [
+            "jmp qword [reloc.gcry_create_nonce]"
+        ]
+    },
+    "sym.imp.gcry_cipher_encrypt": {
+        "function_address": "0x00001760",
+        "instructions": [
+            "jmp qword [reloc.gcry_cipher_encrypt]"
+        ]
+    },
+    "sym.imp.gcry_cipher_close": {
+        "function_address": "0x00001910",
+        "instructions": [
+            "jmp qword [reloc.gcry_cipher_close]"
+        ]
+    },
+    "sym.imp.__memset_chk": {
+        "function_address": "0x000018b0",
+        "instructions": [
+            "jmp qword [reloc.__memset_chk]"
+        ]
+    },
+    "sym.imp.__stack_chk_fail": {
+        "function_address": "0x000016f0",
+        "instructions": [
+            "jmp qword [reloc.__stack_chk_fail]"
+        ]
+    },
+    "fcn.000028b0": {
+        "function_address": "0x000028b0",
+        "instructions": [
+            "push r13",
+            "push r12",
+            "mov r13, r8",
+            "push rbp",
+            "push rbx",
+            "mov rbp, rdi",
+            "mov rbx, rsi",
+            "mov r12, rcx",
+            "sub rsp, 8",
+            "call loc.imp.uam_getname",
+            "test rax, rax",
+            "mov qword [0x00204248], rax",
+            "je 0x2938",
+            "mov rax, qword [reloc.type_configs]",
+            "mov qword [0x00204258], rbx",
+            "cmp dword [rax + 0x58], 4",
+            "ja 0x2908",
+            "add rsp, 8",
+            "mov rdx, r13",
+            "mov rsi, r12",
+            "pop rbx",
+            "mov rdi, rbp",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "jmp fcn.00001de0",
+            "lea r8, str.DHX2_login:__s",
+            "lea rdx, str.uams_dhx2_pam.c",
+            "mov r9, rbx",
+            "mov ecx, 0x149",
+            "mov esi, 5",
+            "mov edi, 5",
+            "xor eax, eax",
+            "call loc.imp.make_log_entry",
+            "jmp 0x28eb",
+            "mov rax, qword [reloc.type_configs]",
+            "cmp dword [rax + 0x58], 4",
+            "ja 0x2958",
+            "add rsp, 8",
+            "mov eax, 0xffffec61",
+            "pop rbx",
+            "pop rbp",
+            "pop r12",
+            "pop r13",
+            "ret",
+            "lea r8, str.DHX2:_unknown_username",
+            "lea rdx, str.uams_dhx2_pam.c",
+            "mov ecx, 0x144",
+            "mov esi, 5",
+            "mov edi, 5",
+            "xor eax, eax",
+            "call loc.imp.make_log_entry",
+            "jmp 0x2945"
+        ]
+    },
+    "loc.imp.uam_getname": {
+        "function_address": "0x00001720",
+        "instructions": [
+            "jmp qword [reloc.uam_getname]"
+        ]
+    }
+}
