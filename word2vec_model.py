@@ -6,6 +6,7 @@ from tqdm import tqdm
 from datetime import datetime
 from gensim.models import Word2Vec
 from concurrent.futures import ProcessPoolExecutor, as_completed
+import gc
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] [%(asctime)s] %(message)s',
@@ -25,11 +26,10 @@ class Word2VecCBOW:
     def train(self, sentences):
         """Train the model using the provided sentences."""
         if self.use_gpu:
-            self.model = Word2Vec(sentences, vector_size=self.vector_size, window=5,
-                                  min_count=1, workers=4, sg=0, epochs=self.epochs, compute_loss=True, compute_device="gpu")
-        else:
-            self.model = Word2Vec(sentences, vector_size=self.vector_size, window=5,
-                                  min_count=1, workers=4, sg=0, epochs=self.epochs)
+            logging.warning(
+                "GPU support is not available in Gensim's Word2Vec. Training will proceed on CPU.")
+        self.model = Word2Vec(sentences, vector_size=self.vector_size, window=5,
+                              min_count=1, workers=4, sg=0, epochs=self.epochs)
         logging.info("Training completed successfully.")
 
     def get_word_vectors(self):
@@ -79,6 +79,10 @@ class Word2VecCBOW:
             batch_results = process_batch(batch)
             results.extend(batch_results)
 
+            # Free memory after processing each batch
+            batch_results.clear()
+            gc.collect()
+
         return results
 
     def label_and_parse_data(self, base_directory):
@@ -105,6 +109,7 @@ class Word2VecCBOW:
             data.extend(labeled_instructions)
             # Free memory after processing each subdirectory
             instructions.clear()
+            gc.collect()
         return data
 
     def save_model(self):

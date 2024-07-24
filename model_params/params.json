@@ -1,31 +1,31 @@
 {
     "normalize": {
-        "input_dir": "E:/Embedding-vector-generation-based-on-function-call-graph-/dataset_disemble",
-        "output_dir": "E:/Embedding-vector-generation-based-on-function-call-graph-/dataset_disemble_results"
+        "input_dir": "D:/Embedding_vector_generation_based_on_function_call_graph/dataset_disemble/results",
+        "output_dir": "E:/Embedding-vector-generation-based-on-function-call-graph-/dataset_disassemble_normalized/results"
     },
     "word2vec": {
         "vector_size": 100,
         "epochs": 10,
-        "save_path": "./model_saved1/word2vec",
+        "save_path": "./model_saved/word2vec",
         "use_gpu": true,
-        "graph_dir": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results"
+        "graph_dir": "D:/Embedding_vector_generation_based_on_function_call_graph/dataset_disassemble_normalized"
     },
     "graph": {
-        "base_directory": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble/results",
-        "normalized_directory": "/mnt/E/mnt/bigDisk/yishan/dataset_disassemble_normalized/results",
-        "output_directory": "/mnt/E/mnt/bigDisk/yishan/graph",
-        "sample_size": 1000,
-        "word2vec_model_path": "/mnt/E/re/Embedding vector generation based on function call graph for effective malware detection and classification/model_saved/word2vec"
+        "base_directory": "D:/Embedding_vector_generation_based_on_function_call_graph/dataset_disemble/results",
+        "normalized_directory": "D:/Embedding_vector_generation_based_on_function_call_graph/dataset_disemble/results",
+        "output_directory": "./graph",
+        "sample_size": "all",
+        "word2vec_model_path": "D:/Embedding_vector_generation_based_on_function_call_graph/model_saved/word2vec"
     },
     "gcn": {
-        "num_features": 128,
+        "num_features": 100,
         "hidden_channels": 64,
         "num_classes": 2,
         "use_gpu": true,
-        "data_dir": "/mnt/E/mnt/bigDisk/yishan/graph",
+        "data_dir": "D:/Embedding_vector_generation_based_on_function_call_graph/graph",
         "batch_size": 32,
         "learning_rate": 0.001,
-        "epochs": 50,
+        "epochs": 100,
         "model_save_path": "./model_saved/gcn_with_attention.pth"
     }
 }

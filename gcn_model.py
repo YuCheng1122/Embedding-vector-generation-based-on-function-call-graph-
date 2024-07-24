@@ -8,6 +8,15 @@ from torch_geometric.data import Data, DataLoader
 from torch_geometric.nn import GCNConv
 from torch_geometric.nn import global_mean_pool as gmp
 from sklearn.model_selection import train_test_split
+import logging
+
+# Configure logging
+logging.basicConfig(
+    filename='gcn_log.log',
+    level=logging.INFO,
+    format='[%(levelname)s] [%(asctime)s] %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
 
 
 class GCNWithAttention(torch.nn.Module):
@@ -24,27 +33,48 @@ class GCNWithAttention(torch.nn.Module):
 
     def forward(self, data_batch):
         x, edge_index, batch = data_batch.x, data_batch.edge_index, data_batch.batch
+        logging.info(f"Input x shape: {x.shape}")
+        logging.info(f"Edge index shape: {edge_index.shape}")
+
         x = self.conv1(x, edge_index)
         x = x.relu()
+        logging.info(f"Shape after conv1: {x.shape}")
+
         x = self.conv2(x, edge_index)
+        logging.info(f"Shape after conv2: {x.shape}")
+
         attn_weights = F.leaky_relu(self.attention(x))
         attn_weights = F.softmax(attn_weights, dim=0)
         x = x * attn_weights
+        logging.info(f"Shape after attention: {x.shape}")
+
         x = gmp(x, batch)
+        logging.info(f"Shape after global mean pool: {x.shape}")
+
         x = self.lin1(x)
         x = F.relu(x)
+        logging.info(f"Shape after lin1: {x.shape}")
+
         x = self.lin2(x)
         x = F.relu(x)
+        logging.info(f"Shape after lin2: {x.shape}")
+
         x = F.dropout(x, p=0.5, training=self.training)
         x = self.lin(x)
         x = F.softmax(x, dim=1)
+        logging.info(f"Output shape: {x.shape}")
+
         return x
 
     @staticmethod
     def load_graph_from_json(json_path):
         """Load a graph from a JSON file and convert it to a PyTorch Geometric Data object."""
-        with open(json_path, 'r') as file:
-            data = json.load(file)
+        try:
+            with open(json_path, 'r') as file:
+                data = json.load(file)
+        except json.JSONDecodeError as e:
+            logging.error(f"Error decoding JSON file {json_path}: {e}")
+            raise
 
         node_features = [node['feature'] for node in data['nodes']]
         x = torch.tensor(node_features, dtype=torch.float)
@@ -63,10 +93,13 @@ class GCNWithAttention(torch.nn.Module):
             for file in files:
                 if file.endswith('.json'):
                     json_path = os.path.join(root, file)
-                    graph_data = GCNWithAttention.load_graph_from_json(
-                        json_path)
-                    graph_data.y = torch.tensor([label], dtype=torch.long)
-                    dataset.append(graph_data)
+                    try:
+                        graph_data = GCNWithAttention.load_graph_from_json(
+                            json_path)
+                        graph_data.y = torch.tensor([label], dtype=torch.long)
+                        dataset.append(graph_data)
+                    except json.JSONDecodeError:
+                        continue
         return dataset
 
     def load_dataset(self, data_dir):
@@ -164,11 +197,22 @@ class ConfigLoader:
 
 def load_graph_from_json(json_path):
     """Load a graph from a JSON file and convert it to a PyTorch Geometric Data object."""
-    with open(json_path, 'r') as file:
-        data = json.load(file)
+    try:
+        with open(json_path, 'r') as file:
+            content = file.read().strip()
+            if not content:
+                logging.warning(f"Empty JSON file: {json_path}")
+                return None
+            data = json.loads(content)
+    except json.JSONDecodeError as e:
+        logging.error(f"Error decoding JSON file {json_path}: {e}")
+        return None
 
     node_features = [node['feature'] for node in data['nodes']]
     x = torch.tensor(node_features, dtype=torch.float)
+    if x.size(1) != 128:  # Check the number of features
+        logging.warning(
+            f"Feature size mismatch in file {json_path}. Expected 128, got {x.size(1)}.")
 
     edges = [(link['source'], link['target']) for link in data['links']]
     edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
@@ -185,6 +229,7 @@ def load_dataset_from_directory(directory, label):
             if file.endswith('.json'):
                 json_path = os.path.join(root, file)
                 graph_data = load_graph_from_json(json_path)
-                graph_data.y = torch.tensor([label], dtype=torch.long)
-                dataset.append(graph_data)
+                if graph_data is not None:
+                    graph_data.y = torch.tensor([label], dtype=torch.long)
+                    dataset.append(graph_data)
     return dataset

@@ -97,14 +97,23 @@ class GraphProcessor:
             directory = os.path.join(base_directory, subdir)
             normalized_subdir = os.path.join(normalized_directory, subdir)
             if not os.path.exists(directory):
+                logging.warning(f"Directory {directory} does not exist.")
                 continue
             all_files = [os.path.join(root, file) for root, _, files in os.walk(
                 directory) for file in files if file.endswith('.dot')]
+            logging.info(f"Found {len(all_files)} .dot files in {directory}.")
             valid_files = [file for file in all_files if os.path.exists(
                 os.path.join(normalized_subdir, os.path.relpath(file, start=directory)).replace('.dot', '.json'))]
+            logging.info(
+                f"Found {len(valid_files)} valid .dot files in {directory}.")
 
-            data_files.extend(random.sample(
-                valid_files, min(sample_size, len(valid_files))))
+            if sample_size == "all":
+                data_files.extend(valid_files)
+            else:
+                data_files.extend(random.sample(
+                    valid_files, min(sample_size, len(valid_files))))
+
+        logging.info(f"Total data files to process: {len(data_files)}")
 
         os.makedirs(output_directory, exist_ok=True)
 
